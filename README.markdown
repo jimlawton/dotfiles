@@ -14,12 +14,14 @@ This project contains submodules. It is suggested that you clone this into your 
     git clone --recurse-submodules https://github.com/jimlawton/dotfiles .dotfiles
 
 # Setup
-There is a set up script that establishes the symlinks in your home directory. Run this once.
 
-* For ZShell
-        ~/dotfiles/_setupdotfiles.zsh
-* For Bash (needs some fixes)
-        ~/dotfiles/_setupdotfiles.bsh
+Personalisation settings are in `personalisation`. Replace the values with your
+own.
+
+There is a set up script that establishes the symlinks in your home directory. Run this once.
+```
+$ ~/dotfiles/_setupdotfiles.sh
+```
 
 > NOTE: Some of my personal configuration will remain after setup. You should fork and tweak to your specific needs.
 
