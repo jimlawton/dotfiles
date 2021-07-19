@@ -4,9 +4,8 @@
 
 export _USERNAMES="jiml jlawton jim.lawton jlawto001c jlawto001 james.lawton"
 export _NAME="Jim Lawton"
-export _EMAIL="james.lawton@forcepoint.com"
 export _SHORTUSER="jim"
 export _MACHNAME="mac"
 
-# Don't forget top modify gitconfig-personal and gitconfig-work for your email 
+# Don't forget to modify gitconfig-personal and gitconfig-work for your email 
 # addresses and directory paths for Git commits.
