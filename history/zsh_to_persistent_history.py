@@ -16,6 +16,9 @@
 #
 # The first integer is time since epoch, the second is runtime, the remainder of the line after ';'
 # is the command line.
+#
+# This script is then run from cron:
+# 0,15,30,45 * * * * python3 ~/dotfiles/history/zsh_to_persistent_history.py -w >/dev/null 2>&1 || true
 
 import argparse
 import sys
