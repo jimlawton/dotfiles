@@ -2,6 +2,7 @@
 SHELLSCONFIGDIR=~/dotfiles
 DOTFILESDIR=~/dotfiles
 DOTFILES=".bash_logout .bash_profile .bashrc .Brewfile .colordiffrc .colorgccrc .gitconfig .gitignore .inputrc .iterm2_shell_integration.zsh .p10k.zsh .profile .pythonrc .rvmrc .shellactivities .shellaliases .shellpaths .shellvars .tmux.conf .vimrc .xxdiffrc .zlogout .zprofile .zshenv .zshrc"
+DOTDIRS=".conf .tmux .vim"
 DROPDIRS="bin .pip"
 MOVE=false
 SAVEDIR=~/.old/_setupdotfiles
@@ -72,6 +73,10 @@ if [ ! -d dotfiles ]; then
 fi
 
 for dotfile in $DOTFILES; do
+	symlinkifne $dotfile
+done
+
+for dotfile in $DOTDIRS; do
 	symlinkifne $dotfile
 done
 
