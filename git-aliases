@@ -61,10 +61,10 @@
 	legitunpublish = !legit unpublish \"$@\"
 	lf = log --pretty=fuller
 	# lg = log --graph
-	lg = log --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative --follow
 	lgme = log --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative --author=me
 	lgorigin = log --oneline --graph --decorate origin/master...master --left-right
-	lgp = log -p --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgp = log -p --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative --follow
 	lgso = log --graph --date=short --pretty=format:'%C(yellow)%h%Creset %cn%x09%cd %s%C(green bold)%d'
 	listconf = config --global --list
 	listhistory = log --name-status
