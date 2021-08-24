@@ -11,7 +11,7 @@ The contents of this repo are based on Matthew McCullough's original (https://gi
 This project contains submodules. It is suggested that you clone this into your home directory.
 
     cd ~
-    git clone --recurse-submodules https://github.com/jimlawton/dotfiles .dotfiles
+    git clone --recurse-submodules https://github.com/jimlawton/dotfiles
 
 # Setup
 
