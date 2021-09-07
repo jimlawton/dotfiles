@@ -118,7 +118,7 @@ plugins=(
   terraform
   textmate
   virtualenv
-  virtualenvwrapper
+  # virtualenvwrapper
 )
 
 source $HOME/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
