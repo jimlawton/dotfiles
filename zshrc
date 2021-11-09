@@ -104,7 +104,7 @@ plugins=(
   gitignore
   golang
   iterm2
-  osx
+  macos
   pip
   # pipenv
   pyenv
