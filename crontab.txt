@@ -1,0 +1,1 @@
+0,15,30,45 * * * * python3 ~/dotfiles/history/zsh_to_persistent_history.py -w >/dev/null 2>&1 || true # >> ~/ph.log 2>&1
