@@ -167,4 +167,6 @@ if [[ -o interactive ]]; then
     printf "\033]1337;ShellIntegrationVersion=12;shell=zsh\007"
   fi
 fi
-alias imgcat=${HOME}/.iterm2/imgcat;alias imgls=${HOME}/.iterm2/imgls;alias it2api=${HOME}/.iterm2/it2api;alias it2attention=${HOME}/.iterm2/it2attention;alias it2check=${HOME}/.iterm2/it2check;alias it2copy=${HOME}/.iterm2/it2copy;alias it2dl=${HOME}/.iterm2/it2dl;alias it2getvar=${HOME}/.iterm2/it2getvar;alias it2git=${HOME}/.iterm2/it2git;alias it2setcolor=${HOME}/.iterm2/it2setcolor;alias it2setkeylabel=${HOME}/.iterm2/it2setkeylabel;alias it2ul=${HOME}/.iterm2/it2ul;alias it2universion=${HOME}/.iterm2/it2universion
+
+# DISABLED because of issues with iTerm2 imgcat!
+#alias imgcat=/Users/james.lawton/.iterm2/imgcat;alias imgls=/Users/james.lawton/.iterm2/imgls;alias it2api=/Users/james.lawton/.iterm2/it2api;alias it2attention=/Users/james.lawton/.iterm2/it2attention;alias it2check=/Users/james.lawton/.iterm2/it2check;alias it2copy=/Users/james.lawton/.iterm2/it2copy;alias it2dl=/Users/james.lawton/.iterm2/it2dl;alias it2getvar=/Users/james.lawton/.iterm2/it2getvar;alias it2git=/Users/james.lawton/.iterm2/it2git;alias it2setcolor=/Users/james.lawton/.iterm2/it2setcolor;alias it2setkeylabel=/Users/james.lawton/.iterm2/it2setkeylabel;alias it2ul=/Users/james.lawton/.iterm2/it2ul;alias it2universion=/Users/james.lawton/.iterm2/it2universion
