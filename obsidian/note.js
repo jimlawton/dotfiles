@@ -54,8 +54,11 @@ function get_date_int(name) {
     }
     console.log("note: tmp_name:", tmp_name);
     var year = get_year(tmp_name);
+    console.log("note: year:", year);
     var month = get_month(tmp_name);
+    console.log("note: month:", month);
     var date = get_day(tmp_name);
+    console.log("note: date:", date);
     return [year, month, date];
 }
 
