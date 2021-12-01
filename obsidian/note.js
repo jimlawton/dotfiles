@@ -95,17 +95,13 @@ function note(type, tp) {
     // console.log("note: files:", files);
     var [year, month, day] = get_date_int(name);
     if (type == "prev") {
-        var [new_year, new_month, new_day] = get_new_date(year, month, day, -1);
-        var note = make_new_date_str(new_year, new_month, new_day);
+        var note = tp.date.yesterday();
     } else if (type == "next") {
-        var [new_year, new_month, new_day] = get_new_date(year, month, day, 1);
-        var note = make_new_date_str(new_year, new_month, new_day);
+        var note = tp.date.tomorrow();
     } else if (type == "prev_week") {
-        var [new_year, new_month, new_day] = get_new_date(year, month, day, -7);
-        var note = "Weekly " + make_new_date_str(new_year, new_month, new_day);
+        var note = "Weekly " + tp.date.now("YYYY-MM-DD", -7);
     } else if (type == "next_week") {
-        var [new_year, new_month, new_day] = get_new_date(year, month, day, 7);
-        var note = "Weekly " + make_new_date_str(new_year, new_month, new_day);
+        var note = "Weekly " + tp.date.now("YYYY-MM-DD", 7);
     } else {
         console.error("ERROR: Type must be \"prev\" or \"next\"!");
     }
