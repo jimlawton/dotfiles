@@ -105,6 +105,7 @@ plugins=(
   golang
   iterm2
   macos
+  per-directory-history
   pip
   # pipenv
   pyenv
