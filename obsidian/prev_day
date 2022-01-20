@@ -5,7 +5,7 @@
 
 # To use it, add this to your daily note template file:
 #   <% tp.user.prev_day() %>
-# and set up the Templater plugin to add a User System Command, named `todos`,
+# and set up the Templater plugin to add a User System Command, named `prev_day`,
 # and specify the path to this script.
 
 vault="${HOME}/Drive/jim.lawton@gmail.com/Obsidian/Notes/"
