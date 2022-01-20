@@ -10,6 +10,11 @@
 
 # This is designed to be used directly from the Templater plugin.
 
+# To use it, add this to your daily note template file:
+#   <% tp.user.todos() %>
+# and set up the Templater plugin to add a User System Command, named `todos`,
+# and specify the path to this script.
+
 vault="${HOME}/Drive/jim.lawton@gmail.com/Obsidian/Notes/"
 notes_dir="${vault}/Daily Notes/"
 when="$(date '+%Y-%m-%d')"
