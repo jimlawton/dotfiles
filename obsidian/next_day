@@ -1,0 +1,23 @@
+#!/usr/local/bin/bash
+# Simple script for Obsidian, for use with the Templater plugin,
+# to generate the name of the next note (i.e. the note on the next working day)
+# to the specified note, and return the date string for it.
+
+# To use it, add this to your daily note template file:
+#   <% tp.user.next_day() %>
+# and set up the Templater plugin to add a User System Command, named `next_day`,
+# and specify the path to this script.
+
+# This depends on MacOS date, not GNU date, and GNU dateutils (for dateadd).
+
+when="$(date '+%Y-%m-%d')"
+if [ -n "$1" ]; then
+    when="$1"
+fi
+input_date=$(echo "${when}" | awk '{print $NF}' | awk -F. '{print $1}')
+if [[ $(date -j -f '%Y-%m-%d' "${input_date}" +'%u') = 5 ]] ; then
+    next_date=$(dateadd "${input_date}" 3d)
+else
+    next_date=$(dateadd "${input_date}" 1d)
+fi
+echo "$next_date"

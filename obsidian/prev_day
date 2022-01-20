@@ -1,0 +1,25 @@
+#!/usr/local/bin/bash
+# Simple script for Obsidian, for use with the Templater plugin,
+# to find the previous note (i.e. the note on the previous working day) to the
+# specified note, and return the date string for it.
+
+# To use it, add this to your daily note template file:
+#   <% tp.user.prev_day() %>
+# and set up the Templater plugin to add a User System Command, named `todos`,
+# and specify the path to this script.
+
+vault="${HOME}/Drive/jim.lawton@gmail.com/Obsidian/Notes/"
+notes_dir="${vault}/Daily Notes/"
+when="$(date '+%Y-%m-%d')"
+if [ -n "$1" ]; then
+    when="$1"
+fi
+input_date=$(echo "${when}" | awk '{print $NF}' | awk -F. '{print $1}')
+
+# Calculate the date of the previous daily note.
+# - List all notes by name in lexical order
+# - Find the entry before the specified date
+all_notes=$(ls -1R "${notes_dir}" | grep '^Daily')
+prev_note=$(echo "${all_notes}" | grep -B1 "${input_date}" | head -1)
+prev_date=$(echo "${prev_note}" | awk '{print $2}' | awk -F. '{print $1}')
+echo "$prev_date"
