@@ -105,7 +105,6 @@ function note(type, tp) {
     } else {
         console.error("ERROR: Type must be \"prev\" or \"next\"!");
     }
-    console.log("note: new date:", new_year, new_month, new_day);
     console.log("note: note:", note);
     console.log("");
     console.log("");
