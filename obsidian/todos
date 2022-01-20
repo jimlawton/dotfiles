@@ -1,0 +1,31 @@
+#!/usr/local/bin/bash
+# Simple script for Obsidian, for use with the Templater plugin,
+# to find the previous note to the specified note, and roll forward any
+# incomplete Todo items.
+
+# Yes, this duplicates the Rollover Daily Todos plugin functionality,
+# but that plugin does not seem to work too well with Templater, as
+# Templater takes longer to generate output, and its rewrite of the
+# target file loses the output from the other plugin.
+
+# This is designed to be used directly from the Templater plugin.
+
+vault="${HOME}/Drive/jim.lawton@gmail.com/Obsidian/Notes/"
+notes_dir="${vault}/Daily Notes/"
+when="$(date '+%Y-%m-%d')"
+if [ -n "$1" ]; then
+    when="$1"
+fi
+input_date=$(echo "${when}" | awk '{print $NF}' | awk -F. '{print $1}')
+
+# Calculate the date of the previous daily note.
+# - List all notes by name in lexical order
+# - Find the entry before the specified date
+all_notes=$(ls -1R "${notes_dir}" | grep '^Daily')
+prev_note=$(echo "${all_notes}" | grep -B1 "${input_date}" | head -1)
+prev_date=$(echo "${prev_note}" | awk '{print $2}' | awk -F. '{print $1}')
+prev_month=$(echo "${prev_date}" | awk -F- '{print $2}')
+prev_year=$(echo "${prev_date}" | awk -F- '{print $1}')
+
+# Print all non-complete todo items from the specified Obsidian file.
+cat "${vault}/Daily Notes/$prev_year/$prev_month/Daily $prev_date.md" | sed '/^$/d' | awk '/^## Todo/{flag=1; next} /^## Agenda/ {flag=0} flag' | grep -v '\- \[x\]'
