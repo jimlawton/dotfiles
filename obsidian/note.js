@@ -7,7 +7,7 @@
 // module, and that export must match the module (file) name.
 
 const homedir = require('os').homedir();
-const vault = "Drive/jim.lawton@gmail.com/Obsidian/Notes/";
+const vault = "obsidian/Notes/";
 const top_level = homedir + "/" + vault;
 const zeroPad = (num, places) => String(num).padStart(places, '0')
 
