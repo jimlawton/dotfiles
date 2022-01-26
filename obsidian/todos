@@ -15,7 +15,7 @@
 # and set up the Templater plugin to add a User System Command, named `todos`,
 # and specify the path to this script.
 
-vault="${HOME}/Drive/jim.lawton@gmail.com/Obsidian/Notes/"
+vault="${HOME}/obsidian/Notes/"
 notes_dir="${vault}/Daily Notes/"
 when="$(date '+%Y-%m-%d')"
 if [ -n "$1" ]; then
