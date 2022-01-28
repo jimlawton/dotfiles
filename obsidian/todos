@@ -33,4 +33,5 @@ prev_month=$(echo "${prev_date}" | awk -F- '{print $2}')
 prev_year=$(echo "${prev_date}" | awk -F- '{print $1}')
 
 # Print all non-complete todo items from the specified Obsidian file.
-cat "${vault}/Daily Notes/$prev_year/$prev_month/Daily $prev_date.md" | sed '/^$/d' | awk '/^## Todo/{flag=1; next} /^## Agenda/ {flag=0} flag' | grep -v '\- \[x\]'
+# cat "${vault}/Daily Notes/$prev_year/$prev_month/Daily $prev_date.md" | sed '/^$/d' | awk '/^## Todo/{flag=1; next} /^## Agenda/ {flag=0} flag' | grep -v '\- \[x\]'
+cat "${vault}/Daily Notes/$prev_year/$prev_month/Daily $prev_date.md" | awk '/^## Todo/{flag=1; next} /^## Agenda/ {flag=0} flag' | grep -v '\- \[x\]'
