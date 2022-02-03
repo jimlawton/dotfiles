@@ -88,3 +88,8 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
+if [ -f ~/.jfrog/jfrog-cli.conf ]; then
+    export ARTIFACTORY_EMAIL=`jq -r '.artifactory[0].user' ~/.jfrog/jfrog-cli.conf`
+    export ARTIFACTORY_API_KEY=`jq -r '.artifactory[0].password' ~/.jfrog/jfrog-cli.conf`
+fi
