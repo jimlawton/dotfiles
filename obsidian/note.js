@@ -99,9 +99,9 @@ function note(type, tp) {
     } else if (type == "next") {
         var note = tp.date.tomorrow();
     } else if (type == "prev_week") {
-        var note = "Weekly " + tp.date.now("YYYY-MM-DD", -7);
+        var note = tp.date.now("YYYY-MM-DD", -7);
     } else if (type == "next_week") {
-        var note = "Weekly " + tp.date.now("YYYY-MM-DD", 7);
+        var note = tp.date.now("YYYY-MM-DD", 7);
     } else {
         console.error("ERROR: Type must be \"prev\" or \"next\"!");
     }
