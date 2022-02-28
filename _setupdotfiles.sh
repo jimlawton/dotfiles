@@ -61,7 +61,7 @@ fi
 
 mkdir -p $SAVEDIR
 
-if [ ! -d dotfiles ]; then 
+if [ ! -d dotfiles ]; then
 	echo "The dotfiles directory does not exist in your home directory!"
 	echo "You need to do:"
 	echo "# cd ~"
