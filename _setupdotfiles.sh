@@ -4,7 +4,6 @@ DOTFILESDIR=~/dotfiles
 DOTFILES=".bash_logout .bash_profile .bashrc .Brewfile .colordiffrc .colorgccrc .gitconfig .gitignore .inputrc .iterm2_shell_integration.zsh .p10k.zsh .profile .pythonrc .rvmrc .shellactivities .shellaliases .shellpaths .shellvars .tmux.conf .vimrc .xxdiffrc .zlogout .zprofile .zshenv .zshrc"
 DOTDIRS=".conf .tmux .vim"
 DROPDIRS="bin .pip"
-MOVE=false
 SAVEDIR=~/.old/_setupdotfiles
 
 function symlinkifne {
@@ -32,7 +31,7 @@ function symlinkifne {
 	if [ ! -L $target ]; then
 		# If it's not a symlink, tread carefully.
 		echo "  WARNING: $target already exists!"
-		if [ "$MOVE" = "true" ]; then
+		if [ "${MOVE:-false}" = "true" ]; then
 			echo "  Moving $target to $SAVEDIR/"
 			mv $target $SAVEDIR/
 			dotless=$(echo $1 | sed s/.//)
@@ -54,7 +53,7 @@ echo "Setting up..."
 
 pushd ~
 
-if [ "$MOVE" = "true" -a -d $SAVEDIR ]; then
+if [ "${MOVE:-false}" = "true" -a -d $SAVEDIR ]; then
 	echo "$SAVEDIR already exists! Please clean up and try again."
 	echo "This is used to save old versions of your configuration files."
 	exit 1
@@ -63,7 +62,7 @@ fi
 mkdir -p $SAVEDIR
 
 if [ ! -d dotfiles ]; then 
-	echo "The dotfiles dir does not exist in your home directory!"
+	echo "The dotfiles directory does not exist in your home directory!"
 	echo "You need to do:"
 	echo "# cd ~"
 	echo "# git clone --recurse-submodules https://github.com/jimlawton/dotfiles"
