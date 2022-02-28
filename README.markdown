@@ -31,13 +31,23 @@ home directory, as follows.
 Personalisation settings are in `personalisation`. Replace the values with your own.
 
 There is a set up script that establishes the symlinks in your home directory.
-Run this once.
+Run this:
 
 ```bash
 > ~/dotfiles/_setupdotfiles.sh
 ```
 
-> NOTE: Some of my personal configuration will remain after setup. You should fork and tweak to your specific needs.
+This will attempt to set up symlinks to the relevant dot files from your home
+directory. In the event of files already existing in your home directory, it
+will warn and skip them. Carefully check the warnings, and when you are happy
+to proceed, do:
+
+```bash
+> MOVE=true ~/dotfiles/_setupdotfiles.sh
+```
+
+> NOTE: Some of my personal configuration will remain after setup. You should
+> fork and tweak to your specific needs.
 
 ## Non-automated, non-captured config
 
