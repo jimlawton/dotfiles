@@ -39,7 +39,7 @@ function symlinkifne {
 			echo "  Symlinking $DOTFILESDIR/$dotless to $1"
 			ln -s $DOTFILESDIR/$dotless $target
 		else
-			echo "  Skipping $1."  
+			echo "  Skipping $1."
 		fi
 	else
 		# Safe to just delete if it is a symlink (or if it doesn't exist).
