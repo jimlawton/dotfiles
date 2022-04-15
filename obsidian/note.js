@@ -103,9 +103,9 @@ function note(type, tp) {
     } else if (type == "next_week") {
         var note = tp.date.now("YYYY-MM-DD", 7);
     } else {
-        console.error("ERROR: Type must be \"prev\" or \"next\"!");
+        console.error("ERROR: invalid type arg to note function!");
     }
-    console.log("note: note:", note);
+    console.log("note: new note:", note);
     console.log("");
     console.log("");
     return note;
