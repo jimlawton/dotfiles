@@ -47,10 +47,8 @@ def main():
 
     vault = f"{home}/obsidian/Notes"
     notes_dir = f"{vault}/Daily Notes/"
-    # templates_dir = f"{vault}/Templates/"
-    # template_file = f"{templates_dir}/Daily Notes.md"
 
-    # get a dict of all daily notes, with paths.
+    # Get a dict of all daily notes, with paths.
     notes_dict = {}
     date_objs = []
     files = glob.glob(notes_dir + '/**/Daily*.md', recursive=True)
