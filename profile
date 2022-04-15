@@ -1,7 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init bash pre)"
-
+. "$HOME/.fig/shell/profile.pre.bash"
 #############################################################
 # Generic configuration that applies to all shells
 #############################################################
@@ -22,5 +20,4 @@ eval "$(pyenv init --path)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Fig post block. Keep at the bottom of this file.
-eval "$(fig init bash post)"
-
+. "$HOME/.fig/shell/profile.post.bash"
