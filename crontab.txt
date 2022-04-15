@@ -1,2 +1,3 @@
 0,15,30,45 * * * * python3 ~/dotfiles/history/zsh_to_persistent_history.py -w >/dev/null 2>&1 || true # >> ~/ph.log 2>&1
 0 6 * * * python3 ~/dotfiles/obsidian/daily-note.py >/dev/null 2>&1 || true >> ~/daily-note.log 2>&1
+30 8 * * 1 python3 ~/dotfiles/obsidian/weekly-report.py >/dev/null 2>&1 || true >> ~/weekly-report.log 2>&1
