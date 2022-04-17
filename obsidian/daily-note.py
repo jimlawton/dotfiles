@@ -75,7 +75,7 @@ def main():
         next_date = min(d for d in date_objs if d > curr_date_obj)
     else:
         next_date = datetime.datetime.strptime(date_str, '%Y-%m-%d') + datetime.timedelta(days=1)
-        next_str = next_date.strftime('%Y-%m-%d')
+    next_str = next_date.strftime('%Y-%m-%d')
 
     file_lines = []
 
