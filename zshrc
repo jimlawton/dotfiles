@@ -116,7 +116,7 @@ plugins=(
   # ssh-agent
   sublime
   sublime-merge
-  sudo
+  # sudo
   terraform
   textmate
   virtualenv
