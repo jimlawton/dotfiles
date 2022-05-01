@@ -89,7 +89,11 @@ def main():
     with open(prev_file_path, 'r') as f:
         prev_data_lines = f.readlines()
 
-    output_file_path = f"{notes_dir + year + '/' + month + '/' + 'Daily ' + date_str + '.md'}"
+    output_dir_path = f"{notes_dir + year + '/' + month}"
+    if not os.path.isdir(output_dir_path):
+        os.makedirs(output_dir_path, exist_ok=True)
+
+    output_file_path = f"{output_dir_path + '/' + 'Daily ' + date_str + '.md'}"
 
     # Generate front matter
     file_lines.append("---")
