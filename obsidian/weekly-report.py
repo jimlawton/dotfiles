@@ -30,7 +30,12 @@ def main():
         except ValueError:
             sys.exit("Invalid date, must be valid calendar date in the form YYYY-MM-DD!")
     else:
-        date_str = datetime.datetime.today().strftime('%Y-%m-%d')
+        weekday_today = datetime.datetime.now().weekday()
+        if weekday_today >= 4:
+            end_date = datetime.datetime.now() - datetime.timedelta(weekday_today - 4)
+        else:
+            end_date = datetime.datetime.now() - datetime.timedelta(weeks=1) + datetime.timedelta(4 - weekday_today)
+        date_str = end_date.strftime('%Y-%m-%d')
 
     curr_date_obj = datetime.datetime.strptime(date_str, '%Y-%m-%d')
 
@@ -80,10 +85,11 @@ def main():
     else:
         next_date = datetime.datetime.strptime(date_str, '%Y-%m-%d') + datetime.timedelta(days=7)
     next_str = next_date.strftime('%Y-%m-%d')
+    print(f"Next weekly report: {next_str}")
 
     file_lines = []
 
-    # Read the previous note file.
+    # Read the previous weekly report file.
     prev_file_path = weekly_dict[prev_str]
     print(f"Reading from {prev_file_path}")
 
