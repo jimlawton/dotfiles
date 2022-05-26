@@ -3,6 +3,7 @@
 DOTFILESDIR=~/dotfiles
 DOTFILES=".bash_logout .bash_profile .bashrc .Brewfile .colordiffrc .colorgccrc .gitconfig .gitignore .inputrc .iterm2_shell_integration.zsh .p10k.zsh .profile .pythonrc .rvmrc .shellactivities .shellaliases .shellpaths .shellvars .tmux.conf .vimrc .xxdiffrc .zlogout .zprofile .zshenv .zshrc"
 DOTDIRS=".vim"
+DROPFILES="persistent_history"
 DROPDIRS="bin .pip"
 SAVEDIR=~/.old/_setupdotfiles
 
@@ -89,6 +90,15 @@ if [ -e ~/Dropbox/ ]; then
     for dropdir in $DROPDIRS; do
         if [ ! -e ~/$dropdir ]; then
             ln -s ~/Dropbox/unixhome/$dropdir ~/
+        fi
+    done
+fi
+
+# Any files you want linked from Dropbox.
+if [ -e ~/Dropbox/ ]; then
+    for dropfile in $DROPFILES; do
+        if [ ! -e ~/$dropfile ]; then
+            ln -s ~/Dropbox/$dropfile ~/.$dropfile
         fi
     done
 fi
