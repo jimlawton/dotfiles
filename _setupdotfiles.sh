@@ -28,21 +28,26 @@ function symlinkifne {
 			exit 1
 		fi
 	fi
-	if [ ! -L $target ]; then
-		# If it's not a symlink, tread carefully.
-		echo "  WARNING: $target already exists!"
-		if [ "${MOVE:-false}" = "true" ]; then
-			echo "  Moving $target to $SAVEDIR/"
-			mv $target $SAVEDIR/
-			dotless=$(echo $1 | sed s/.//)
-			echo "  Symlinking $DOTFILESDIR/$dotless to $1"
-			ln -s $DOTFILESDIR/$dotless $target
+	if [ -e $target ]; then
+		if [ ! -L $target ]; then
+			# If it's not a symlink, tread carefully.
+			echo "  WARNING: $target already exists!"
+			if [ "${MOVE:-false}" = "true" ]; then
+				echo "  Moving $target to $SAVEDIR/"
+				mv $target $SAVEDIR/
+				dotless=$(echo $1 | sed s/.//)
+				echo "  Symlinking $DOTFILESDIR/$dotless to $1"
+				ln -s $DOTFILESDIR/$dotless $target
+			else
+				echo "  Skipping $1."
+			fi
 		else
-			echo "  Skipping $1."
+			# Safe to just delete if it is a symlink (or if it doesn't exist).
+			rm -f $target
+			echo "  Symlinking $DOTFILESDIR/$dotless to $target"
+			ln -s $DOTFILESDIR/$dotless $target
 		fi
 	else
-		# Safe to just delete if it is a symlink (or if it doesn't exist).
-		rm -f $target
 		echo "  Symlinking $DOTFILESDIR/$dotless to $target"
 		ln -s $DOTFILESDIR/$dotless $target
 	fi
