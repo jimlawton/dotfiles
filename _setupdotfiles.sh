@@ -80,8 +80,8 @@ for dotfile in $DOTFILES; do
 	symlinkifne $dotfile
 done
 
-for dotfile in $DOTDIRS; do
-	symlinkifne $dotfile
+for dotdir in $DOTDIRS; do
+	symlinkifne $dotdir
 done
 
 # Any directories you want linked from Dropbox.
