@@ -26,8 +26,10 @@ export PATH=$PATH:~/adr-tools/src
 
 # Brew
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 # Path setup for Brew Python.
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+#export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Dev frameworks
 #export PATH=$PATH:$ANT_HOME/bin
