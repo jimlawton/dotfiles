@@ -165,6 +165,8 @@ def main():
         zdata = f.readlines()
 
     hostname = socket.gethostname().lower()
+    if hostname.endswith(".local"):
+        hostname = hostname.replace(".local", "")
     user = os.getenv("USER")
     usernames = os.getenv("_USERNAMES")
     if usernames is None:
