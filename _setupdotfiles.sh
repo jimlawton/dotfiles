@@ -104,7 +104,7 @@ if [ -e ~/Dropbox/ ]; then
 fi
 
 mkdir -p ~/.config
-ln -sf ~/dotfiles/karabiner ~/.config/karabiner
+ln -sf ~/dotfiles/hyper-hacks/karabiner ~/.config/karabiner
 
 popd
 
