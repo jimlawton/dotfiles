@@ -103,6 +103,9 @@ if [ -e ~/Dropbox/ ]; then
     done
 fi
 
+mkdir -p ~/.config
+ln -sf ~/dotfiles/karabiner ~/.config/karabiner
+
 popd
 
 echo "Done!"
