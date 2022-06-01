@@ -48,6 +48,8 @@ def main():
     vault = f"{home}/obsidian/Notes"
     notes_dir = f"{vault}/Daily Notes/"
 
+    print(f"Scanning '{notes_dir}'...")
+
     # Get a dict of all daily notes, with paths.
     notes_dict = {}
     date_objs = []
@@ -56,6 +58,9 @@ def main():
         note_date = file_path.split('/')[-1].split('.')[0].split()[1]
         notes_dict[note_date] = file_path
         date_objs.append(datetime.datetime.strptime(note_date, "%Y-%m-%d"))
+
+    if len(date_objs) == 0:
+        sys.exit(f"Cannot find any daily notes in '{notes_dir}'!")
 
     if date_str in notes_dict.keys():
         sys.exit(f"Daily note for {date_str} already exists, skipping!")
