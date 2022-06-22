@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zprofile.pre.zsh"
+[[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && . "$HOME/.fig/shell/zprofile.pre.zsh"
 ##############################################################################
 # Import the shell-agnostic (Bash or Zsh) environment config
 ##############################################################################
@@ -11,4 +11,4 @@ source ~/.profile
 source ~/dotfiles/z/z.sh
 
 # Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zprofile.post.zsh"
+[[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && . "$HOME/.fig/shell/zprofile.post.zsh"
