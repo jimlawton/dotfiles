@@ -3,5 +3,3 @@
 
 [credential]
 	helper = osxkeychain
-[init]
-	templateDir = /Users/james.lawton/dotfiles/git-template

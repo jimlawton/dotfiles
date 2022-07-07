@@ -4,3 +4,5 @@
 [hub]
     protocol = https
     host = https://github.cicd.cloud.fpdev.io
+[init]
+    templateDir = ~/dotfiles/git-template
