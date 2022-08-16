@@ -53,9 +53,10 @@ brew "freetype"
 brew "cairo"
 brew "chezmoi"
 brew "clang-format"
+brew "cmake"
 brew "consul"
 brew "consul-template"
-brew "coreutils"
+brew "coreutils", link: false
 brew "libidn2"
 brew "libssh2"
 brew "rtmpdump"
@@ -72,7 +73,6 @@ brew "docker-credential-helper-ecr"
 brew "docker-machine-completion"
 brew "dos2unix"
 brew "doxygen"
-brew "earthly"
 brew "envconsul"
 brew "exa"
 brew "fd"
@@ -91,7 +91,6 @@ brew "ffmpeg"
 brew "flake8"
 brew "fzf"
 brew "gcc"
-brew "gdb"
 brew "gh"
 brew "ghostscript"
 brew "gimme-aws-creds"
@@ -100,11 +99,11 @@ brew "git"
 brew "git-extras"
 brew "git-filter-repo"
 brew "git-quick-stats"
-brew "git-standup", link: false
 brew "gitleaks"
 brew "glow"
 brew "gnu-indent"
 brew "gnu-sed"
+brew "gnu-tar"
 brew "libgcrypt"
 brew "libksba"
 brew "libusb"
@@ -144,8 +143,6 @@ brew "libusb-compat"
 brew "make"
 brew "markdownlint-cli"
 brew "mas"
-brew "openjdk"
-brew "maven"
 brew "md5sha1sum", link: false
 brew "micro"
 brew "mmark"
@@ -157,7 +154,6 @@ brew "mypy"
 brew "ncftp"
 brew "neovim"
 brew "ocrad"
-brew "openapi-generator"
 brew "openconnect"
 brew "packer"
 brew "packer-completion"
@@ -167,9 +163,9 @@ brew "peco"
 brew "percol"
 brew "pip-completion"
 brew "pipenv"
-brew "plantuml"
 brew "pre-commit"
 brew "progress"
+brew "protobuf-c"
 brew "protoc-gen-go"
 brew "protoc-gen-go-grpc"
 brew "pth"
@@ -213,7 +209,6 @@ brew "todo-txt"
 brew "tree"
 brew "vagrant-completion"
 brew "vault"
-brew "vault-cli"
 brew "vim"
 brew "wget"
 brew "xpdf"
@@ -225,10 +220,12 @@ brew "zoxide"
 brew "zsh"
 brew "bufbuild/buf/buf"
 brew "charmbracelet/tap/skate"
+brew "coretech/terrafile/terrafile"
 brew "dutchcoders/cloudman/cloudman"
 brew "mkchoi212/fac/fac"
 brew "sachaos/todoist/todoist"
 cask "aws-vault"
+cask "beardedspice"
 cask "cakebrew"
 cask "devtoys"
 cask "dozer"
@@ -253,8 +250,6 @@ cask "font-sf-mono-for-powerline"
 cask "font-source-code-pro-for-powerline"
 cask "font-ubuntu-mono-derivative-powerline"
 cask "inspec"
-cask "java"
-cask "jedit"
 cask "jupyter-notebook-ql"
 cask "kdiff3"
 cask "lumen"
@@ -270,38 +265,4 @@ cask "vagrant"
 cask "vlc"
 cask "xquartz"
 cask "yt-music"
-mas "24 Hour Wallpaper", id: 1226087575
-mas "Agenda", id: 1287445660
-mas "aText", id: 488566438
-mas "Battery Monitor", id: 836505650
-mas "Bear", id: 1091189122
-mas "CopyClip", id: 1020812363
-mas "Delicious Library", id: 635124250
-mas "Disk Space", id: 603688030
-mas "EtreCheck", id: 1423715984
-mas "feedly", id: 865500966
-mas "Funter", id: 1109422934
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Kindle", id: 405399194
-mas "Magnet", id: 441258766
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft OneNote", id: 784801555
-mas "Microsoft Outlook", id: 985367838
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "Microsoft Word", id: 462054704
-mas "my41cx", id: 949272407
-mas "Notability", id: 736189492
-mas "Numbers", id: 409203825
-mas "Okta Extension App", id: 1439967473
-mas "OneDrive", id: 823766827
-mas "Pages", id: 409201541
-mas "Slack", id: 803453959
-mas "Speedtest", id: 1153157709
-mas "The Archive Browser", id: 510232205
-mas "The Unarchiver", id: 425424353
-mas "Twitter", id: 409789998
-mas "Typist", id: 415166115
-mas "Unsplash Wallpapers", id: 1284863847
-mas "WhatsApp", id: 1147396723
+cask "ytmdesktop-youtube-music"
