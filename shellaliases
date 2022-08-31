@@ -277,3 +277,12 @@ fi
 
 # Alias for parsing structure JSON logs...
 alias plog="jq -r -s 'map(select(.) | .log_level |=  ascii_upcase) | .[] | \"\(.event_timestamp) \(.log_level) \t \(.event_message)\" | @text'"
+
+# Jira CLI aliases (https://github.com/ankitpokhrel/jira-cli)
+alias jfullboard="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in (Open, 'On Hold', 'In Progress', 'In Review', 'To Do') OR status = Closed AND resolutiondate >= startOfDay(-2d))\""
+alias jtodo="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('To Do'))\""
+alias jbacklog="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in (Open))\""
+alias jreview="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('In Review'))\""
+alias jwip="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('In Progress'))\""
+alias jblocked="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('On Hold'))\""
+alias jkanban="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('On Hold', 'In Progress', 'In Review', 'To Do') OR status = Closed AND resolutiondate >= startOfDay(-2d))\""
