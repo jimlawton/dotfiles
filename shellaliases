@@ -286,3 +286,4 @@ alias jreview="jira issue list -q \"project in (FWAAS) AND issuetype not in (Ini
 alias jwip="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('In Progress'))\""
 alias jblocked="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('On Hold'))\""
 alias jkanban="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('On Hold', 'In Progress', 'In Review', 'To Do') OR status = Closed AND resolutiondate >= startOfDay(-2d))\""
+
