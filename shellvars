@@ -93,3 +93,11 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 #    export ARTIFACTORY_EMAIL=`jq -r '.artifactory[0].user' ~/.jfrog/jfrog-cli.conf`
 #    export ARTIFACTORY_API_KEY=`jq -r '.artifactory[0].password' ~/.jfrog/jfrog-cli.conf`
 #fi
+
+if [ -f ~/dotfiles/shellvars-personal ]; then
+    source ~/dotfiles/shellvars-personal
+fi
+if [ -f ~/dotfiles/shellvars-work ]; then
+    source ~/dotfiles/shellvars-work
+fi
+
