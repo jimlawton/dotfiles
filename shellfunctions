@@ -253,8 +253,10 @@ function git.clone() {
     return 0
 }
 
-# Run CLI in Docker.
-function dockercli() {
-    docker run --platform linux/amd64 --rm -v $HOME/.aws/:/home/${DOCKER_CLI_USER}/.aws/:ro -v `pwd`:`pwd` -w `pwd` -e AWS_PROFILE="$AWS_PROFILE" -it ${DOCKER_CLI_IMAGE} "$@" 
-}
+if [ -f ~/dotfiles/shellfunctions-personal ]; then
+    source ~/dotfiles/shellfunctions-personal
+fi
+if [ -f ~/dotfiles/shellfunctions-work ]; then
+    source ~/dotfiles/shellfunctions-work
+fi
 
