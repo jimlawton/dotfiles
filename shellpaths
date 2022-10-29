@@ -60,3 +60,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 # PATH=$PATH:/usr/local/share/npm/bin
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# Put goenv on path.
+export PATH="$GOENV_ROOT/bin:$PATH"
+
