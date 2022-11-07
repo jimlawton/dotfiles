@@ -63,9 +63,10 @@ def main():
         sys.exit(f"Cannot find any daily notes in '{notes_dir}'!")
 
     if date_str in notes_dict.keys():
-        sys.exit(f"Daily note for {date_str} already exists, skipping!")
-    else:
-        print(f"Creating note for {date_str}...")
+        print(f"Daily note for {date_str} already exists, skipping!")
+        sys.exit(0)
+
+    print(f"Creating note for {date_str}...")
 
     last_date_obj = date_objs[-1]
 
