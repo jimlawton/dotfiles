@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOTFILESDIR=~/dotfiles
-DOTFILES=".bash_logout .bash_profile .bashrc .Brewfile .colordiffrc .colorgccrc .gitconfig .gitignore .hammerspoon .inputrc .iterm2_shell_integration.zsh .p10k.zsh .profile .pythonrc .shellactivities .shellaliases .shellpaths .shellvars .tmux.conf .vimrc .xxdiffrc .zlogout .zprofile .zshenv .zshrc"
+DOTFILES=".bash_logout .bash_profile .bashrc .Brewfile .colordiffrc .colorgccrc .gitconfig .gitignore .hammerspoon .inputrc .iterm2_shell_integration.zsh .p10k.zsh .profile .pythonrc .shellactivities .shellaliases .shellpaths .shellvars .terraformrc .tmux.conf .vimrc .xxdiffrc .zlogout .zprofile .zshenv .zshrc"
 DOTDIRS=".vim"
 DROPFILES="persistent_history"
 DROPDIRS="bin .pip"
@@ -105,6 +105,8 @@ fi
 
 mkdir -p ~/.config
 ln -sf ~/dotfiles/hyper-hacks/karabiner ~/.config/karabiner
+
+mkdir -p ~/.terraform.d
 
 popd
 
