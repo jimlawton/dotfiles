@@ -254,14 +254,6 @@ function git.clone() {
     return 0
 }
 
-gen_insomnia() {
-    cat << EOF > ~/insomnia/.env
-AWS_ACCESS_KEY_ID=$(aws configure get $AWS_PROFILE.aws_access_key_id)
-AWS_SECRET_ACCESS_KEY=$(aws configure get $AWS_PROFILE.aws_secret_access_key)
-AWS_SESSION_TOKEN=$(aws configure get $AWS_PROFILE.aws_session_token)
-EOF
-}
-
 if [ -f ~/dotfiles/shellfunctions-personal ]; then
     source ~/dotfiles/shellfunctions-personal
 fi
