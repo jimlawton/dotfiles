@@ -91,10 +91,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 export GOENV_ROOT="$HOME/.goenv"
 
-#if [ -f ~/.jfrog/jfrog-cli.conf ]; then
-#    export ARTIFACTORY_EMAIL=`jq -r '.artifactory[0].user' ~/.jfrog/jfrog-cli.conf`
-#    export ARTIFACTORY_API_KEY=`jq -r '.artifactory[0].password' ~/.jfrog/jfrog-cli.conf`
-#fi
+export TSRC_PARALLEL_JOBS=8
 
 if [ -f ~/dotfiles/shellvars-personal ]; then
     source ~/dotfiles/shellvars-personal
