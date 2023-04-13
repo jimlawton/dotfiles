@@ -3,3 +3,5 @@
 
 [credential]
 	helper = osxkeychain
+[safe]
+	directory = "*"
