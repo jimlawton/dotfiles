@@ -1,7 +1,7 @@
 [include]
 	path = ~/dotfiles/gitconfig-common
-
 [credential]
 	helper = osxkeychain
 [safe]
 	directory = "*"
+
