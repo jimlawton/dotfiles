@@ -5,3 +5,5 @@
 [safe]
 	directory = "*"
 
+[push]
+	default = current
