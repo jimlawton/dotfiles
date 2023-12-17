@@ -25,6 +25,7 @@ eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 
+. "$HOME/.cargo/env"
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/profile.post.bash" ]] && builtin source "$HOME/.fig/shell/profile.post.bash"
-. "$HOME/.cargo/env"

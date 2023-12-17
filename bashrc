@@ -13,6 +13,7 @@ source ~/.bash_profile
 export PATH="/Users/james.lawton/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
+. "$HOME/.cargo/env"
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
-. "$HOME/.cargo/env"
