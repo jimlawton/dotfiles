@@ -156,9 +156,9 @@ def main():
     file_lines.append("- ")
     file_lines.append("")
 
-    file_lines.append("## Backlog")
-    file_lines.append("- ")
-    file_lines.append("")
+    # file_lines.append("## Backlog")
+    # file_lines.append("- ")
+    # file_lines.append("")
 
     # Write new file
     print(f"Writing to {output_file_path}")
