@@ -110,8 +110,8 @@ def main():
     file_lines.append("")
 
     # Generate nav bar
-    file_lines.append(f"<< [[Weekly {prev_str}]] | [[Weekly {next_str}]] >>")
-    file_lines.append("")
+    # file_lines.append(f"<< [[Weekly {prev_str}]] | [[Weekly {next_str}]] >>")
+    # file_lines.append("")
 
     file_lines.append("## Activities this week")
     start = end = 0

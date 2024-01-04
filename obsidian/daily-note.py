@@ -109,8 +109,8 @@ def main():
     file_lines.append("")
 
     # Generate nav bar
-    file_lines.append(f"<< [[Daily {prev_str}]] | [[Daily {next_str}]] >>")
-    file_lines.append("")
+    # file_lines.append(f"<< [[Daily {prev_str}]] | [[Daily {next_str}]] >>")
+    # file_lines.append("")
 
     # Generate todos section
     file_lines.append("## Todo")
