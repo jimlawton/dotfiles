@@ -6,7 +6,6 @@ import argparse
 import datetime
 import glob
 import os
-import subprocess
 import sys
 
 
