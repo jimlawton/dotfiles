@@ -46,7 +46,7 @@ def main():
     year = curr_date_obj.strftime('%Y')
     month = curr_date_obj.strftime('%m')
 
-    vault = f"{home}/obsidian/Notes"
+    vault = f"{home}/obsidian/"
     daily_dir = f"{vault}/Daily Notes/"
     weekly_dir = f"{vault}/Weekly Reports/"
 
