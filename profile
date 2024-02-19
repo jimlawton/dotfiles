@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/profile.pre.bash" ]] && builtin source "$HOME/.fig/shell/profile.pre.bash"
 #############################################################
 # Generic configuration that applies to all shells
 #############################################################
@@ -27,5 +25,3 @@ export PATH="$PATH:$GOPATH/bin"
 
 . "$HOME/.cargo/env"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/profile.post.bash" ]] && builtin source "$HOME/.fig/shell/profile.post.bash"
