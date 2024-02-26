@@ -198,3 +198,6 @@ unset __conda_setup
 export PATH="/Users/james.lawton/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
+
+# Created by `pipx` on 2024-02-23 11:28:21
+export PATH="$PATH:/Users/james.lawton/.local/bin"
