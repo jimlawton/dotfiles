@@ -57,7 +57,6 @@ brew "protobuf"
 brew "bear"
 brew "bit-git"
 brew "bitwarden-cli"
-brew "python-packaging"
 brew "black"
 brew "brew-cask-completion"
 brew "bzip2"
@@ -92,6 +91,7 @@ brew "p11-kit"
 brew "unbound"
 brew "gnutls"
 brew "leptonica"
+brew "python-packaging"
 brew "sdl2"
 brew "tesseract"
 brew "x265"
@@ -147,9 +147,7 @@ brew "jless"
 brew "jq"
 brew "jsonlint"
 brew "jsonnet"
-brew "mypy"
 brew "pandoc"
-brew "ruff"
 brew "jupyterlab"
 brew "lastpass-cli"
 brew "lftp"
@@ -169,6 +167,7 @@ brew "mmark"
 brew "mosh"
 brew "mplayer"
 brew "mtr"
+brew "mypy"
 brew "ncftp"
 brew "neovim"
 brew "ocrad"
@@ -203,6 +202,7 @@ brew "repo"
 brew "ripgrep"
 brew "rlwrap"
 brew "robot-framework"
+brew "ruff"
 brew "rustup-init"
 brew "semgrep"
 brew "shellcheck"
@@ -270,6 +270,7 @@ cask "font-roboto-mono-for-powerline"
 cask "font-sf-mono-for-powerline"
 cask "font-source-code-pro-for-powerline"
 cask "font-ubuntu-mono-derivative-powerline"
+cask "git-credential-manager"
 cask "jupyter-notebook-ql"
 cask "kdiff3"
 cask "lumen"
@@ -277,73 +278,31 @@ cask "maccy"
 cask "meetingbar"
 cask "openconnect-gui"
 cask "rectangle"
-cask "staruml"
 cask "sublime-merge-dev"
 cask "sublime-text-dev"
 cask "vlc"
 cask "xquartz"
 cask "yt-music"
-cask "ytmdesktop-youtube-music"
-mas "24 Hour Wallpaper", id: 1226087575
-mas "AdBlock", id: 1402042596
-mas "Agenda", id: 1287445660
-mas "aText", id: 488566438
-mas "Battery Monitor", id: 836505650
-mas "Bear", id: 1091189122
-mas "Bitwarden", id: 1352778147
-mas "CleanMyMac X", id: 1339170533
-mas "CopyClip", id: 1020812363
-mas "Delicious Library", id: 635124250
-mas "Disk Space", id: 603688030
-mas "Elisi", id: 1406239881
-mas "EtreCheck", id: 1423715984
-mas "Evernote", id: 406056744
-mas "feedly", id: 865500966
-mas "Funter", id: 1109422934
-mas "GoPro Player", id: 1460836908
-mas "Keynote", id: 409183694
-mas "Kindle", id: 405399194
-mas "Magnet", id: 441258766
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft OneNote", id: 784801555
-mas "Microsoft Outlook", id: 985367838
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "Microsoft Word", id: 462054704
-mas "MindNode", id: 1289197285
-mas "my41cx", id: 949272407
-mas "Notability", id: 360593530
-mas "Okta Extension App", id: 1439967473
-mas "Okta Verify", id: 490179405
-mas "Slack", id: 803453959
-mas "Speedtest", id: 1153157709
-mas "Tailscale", id: 1475387142
-mas "The Archive Browser", id: 510232205
-mas "The Unarchiver", id: 425424353
-mas "Twitter", id: 409789998
-mas "Typist", id: 415166115
-mas "Unsplash Wallpapers", id: 1284863847
-mas "WhatsApp", id: 1147396723
-mas "Yubico Authenticator", id: 1497506650
 vscode "amazonwebservices.aws-toolkit-vscode"
-vscode "AryanAhire.sublime-monokai"
+vscode "aryanahire.sublime-monokai"
 vscode "atlassian.atlascode"
 vscode "charliermarsh.ruff"
 vscode "cschlosser.doxdocgen"
-vscode "DavidAnson.vscode-markdownlint"
+vscode "davidanson.vscode-markdownlint"
 vscode "davidbwaters.macos-modern-theme"
 vscode "donjayamanne.githistory"
 vscode "eamodio.gitlens"
-vscode "EditorConfig.EditorConfig"
+vscode "editorconfig.editorconfig"
 vscode "fabiospampinato.vscode-diff"
 vscode "giovdk21.vscode-sublime-merge"
-vscode "GitHub.copilot"
-vscode "GitHub.copilot-chat"
-vscode "GitHub.github-vscode-theme"
-vscode "GitHub.vscode-pull-request-github"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.github-vscode-theme"
+vscode "github.vscode-pull-request-github"
 vscode "golang.go"
-vscode "Grafana.vscode-jsonnet"
-vscode "GrapeCity.gc-excelviewer"
-vscode "Gruntfuggly.todo-tree"
+vscode "grafana.vscode-jsonnet"
+vscode "grapecity.gc-excelviewer"
+vscode "gruntfuggly.todo-tree"
 vscode "hashicorp.terraform"
 vscode "hediet.vscode-drawio"
 vscode "humao.rest-client"
@@ -351,10 +310,11 @@ vscode "janjoerke.jenkins-pipeline-linter-connector"
 vscode "jeff-hykin.better-cpp-syntax"
 vscode "joffreykern.markdown-toc"
 vscode "mechatroner.rainbow-csv"
-vscode "Meezilla.json"
-vscode "MellowMarshmallow.groovy"
+vscode "meezilla.json"
+vscode "mellowmarshmallow.groovy"
 vscode "mrmlnc.vscode-duplicate"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.debugpy"
 vscode "ms-python.isort"
 vscode "ms-python.mypy-type-checker"
 vscode "ms-python.python"
@@ -370,17 +330,18 @@ vscode "ms-vscode.cpptools-themes"
 vscode "ms-vscode.live-server"
 vscode "ms-vscode.makefile-tools"
 vscode "peterj.proto"
-vscode "PKief.material-icon-theme"
+vscode "pkief.material-icon-theme"
 vscode "redhat.vscode-yaml"
-vscode "ritwickdey.LiveServer"
+vscode "ritwickdey.liveserver"
 vscode "rust-lang.rust-analyzer"
 vscode "ryanluker.vscode-coverage-gutters"
-vscode "SonarSource.sonarlint-vscode"
+vscode "sonarsource.sonarlint-vscode"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "tadayosi.vscode-makefile-outliner"
-vscode "TakumiI.markdowntable"
+vscode "takumii.markdowntable"
 vscode "timonwong.shellcheck"
 vscode "tomoki1207.pdf"
 vscode "twxs.cmake"
 vscode "vscode-icons-team.vscode-icons"
+vscode "withfig.fig"
 vscode "ziglang.vscode-zig"
