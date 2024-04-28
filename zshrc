@@ -31,7 +31,7 @@ setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 setopt AUTO_CD                   # Automatically cd to a path if specified as a command.
 
 setopt CORRECT                   # Correction.
-setopt CORRECT_ALL               # Correction.
+#setopt CORRECT_ALL               # Correction.
 setopt NO_CASE_GLOB              # Case-insensitive globbing.
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
