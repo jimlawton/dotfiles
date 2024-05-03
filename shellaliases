@@ -287,4 +287,4 @@ alias jwip="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initia
 alias jblocked="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('On Hold'))\""
 alias jkanban="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in ('On Hold', 'In Progress', 'In Review', 'To Do') OR status = Closed AND resolutiondate >= startOfDay(-2d))\""
 
-alias afcheck='curl -I https:/${ARTIFACTORY_EMAIL}:${ARTIFACTORY_API_KEY}@${ARTIFACTORY_BASE}/artifactory/api/system/ping'
+alias afping='curl -I https:/${ARTIFACTORY_EMAIL}:${ARTIFACTORY_API_KEY}@${ARTIFACTORY_BASE}/artifactory/api/system/ping'
