@@ -54,7 +54,6 @@ alias gitscribe.gp='git scribe gen pdf && open output/book.pdf'
 alias gitscribe.gh='git scribe gen html && open output/book.html'
 
 # Git shortcuts
-alias gs='git status'
 alias gpl='git pull'
 alias gps='git push'
 alias gsy='git pull && git push'
