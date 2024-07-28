@@ -201,4 +201,6 @@ export PATH="/Users/james.lawton/.rd/bin:$PATH"
 
 # Created by `pipx` on 2024-02-23 11:28:21
 export PATH="$PATH:/Users/james.lawton/.local/bin"
+
+# Add rustup to path.
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
