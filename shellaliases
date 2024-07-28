@@ -58,13 +58,6 @@ alias gpl='git pull'
 alias gps='git push'
 alias gsy='git pull && git push'
 
-# repo shortcuts
-alias rsy='repo sync'
-alias rst='repo status'
-alias rpu='repo forall -e -c git push'
-alias rcm='repo forall -e -c git checkout master'
-alias rsyp='repo sync && repo forall -e -c git push'
-
 # Show network connections
 # Often useful to prefix with SUDO to see more system level network usage
 alias network.connections='lsof -l -i +L -R -V'
