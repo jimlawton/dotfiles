@@ -199,3 +199,6 @@ export PATH="$PATH:/Users/james.lawton/.local/bin"
 
 # Add rustup to path.
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+
+# git-spice shell completion.
+# eval "$(gs shell completion zsh)"
