@@ -49,14 +49,9 @@ alias pbcopynn='tr -d "\n" | pbcopy'
 alias finder.astext='xattr -wx com.apple.FinderInfo "54 45 58 54 21 52 63 68 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" $1'
 #alias finder.qltext2='osascript -e tell application "Finder" to set file type of ((POSIX file "$1") as alias) to "TEXT"'
 
-# Git Scribe Commands
-alias gitscribe.gp='git scribe gen pdf && open output/book.pdf'
-alias gitscribe.gh='git scribe gen html && open output/book.html'
-
 # Git shortcuts
 alias gpl='git pull'
 alias gps='git push'
-alias gsy='git pull && git push'
 
 # Show network connections
 # Often useful to prefix with SUDO to see more system level network usage
