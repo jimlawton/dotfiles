@@ -194,11 +194,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/james.lawton/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-
 # Created by `pipx` on 2024-02-23 11:28:21
 export PATH="$PATH:/Users/james.lawton/.local/bin"
 
