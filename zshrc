@@ -110,7 +110,7 @@ plugins=(
   pyenv
   pylint
   python
-  ripgrep
+  # ripgrep
   # ssh-agent
   sublime
   sublime-merge
