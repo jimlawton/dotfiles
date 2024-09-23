@@ -36,6 +36,7 @@ brew "boost"
 brew "asciidoc"
 brew "asciinema"
 brew "gettext"
+brew "python-packaging"
 brew "atomicparsley"
 brew "autojump"
 brew "awk"
@@ -192,7 +193,6 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 brew "pyenv-virtualenvwrapper"
 brew "pygments"
-brew "python-packaging"
 brew "python@3.9"
 brew "qemu"
 brew "qt"
@@ -303,6 +303,7 @@ mas "GoPro Player", id: 1460836908
 mas "GoPro Quik", id: 561350520
 mas "Kindle", id: 302584613
 mas "Magnet", id: 441258766
+mas "Mattermost", id: 1614666244
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
