@@ -50,7 +50,7 @@ def main():
     vault = f"{home}/obsidian"
     notes_dir = f"{vault}/Daily Notes/"
 
-    print(f"Scanning '{notes_dir}'...")
+    # print(f"Scanning '{notes_dir}'...")
 
     # Get a dict of all daily notes, with paths.
     notes_dict = {}
