@@ -28,22 +28,24 @@ def main():
 
     if args.date:
         try:
-            datetime.datetime.strptime(args.date, '%Y-%m-%d')
+            datetime.datetime.strptime(args.date, "%Y-%m-%d")
             date_str = args.date
         except ValueError:
-            sys.exit("Invalid date, must be valid calendar date in the form YYYY-MM-DD!")
+            sys.exit(
+                "Invalid date, must be valid calendar date in the form YYYY-MM-DD!"
+            )
     else:
-        date_str = datetime.datetime.today().strftime('%Y-%m-%d')
+        date_str = datetime.datetime.today().strftime("%Y-%m-%d")
 
-    curr_date_obj = datetime.datetime.strptime(date_str, '%Y-%m-%d')
+    curr_date_obj = datetime.datetime.strptime(date_str, "%Y-%m-%d")
 
-    home = os.getenv('HOME')
+    home = os.getenv("HOME")
     if home is None:
         sys.exit("$HOME is not defined!")
 
-    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    year = curr_date_obj.strftime('%Y')
-    month = curr_date_obj.strftime('%m')
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    year = curr_date_obj.strftime("%Y")
+    month = curr_date_obj.strftime("%m")
 
     vault = f"{home}/obsidian"
     notes_dir = f"{vault}/Daily Notes/"
@@ -53,9 +55,9 @@ def main():
     # Get a dict of all daily notes, with paths.
     notes_dict = {}
     date_objs = []
-    files = glob.glob(notes_dir + '/**/Daily*.md', recursive=True)
+    files = glob.glob(notes_dir + "/**/Daily*.md", recursive=True)
     for file_path in sorted(files):
-        note_date = file_path.split('/')[-1].split('.')[0].split()[1]
+        note_date = file_path.split("/")[-1].split(".")[0].split()[1]
         notes_dict[note_date] = file_path
         date_objs.append(datetime.datetime.strptime(note_date, "%Y-%m-%d"))
 
@@ -74,14 +76,16 @@ def main():
 
     # Find previous date.
     prev_date = max(d for d in date_objs if d < curr_date_obj)
-    prev_str = prev_date.strftime('%Y-%m-%d')
+    prev_str = prev_date.strftime("%Y-%m-%d")
 
     # Find next date. This depends on whether we're creating a note in a date gap, or adding at the end.
     if curr_date_obj < last_date_obj:
         next_date = min(d for d in date_objs if d > curr_date_obj)
     else:
-        next_date = datetime.datetime.strptime(date_str, '%Y-%m-%d') + datetime.timedelta(days=1)
-    next_str = next_date.strftime('%Y-%m-%d')
+        next_date = datetime.datetime.strptime(
+            date_str, "%Y-%m-%d"
+        ) + datetime.timedelta(days=1)
+    next_str = next_date.strftime("%Y-%m-%d")
 
     file_lines = []
 
@@ -92,7 +96,7 @@ def main():
     print(f"Reading from {prev_file_path}")
 
     prev_data_lines = []
-    with open(prev_file_path, 'r') as f:
+    with open(prev_file_path, "r") as f:
         prev_data_lines = f.readlines()
 
     output_dir_path = f"{notes_dir + year + '/' + month}"
@@ -125,7 +129,7 @@ def main():
     #   - Remove any items done
     for line in todo_lines:
         if not line.startswith(("- [x]", "- [X]")):
-            file_lines.append(line.strip('\n'))
+            file_lines.append(line.strip("\n"))
     file_lines.append("")
 
     # Generate agenda
@@ -145,8 +149,8 @@ def main():
 
     # Write new file
     print(f"Writing to {output_file_path}")
-    with open(output_file_path, 'w') as f:
-        f.write('\n'.join(file_lines))
+    with open(output_file_path, "w") as f:
+        f.write("\n".join(file_lines))
 
 
 if __name__ == "__main__":
