@@ -14,7 +14,7 @@ DAYMD_SCRIPT = "dotfiles/scripts/daymd"
 
 
 def main():
-    """Generate a EasyConnect connection request."""
+    """Generate daily agenda as Markdown."""
 
     parser = argparse.ArgumentParser()
     parser.add_argument(

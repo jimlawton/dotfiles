@@ -10,7 +10,7 @@ import sys
 
 
 def main():
-    """Generate a EasyConnect connection request."""
+    """Generate weekly report as Markdown."""
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
