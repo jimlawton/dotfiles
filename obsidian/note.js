@@ -87,7 +87,7 @@ function make_new_date_str(year, month, day) {
 function note(type, tp) {
     console.log("");
     console.log("");
-    var dir = tp.file.folder(relative=true);
+    var dir = tp.file.folder(relative = true);
     console.log("note: dir:", dir);
     var name = tp.file.title;
     console.log("note: name:", name);
