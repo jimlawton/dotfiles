@@ -24,27 +24,33 @@ def main():
 
     if args.date:
         try:
-            datetime.datetime.strptime(args.date, '%Y-%m-%d')
+            datetime.datetime.strptime(args.date, "%Y-%m-%d")
             date_str = args.date
         except ValueError:
-            sys.exit("Invalid date, must be valid calendar date in the form YYYY-MM-DD!")
+            sys.exit(
+                "Invalid date, must be valid calendar date in the form YYYY-MM-DD!"
+            )
     else:
         weekday_today = datetime.datetime.now().weekday()
         if weekday_today >= 4:
             end_date = datetime.datetime.now() - datetime.timedelta(weekday_today - 4)
         else:
-            end_date = datetime.datetime.now() - datetime.timedelta(weeks=1) + datetime.timedelta(4 - weekday_today)
-        date_str = end_date.strftime('%Y-%m-%d')
+            end_date = (
+                datetime.datetime.now()
+                - datetime.timedelta(weeks=1)
+                + datetime.timedelta(4 - weekday_today)
+            )
+        date_str = end_date.strftime("%Y-%m-%d")
 
-    curr_date_obj = datetime.datetime.strptime(date_str, '%Y-%m-%d')
+    curr_date_obj = datetime.datetime.strptime(date_str, "%Y-%m-%d")
 
-    home = os.getenv('HOME')
+    home = os.getenv("HOME")
     if home is None:
         sys.exit("$HOME is not defined!")
 
-    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    year = curr_date_obj.strftime('%Y')
-    month = curr_date_obj.strftime('%m')
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    year = curr_date_obj.strftime("%Y")
+    month = curr_date_obj.strftime("%m")
 
     vault = f"{home}/obsidian/"
     daily_dir = f"{vault}/Daily Notes/"
@@ -53,18 +59,18 @@ def main():
     # Get a dict of all daily notes, with paths.
     daily_dict = {}
     daily_date_objs = []
-    files = glob.glob(daily_dir + '/**/Daily*.md', recursive=True)
+    files = glob.glob(daily_dir + "/**/Daily*.md", recursive=True)
     for file_path in sorted(files):
-        note_date = file_path.split('/')[-1].split('.')[0].split()[1]
+        note_date = file_path.split("/")[-1].split(".")[0].split()[1]
         daily_dict[note_date] = file_path
         daily_date_objs.append(datetime.datetime.strptime(note_date, "%Y-%m-%d"))
 
     # Get a dict of all weekly notes, with paths.
     weekly_dict = {}
     weekly_date_objs = []
-    files = glob.glob(weekly_dir + '/**/Weekly*.md', recursive=True)
+    files = glob.glob(weekly_dir + "/**/Weekly*.md", recursive=True)
     for file_path in sorted(files):
-        note_date = file_path.split('/')[-1].split('.')[0].split()[1]
+        note_date = file_path.split("/")[-1].split(".")[0].split()[1]
         weekly_dict[note_date] = file_path
         weekly_date_objs.append(datetime.datetime.strptime(note_date, "%Y-%m-%d"))
 
@@ -77,13 +83,15 @@ def main():
 
     # Find previous date.
     prev_date = max(d for d in weekly_date_objs if d < curr_date_obj)
-    prev_str = prev_date.strftime('%Y-%m-%d')
+    prev_str = prev_date.strftime("%Y-%m-%d")
 
     if curr_date_obj < last_date_obj:
         next_date = min(d for d in weekly_date_objs if d > curr_date_obj)
     else:
-        next_date = datetime.datetime.strptime(date_str, '%Y-%m-%d') + datetime.timedelta(days=7)
-    next_str = next_date.strftime('%Y-%m-%d')
+        next_date = datetime.datetime.strptime(
+            date_str, "%Y-%m-%d"
+        ) + datetime.timedelta(days=7)
+    next_str = next_date.strftime("%Y-%m-%d")
     print(f"Next weekly report: {next_str}")
 
     file_lines = []
@@ -93,7 +101,7 @@ def main():
     print(f"Reading from {prev_file_path}")
 
     prev_data_lines = []
-    with open(prev_file_path, 'r') as f:
+    with open(prev_file_path, "r") as f:
         prev_data_lines = f.readlines()
 
     output_dir_path = f"{weekly_dir + year + '/' + month}"
@@ -123,7 +131,7 @@ def main():
     planned_lines = prev_data_lines[start:end]
     # Populate activities with planned from last week, plus FIXME.
     for line in planned_lines:
-        file_lines.append(line.strip('\n').replace("- ", "- `FIXME` "))
+        file_lines.append(line.strip("\n").replace("- ", "- `FIXME` "))
 
     # Extract all activities from daily reports since last weekly report.
     prev_dates = [d for d in daily_date_objs if prev_date < d <= curr_date_obj]
@@ -132,7 +140,7 @@ def main():
         d_str = d.strftime("%Y-%m-%d")
         prev_file_path = daily_dict[d_str]
         print(f"Reading from {prev_file_path}")
-        with open(prev_file_path, 'r') as f:
+        with open(prev_file_path, "r") as f:
             start = 0
             daily_lines = f.readlines()
             for i, line in enumerate(daily_lines):
@@ -141,14 +149,16 @@ def main():
             daily_lines = daily_lines[start:]
             daily_lines_tmp = []
             for line in daily_lines:
-                if line.strip() == '-':
+                if line.strip() == "-":
                     continue
                 if line.startswith("- "):
                     daily_lines_tmp.append(f"- {d_str} {line[2:]}")
                 else:
                     daily_lines_tmp.append(line)
             prev_data_lines.extend(daily_lines_tmp)
-    prev_data_lines = [line.strip('\n') for line in prev_data_lines if line.strip() != '-']
+    prev_data_lines = [
+        line.strip("\n") for line in prev_data_lines if line.strip() != "-"
+    ]
     file_lines.extend(prev_data_lines)
     file_lines.append("")
 
@@ -162,8 +172,8 @@ def main():
 
     # Write new file
     print(f"Writing to {output_file_path}")
-    with open(output_file_path, 'w') as f:
-        f.write('\n'.join(file_lines))
+    with open(output_file_path, "w") as f:
+        f.write("\n".join(file_lines))
 
 
 if __name__ == "__main__":
