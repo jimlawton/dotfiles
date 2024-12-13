@@ -99,6 +99,7 @@ brew "zeromq"
 brew "ffmpeg"
 brew "flake8"
 brew "fzf"
+brew "get_iplayer"
 brew "gh"
 brew "ghostscript", link: false
 brew "gimme-aws-creds"
@@ -192,6 +193,7 @@ brew "protobuf"
 brew "protobuf-c"
 brew "protoc-gen-go"
 brew "pth"
+brew "pulseaudio"
 brew "pulumi"
 brew "pycodestyle"
 brew "pyenv"
@@ -215,7 +217,7 @@ brew "semgrep"
 brew "shellcheck"
 brew "socat"
 brew "sonar-scanner"
-brew "sphinx-doc"
+brew "sphinx-doc", link: false
 brew "ssh-copy-id", link: true
 brew "sshuttle"
 brew "starship"
@@ -300,7 +302,6 @@ mas "AdBlock", id: 1402042596
 mas "Agenda", id: 1287445660
 mas "Battery Monitor", id: 836505650
 mas "Bitwarden", id: 1352778147
-mas "CleanMyMac X", id: 1339170533
 mas "Disk Space", id: 603688030
 mas "Elisi", id: 1406239881
 mas "EtreCheck", id: 1423715984
@@ -383,6 +384,7 @@ vscode "sonarsource.sonarlint-vscode"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "tadayosi.vscode-makefile-outliner"
 vscode "takumii.markdowntable"
+vscode "tamasfe.even-better-toml"
 vscode "timonwong.shellcheck"
 vscode "tomoki1207.pdf"
 vscode "twxs.cmake"
