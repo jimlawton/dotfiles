@@ -301,14 +301,39 @@ cask "vlc"
 cask "xquartz"
 cask "yt-music"
 cask "zed"
+mas "AdBlock", id: 1402042596
+mas "Agenda", id: 1287445660
+mas "Battery Monitor", id: 836505650
+mas "Bitwarden", id: 1352778147
+mas "Disk Space", id: 603688030
+mas "Elisi", id: 1406239881
+mas "EtreCheck", id: 1423715984
+mas "Funter", id: 1109422934
+mas "GoPro Player", id: 1460836908
+mas "GoPro Quik", id: 561350520
+mas "Kindle", id: 302584613
+mas "Magnet", id: 441258766
+mas "Mattermost", id: 1614666244
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
-vscode "amazonwebservices.aws-toolkit-vscode"
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Microsoft Word", id: 462054704
+mas "MindNode", id: 1289197285
+mas "my41cx", id: 949272407
+mas "Notability", id: 360593530
+mas "Okta Extension App", id: 1439967473
+mas "Okta Verify", id: 490179405
+mas "Speedtest", id: 1153157709
+mas "Tailscale", id: 1475387142
+mas "The Archive Browser", id: 510232205
+mas "The Unarchiver", id: 425424353
+mas "Typist", id: 415166115
+mas "Yubico Authenticator", id: 1497506650
 vscode "aryanahire.sublime-monokai"
-vscode "atlassian.atlascode"
 vscode "charliermarsh.ruff"
 vscode "codezombiech.gitignore"
 vscode "cschlosser.doxdocgen"
-vscode "davidanson.vscode-markdownlint"
 vscode "davidbwaters.macos-modern-theme"
 vscode "donjayamanne.githistory"
 vscode "editorconfig.editorconfig"
@@ -319,14 +344,10 @@ vscode "github.copilot-chat"
 vscode "github.github-vscode-theme"
 vscode "github.vscode-pull-request-github"
 vscode "golang.go"
-vscode "grafana.vscode-jsonnet"
-vscode "grapecity.gc-excelviewer"
 vscode "gruntfuggly.todo-tree"
 vscode "hashicorp.hcl"
 vscode "hashicorp.terraform"
 vscode "hediet.vscode-drawio"
-vscode "humao.rest-client"
-vscode "janjoerke.jenkins-pipeline-linter-connector"
 vscode "jeff-hykin.better-cpp-syntax"
 vscode "joffreykern.markdown-toc"
 vscode "mechatroner.rainbow-csv"
@@ -338,7 +359,6 @@ vscode "ms-python.debugpy"
 vscode "ms-python.isort"
 vscode "ms-python.mypy-type-checker"
 vscode "ms-python.python"
-vscode "ms-vscode-remote.remote-containers"
 vscode "ms-vscode.cmake-tools"
 vscode "ms-vscode.cpptools"
 vscode "ms-vscode.cpptools-extension-pack"
@@ -353,7 +373,6 @@ vscode "ritwickdey.liveserver"
 vscode "rust-lang.rust-analyzer"
 vscode "ryanluker.vscode-coverage-gutters"
 vscode "solomonkinard.git-blame"
-vscode "sonarsource.sonarlint-vscode"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "tadayosi.vscode-makefile-outliner"
 vscode "takumii.markdowntable"
