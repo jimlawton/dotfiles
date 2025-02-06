@@ -311,6 +311,7 @@ mas "EtreCheck", id: 1423715984
 mas "Funter", id: 1109422934
 mas "GoPro Player", id: 1460836908
 mas "GoPro Quik", id: 561350520
+mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
 mas "Magnet", id: 441258766
 mas "Mattermost", id: 1614666244
