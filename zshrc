@@ -202,3 +202,10 @@ export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 
 # git-spice shell completion.
 # eval "$(gs shell completion zsh)"
+
+# bun completions
+[ -s "/Users/james.lawton/.bun/_bun" ] && source "/Users/james.lawton/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
