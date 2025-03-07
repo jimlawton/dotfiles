@@ -111,6 +111,7 @@ plugins=(
   pylint
   python
   # ripgrep
+  rust
   # ssh-agent
   sublime
   sublime-merge
