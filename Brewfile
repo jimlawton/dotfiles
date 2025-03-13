@@ -33,7 +33,6 @@ brew "boost"
 brew "asciidoc"
 brew "asciinema"
 brew "gettext"
-brew "python-packaging"
 brew "atomicparsley"
 brew "autojump"
 brew "awk"
@@ -62,6 +61,7 @@ brew "chezmoi"
 brew "clang-format"
 brew "cloc"
 brew "cmake"
+brew "consul-template"
 brew "coreutils"
 brew "rtmpdump"
 brew "curl"
@@ -172,6 +172,7 @@ brew "openjdk"
 brew "openjdk@11"
 brew "ossp-uuid"
 brew "p7zip"
+brew "packer-completion"
 brew "parallel"
 brew "patchutils"
 brew "peco"
@@ -193,6 +194,7 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 brew "pyenv-virtualenvwrapper"
 brew "pygments"
+brew "python-packaging"
 brew "python@3.9"
 brew "qemu"
 brew "qt"
@@ -249,7 +251,9 @@ brew "sachaos/todoist/todoist"
 brew "taiki-e/tap/cargo-llvm-cov"
 cask "alt-tab"
 cask "aws-vault"
+cask "bartender"
 cask "beardedspice"
+cask "bitwarden"
 cask "doll"
 cask "firefox"
 cask "font-anonymice-powerline"
@@ -272,9 +276,12 @@ cask "font-roboto-mono-for-powerline"
 cask "font-sf-mono-for-powerline"
 cask "font-source-code-pro-for-powerline"
 cask "font-ubuntu-mono-derivative-powerline"
+cask "funter"
 cask "ghostty"
 cask "git-credential-manager"
+cask "hammerspoon"
 cask "jupyter-notebook-ql"
+cask "karabiner-elements"
 cask "kdiff3"
 cask "lumen"
 cask "maccy"
@@ -285,6 +292,7 @@ cask "rectangle"
 cask "sublime-merge@dev"
 cask "sublime-text@dev"
 cask "temurin"
+cask "visual-studio-code"
 cask "vlc"
 cask "xquartz"
 cask "yt-music"
@@ -293,10 +301,7 @@ mas "AdBlock", id: 1402042596
 mas "Agenda", id: 1287445660
 mas "Battery Monitor", id: 836505650
 mas "Bitwarden", id: 1352778147
-mas "Disk Space", id: 603688030
 mas "Elisi", id: 1406239881
-mas "EtreCheck", id: 1423715984
-mas "Funter", id: 1109422934
 mas "GoPro Player", id: 1460836908
 mas "GoPro Quik", id: 561350520
 mas "Keynote", id: 409183694
@@ -306,23 +311,22 @@ mas "Mattermost", id: 1614666244
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
-mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft Word", id: 462054704
 mas "MindNode", id: 1289197285
-mas "my41cx", id: 949272407
 mas "Notability", id: 360593530
 mas "Okta Extension App", id: 1439967473
 mas "Okta Verify", id: 490179405
 mas "Speedtest", id: 1153157709
 mas "Tailscale", id: 1475387142
-mas "The Archive Browser", id: 510232205
 mas "The Unarchiver", id: 425424353
-mas "Typist", id: 415166115
+mas "Windows App", id: 1295203466
 mas "Yubico Authenticator", id: 1497506650
 vscode "aryanahire.sublime-monokai"
+vscode "atlassian.atlascode"
 vscode "charliermarsh.ruff"
 vscode "codezombiech.gitignore"
 vscode "cschlosser.doxdocgen"
+vscode "davidanson.vscode-markdownlint"
 vscode "davidbwaters.macos-modern-theme"
 vscode "donjayamanne.githistory"
 vscode "editorconfig.editorconfig"
@@ -333,10 +337,14 @@ vscode "github.copilot-chat"
 vscode "github.github-vscode-theme"
 vscode "github.vscode-pull-request-github"
 vscode "golang.go"
+vscode "grafana.vscode-jsonnet"
+vscode "grapecity.gc-excelviewer"
 vscode "gruntfuggly.todo-tree"
 vscode "hashicorp.hcl"
 vscode "hashicorp.terraform"
 vscode "hediet.vscode-drawio"
+vscode "humao.rest-client"
+vscode "janjoerke.jenkins-pipeline-linter-connector"
 vscode "jebbs.plantuml"
 vscode "jeff-hykin.better-cpp-syntax"
 vscode "joffreykern.markdown-toc"
@@ -349,6 +357,13 @@ vscode "ms-python.debugpy"
 vscode "ms-python.isort"
 vscode "ms-python.mypy-type-checker"
 vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
 vscode "ms-vscode.cmake-tools"
 vscode "ms-vscode.cpptools"
 vscode "ms-vscode.cpptools-extension-pack"
@@ -363,6 +378,7 @@ vscode "ritwickdey.liveserver"
 vscode "rust-lang.rust-analyzer"
 vscode "ryanluker.vscode-coverage-gutters"
 vscode "solomonkinard.git-blame"
+vscode "sonarsource.sonarlint-vscode"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "tadayosi.vscode-makefile-outliner"
 vscode "takumii.markdowntable"
