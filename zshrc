@@ -210,3 +210,7 @@ export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# GitHub Copilot CLI.
+eval "$(gh copilot alias -- zsh)"
+
