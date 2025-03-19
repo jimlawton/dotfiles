@@ -175,3 +175,8 @@
 
 [spice "branchCreate"]
 	commit = false
+
+[spice "forge.github"]
+    url = https://github.cicd.cloud.fpdev.io
+    apiUrl = https://github.cicd.cloud.fpdev.io/api
+
