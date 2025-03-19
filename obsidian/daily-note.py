@@ -47,7 +47,7 @@ def main():
     year = curr_date_obj.strftime("%Y")
     month = curr_date_obj.strftime("%m")
 
-    vault = f"{home}/obsidian"
+    vault = f"{home}/Obsidian/Notes"
     notes_dir = f"{vault}/Daily Notes/"
 
     # print(f"Scanning '{notes_dir}'...")
