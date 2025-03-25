@@ -94,7 +94,6 @@ brew "flake8"
 brew "fzf"
 brew "get_iplayer"
 brew "gh"
-brew "ghostscript", link: false
 brew "gimme-aws-creds"
 brew "gist"
 brew "git"
@@ -134,7 +133,6 @@ brew "hub"
 brew "ical-buddy"
 brew "id3lib"
 brew "id3v2"
-brew "imagemagick"
 brew "infracost"
 brew "iproute2mac"
 brew "ipython"
@@ -186,6 +184,7 @@ brew "progress"
 brew "protobuf"
 brew "protobuf-c"
 brew "protoc-gen-go"
+brew "protoc-gen-go-grpc"
 brew "pth"
 brew "pulseaudio"
 brew "pulumi"
@@ -286,6 +285,7 @@ cask "kdiff3"
 cask "lumen"
 cask "maccy"
 cask "meetingbar"
+cask "mitmproxy"
 cask "notunes"
 cask "obsidian"
 cask "rectangle"
@@ -297,7 +297,6 @@ cask "vlc"
 cask "xquartz"
 cask "yt-music"
 cask "zed"
-mas "AdBlock", id: 1402042596
 mas "Agenda", id: 1287445660
 mas "Battery Monitor", id: 836505650
 mas "Bitwarden", id: 1352778147
@@ -312,7 +311,6 @@ mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
 mas "Microsoft Word", id: 462054704
-mas "MindNode", id: 1289197285
 mas "Notability", id: 360593530
 mas "Okta Extension App", id: 1439967473
 mas "Okta Verify", id: 490179405
@@ -385,6 +383,5 @@ vscode "takumii.markdowntable"
 vscode "tamasfe.even-better-toml"
 vscode "timonwong.shellcheck"
 vscode "tomoki1207.pdf"
-vscode "twxs.cmake"
 vscode "vscode-icons-team.vscode-icons"
 vscode "ziglang.vscode-zig"
