@@ -214,3 +214,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # GitHub Copilot CLI.
 eval "$(gh copilot alias -- zsh)"
 
+# To customize prompt, run `p10k configure` or edit ~/Personal/git/dotfiles/p10k.zsh.
+[[ ! -f ~/Personal/git/dotfiles/p10k.zsh ]] || source ~/Personal/git/dotfiles/p10k.zsh
