@@ -295,7 +295,6 @@ cask "vlc"
 cask "xquartz"
 cask "yt-music"
 cask "zed"
-mas "Agenda", id: 1287445660
 mas "Battery Monitor", id: 836505650
 mas "Bitwarden", id: 1352778147
 mas "Elisi", id: 1406239881
@@ -308,10 +307,12 @@ mas "Mattermost", id: 1614666244
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
+mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "Notability", id: 360593530
 mas "Okta Extension App", id: 1439967473
 mas "Okta Verify", id: 490179405
+mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
 mas "Tailscale", id: 1475387142
 mas "The Unarchiver", id: 425424353
@@ -324,6 +325,7 @@ vscode "codezombiech.gitignore"
 vscode "cschlosser.doxdocgen"
 vscode "davidanson.vscode-markdownlint"
 vscode "davidbwaters.macos-modern-theme"
+vscode "docker.docker"
 vscode "donjayamanne.githistory"
 vscode "editorconfig.editorconfig"
 vscode "fabiospampinato.vscode-diff"
