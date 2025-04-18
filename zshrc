@@ -216,3 +216,8 @@ eval "$(gh copilot alias -- zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/Personal/git/dotfiles/p10k.zsh.
 [[ ! -f ~/Personal/git/dotfiles/p10k.zsh ]] || source ~/Personal/git/dotfiles/p10k.zsh
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/james.lawton/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
