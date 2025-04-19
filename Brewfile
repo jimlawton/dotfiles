@@ -314,7 +314,6 @@ mas "Microsoft Word", id: 462054704
 mas "Notability", id: 360593530
 mas "Okta Extension App", id: 1439967473
 mas "Okta Verify", id: 490179405
-mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
 mas "Tailscale", id: 1475387142
 mas "The Unarchiver", id: 425424353
@@ -377,6 +376,7 @@ vscode "redhat.vscode-yaml"
 vscode "ritwickdey.liveserver"
 vscode "rust-lang.rust-analyzer"
 vscode "ryanluker.vscode-coverage-gutters"
+vscode "seansassenrath.vscode-theme-superonedark"
 vscode "solomonkinard.git-blame"
 vscode "sonarsource.sonarlint-vscode"
 vscode "streetsidesoftware.code-spell-checker"
@@ -386,4 +386,5 @@ vscode "tamasfe.even-better-toml"
 vscode "timonwong.shellcheck"
 vscode "tomoki1207.pdf"
 vscode "vscode-icons-team.vscode-icons"
+vscode "zhuangtongfa.material-theme"
 vscode "ziglang.vscode-zig"
