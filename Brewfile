@@ -89,6 +89,7 @@ brew "x265"
 brew "xvid"
 brew "zeromq"
 brew "ffmpeg"
+brew "figlet"
 brew "flake8"
 brew "fzf"
 brew "get_iplayer"
@@ -318,6 +319,7 @@ mas "Speedtest", id: 1153157709
 mas "Tailscale", id: 1475387142
 mas "The Unarchiver", id: 425424353
 mas "Windows App", id: 1295203466
+mas "Xcode", id: 497799835
 mas "Xmind", id: 1327661892
 mas "Yubico Authenticator", id: 1497506650
 vscode "aryanahire.sublime-monokai"
@@ -348,12 +350,13 @@ vscode "janjoerke.jenkins-pipeline-linter-connector"
 vscode "jebbs.plantuml"
 vscode "jeff-hykin.better-cpp-syntax"
 vscode "joffreykern.markdown-toc"
+vscode "llvm-vs-code-extensions.lldb-dap"
 vscode "mechatroner.rainbow-csv"
 vscode "meezilla.json"
 vscode "mellowmarshmallow.groovy"
 vscode "mermaidchart.vscode-mermaid-chart"
 vscode "mrmlnc.vscode-duplicate"
-vscode "ms-azuretools.vscode-docker"
+vscode "ms-azuretools.vscode-containers"
 vscode "ms-python.debugpy"
 vscode "ms-python.isort"
 vscode "ms-python.mypy-type-checker"
@@ -379,6 +382,7 @@ vscode "rust-lang.rust-analyzer"
 vscode "ryanluker.vscode-coverage-gutters"
 vscode "solomonkinard.git-blame"
 vscode "streetsidesoftware.code-spell-checker"
+vscode "swiftlang.swift-vscode"
 vscode "tadayosi.vscode-makefile-outliner"
 vscode "takumii.markdowntable"
 vscode "tamasfe.even-better-toml"
