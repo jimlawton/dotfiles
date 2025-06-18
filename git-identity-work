@@ -6,3 +6,5 @@
     host = https://github.cicd.cloud.fpdev.io
 [init]
     templateDir = ~/dotfiles/git-template
+[credential "https://github.cicd.cloud.fpdev.io"]
+    helper = !/opt/homebrew/bin/gh auth git-credential
