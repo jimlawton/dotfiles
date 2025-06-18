@@ -77,14 +77,17 @@ if [ ! -d dotfiles ]; then
 	exit 1
 fi
 
+echo "Symlinking dot files..."
 for dotfile in $DOTFILES; do
 	symlinkifne $dotfile
 done
 
+echo "Symlinking dot directories..."
 for dotdir in $DOTDIRS; do
 	symlinkifne $dotdir
 done
 
+echo "Symlinking Dropbox directories..."
 # Any directories you want linked from Dropbox.
 if [ -e ~/Dropbox/ ]; then
     for dropdir in $DROPDIRS; do
@@ -94,6 +97,7 @@ if [ -e ~/Dropbox/ ]; then
     done
 fi
 
+echo "Symlinking Dropbox files..."
 # Any files you want linked from Dropbox.
 if [ -e ~/Dropbox/ ]; then
     for dropfile in $DROPFILES; do
@@ -103,9 +107,12 @@ if [ -e ~/Dropbox/ ]; then
     done
 fi
 
+echo "Symlinking config directories..."
 mkdir -p ~/.config
 ln -sf ~/dotfiles/hyper-hacks/karabiner ~/.config/karabiner
+ln -sf ~/dotfiles/fish ~/.config/fish
 
+echo "Creating Terraform directory..."
 mkdir -p ~/.terraform.d
 
 popd
