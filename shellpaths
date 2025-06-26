@@ -10,6 +10,7 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:~/dotfiles/scripts
 export PATH=$PATH:~/utils
 export PATH=$PATH:~/dotfiles/git/git-identify/bin
+export PATH=$PATH:~/.cargo/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 #export PATH=~/pebble-dev/sdk/bin:$PATH
