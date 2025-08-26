@@ -9,7 +9,6 @@ import os
 import subprocess
 import sys
 
-
 DAYMD_SCRIPT = "dotfiles/scripts/daymd"
 
 
@@ -126,9 +125,9 @@ def main():
         if line.startswith("## Agenda") and start > 0:
             end = i - 1
     todo_lines = prev_data_lines[start:end]
-    #   - Remove any items done
+    #   - Remove any items done (including done nested todos)
     for line in todo_lines:
-        if not line.startswith(("- [x]", "- [X]")):
+        if not line.strip().startswith(("- [x]", "- [X]")):
             file_lines.append(line.strip("\n"))
     file_lines.append("")
 
