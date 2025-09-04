@@ -40,6 +40,7 @@ brew "node"
 brew "aws-cdk"
 brew "aws-shell"
 brew "awscli"
+brew "bandwhich"
 brew "base64"
 brew "bash"
 brew "bash-completion"
@@ -159,9 +160,10 @@ brew "llvm"
 brew "make"
 brew "markdownlint-cli"
 brew "mas"
-brew "md5sha1sum", link: false
+brew "md5sha1sum"
 brew "mdbook"
 brew "micro"
+brew "microsocks"
 brew "mmark"
 brew "mplayer"
 brew "mtr"
@@ -213,6 +215,7 @@ brew "robot-framework"
 brew "ruff"
 brew "rustup"
 brew "scc"
+brew "sccache"
 brew "semgrep"
 brew "shellcheck"
 brew "socat"
@@ -241,6 +244,7 @@ brew "xpdf"
 brew "yaegi"
 brew "yamlfmt"
 brew "yamllint"
+brew "yt-dlp"
 brew "zig"
 brew "zlib"
 brew "zoxide"
@@ -322,8 +326,10 @@ mas "Microsoft Word", id: 462054704
 mas "Notability", id: 360593530
 mas "Okta Extension App", id: 1439967473
 mas "Okta Verify", id: 490179405
+mas "Proxy", id: 0
 mas "Speedtest", id: 1153157709
 mas "Tailscale", id: 1475387142
+mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "Windows App", id: 1295203466
 mas "Xcode", id: 497799835
@@ -370,6 +376,7 @@ vscode "ms-python.isort"
 vscode "ms-python.mypy-type-checker"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
 vscode "ms-toolsai.jupyter"
 vscode "ms-toolsai.jupyter-keymap"
 vscode "ms-toolsai.jupyter-renderers"
