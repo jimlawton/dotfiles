@@ -1,0 +1,18 @@
+*.swp
+*.swo
+*~
+.ruby-version
+.rbenv-version
+*.sublime-project
+*.sublime-workspace
+thumbs.db
+.#*
+*.pyc
+*.o
+# srclib build cache
+.srclib-cache/
+.DS_Store
+.gradle
+.gradle_targets
+.gradletasknamecache
+.gitconfig-work
