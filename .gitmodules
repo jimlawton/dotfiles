@@ -1,9 +1,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/jimlawton/scripts
-[submodule "autoenv"]
-	path = autoenv
-	url = http://github.com/kennethreitz/autoenv.git
 [submodule "hyper-hacks"]
 	path = hyper-hacks
 	url = https://github.com/jimlawton/hyper-hacks.git
