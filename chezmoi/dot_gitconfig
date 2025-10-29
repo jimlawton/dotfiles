@@ -1,0 +1,191 @@
+# Personal/work Git identity.
+[includeIf "gitdir:~/Work/"]
+    path = ~/dotfiles/git-identity-work
+[includeIf "gitdir:~/Personal/"]
+    path = ~/dotfiles/git-identity-personal
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+    path = ~/dotfiles/git-identity-personal
+
+# Mac/Linux specifics.
+[includeIf "gitdir:/Users"]
+    path = ~/dotfiles/gitconfig-macos
+[includeIf "gitdir:/home"]
+    path = ~/dotfiles/gitconfig-linux
+
+# Git aliases.
+[include]
+    path = ~/dotfiles/git-aliases
+
+[push]
+	default = simple
+[branch]
+	# Automatically set up pull to be --rebase
+	autosetuprebase = always
+[branch "master"]
+	rebase = true
+	autosetuprebase = true
+[status]
+	displaycommentprefix = false
+[rebase]
+	stat = true
+
+[pager]
+    diff = false
+    branch = false
+
+[color]
+# ui = true is a superset of all the more specific color options
+#  as documented at http://book.git-scm.com/5_customizing_git.html
+# When set to always, always use colors in all git commands which are capable of colored output.
+# When false, never. When set to true or auto, use colors only when the output is to the terminal.
+# When more specific variables of color.* are set, they always take precedence over this setting.
+# Defaults to false.
+	ui = auto
+	# diff = auto
+	# status = auto
+	# branch = auto
+
+[color "branch"]
+	#current = yellow reverse
+	#local = yellow
+	#remote = green
+[color "diff"]
+	#meta = yellow bold
+	#frag = magenta bold
+	#old = red bold
+	#new = green bold
+[color "status"]
+	#added = yellow
+	#changed = green
+	#untracked = cyan
+
+[gui]
+#	recentrepo = ~/Documents/Temp/Scratch/hello/hgw1
+
+[core]
+	safecrlf = warn
+	deltaBaseCacheLimit = 1G
+	excludesfile = ~/.gitignore
+	quotepath = false
+#	autocrlf = input
+#	editor = vim
+
+[apply]
+	whitespace = nowarn
+[rerere]
+	enabled = true
+
+[diff]
+	algorithm = patience
+#	renames = true
+#	tool = araxis
+#	tool = Kaleidoscope
+	tool = bcomp
+
+# This is for skipping diffing files, that you don't want to add to .gitignore.
+# https://stackoverflow.com/questions/52623898/how-can-i-skip-some-files-while-taking-git-diff
+[diff "nodiff"]
+	command = /bin/true
+
+[difftool]
+	prompt = false
+
+[difftool "myaraxis"]
+	cmd = araxisgitdiff ONE $LOCAL THREE FOUR $REMOTE
+
+[difftool "bcomp"]
+    trustExitCode = true
+    cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE"
+
+[merge]
+#	tool = araxis
+#	tool = Kaleidoscope
+	tool = bcomp
+
+[mergetool]
+	prompt = false
+	keepBackup = false
+
+[mergetool "myaraxis"]
+    cmd = araxisgitmerge $PWD/$REMOTE $PWD/$BASE $PWD/$LOCAL $PWD/$MERGED
+
+[mergetool "bcomp"]
+    trustExitCode = true
+    cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+
+
+[branch]
+    # Automatically set up pull to be --rebase
+    #autosetuprebase = always
+
+[url "git://github.com/"]
+	insteadOf = "ghg://"
+	pushInsteadOf = "ghg://"
+	# Example: git clone ghg://ntschutta/emacs
+[url "git://github.com/jimlawton/"]
+	insteadOf = "ghgj://"
+	pushInsteadOf = "ghgj://"
+	# Example: git clone ghgj://hellogitworld
+[url "git@github.com:"]
+	insteadOf = "ghs://"
+	pushInsteadOf = "ghs://"
+[url "git@github.com:jimlawton/"]
+	insteadOf = "ghsj://"
+	pushInsteadOf = "ghsj://"
+[url "https://github.com/"]
+	insteadOf = "ghh://"
+	pushInsteadOf = "ghh://"
+[url "https://github.com/jimlawton/"]
+	insteadOf = "ghhj://"
+	pushInsteadOf = "ghhj://"
+
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[difftool "p4merge"]
+	cmd = \"/Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE\"
+[http]
+	# proxy=http://something
+
+[hub]
+	protocol = https
+[gist]
+	private = yes
+	browse = yes
+
+[push]
+	default = matching
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
+[gh]
+	protocol = https
+
+[github]
+	user = jimlawton
+	#token = PLACEHOLDER
+
+[http]
+	sslVerify = false
+	postBuffer = 524288000
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[spice "branchCreate"]
+	commit = false
+
+[spice "forge.github"]
+    url = https://github.cicd.cloud.fpdev.io
+    apiUrl = https://github.cicd.cloud.fpdev.io/api
