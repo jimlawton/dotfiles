@@ -1,8 +1,16 @@
+# Personal/work Git identity.
 [includeIf "gitdir:~/Work/"]
     path = ~/dotfiles/git-identity-work
 [includeIf "gitdir:~/Personal/"]
     path = ~/dotfiles/git-identity-personal
 
+# Mac/Linux specifics.
+[includeIf "gitdir:/Users"]
+    path = ~/dotfiles/gitconfig-macos
+[includeIf "gitdir:/home"]
+    path = ~/dotfiles/gitconfig-linux
+
+# Git aliases.
 [include]
     path = ~/dotfiles/git-aliases
 
@@ -179,4 +187,3 @@
 [spice "forge.github"]
     url = https://github.cicd.cloud.fpdev.io
     apiUrl = https://github.cicd.cloud.fpdev.io/api
-
