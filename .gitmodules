@@ -1,9 +1,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/jimlawton/scripts
-[submodule "unison-sync"]
-	path = unison-sync
-	url = https://github.com/jimlawton/unison-sync
 [submodule "vim/bundle/tabnine-vim"]
 	path = vim/bundle/tabnine-vim
 	url = https://github.com/zxqfl/tabnine-vim.git
