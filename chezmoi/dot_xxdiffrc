@@ -1,0 +1,10 @@
+FontText: "Lucida Console,7,-1,5,50,0,0,0,0,0"
+Color.Same.Back: "#e2e2e2"
+AutoSelectMerge: True
+DirDiffRecursive: True
+Show.Toolbar: True
+TabWidth: 4
+Command.DiffDirectories: "diff -q -s -x .svn"
+Command.DiffDirectoriesRec: "diff -q -s -r -x .svn"
+Command.DiffFiles2: "diff -d"
+Geometry: Maximize
