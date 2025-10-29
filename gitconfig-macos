@@ -1,6 +1,6 @@
-# [credential]
-# 	helper = osxkeychain
-# 	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential]
+	helper = osxkeychain
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [safe]
 	directory = "*"
 
