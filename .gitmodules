@@ -1,9 +1,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/jimlawton/scripts
-[submodule "vim/bundle/tabnine-vim"]
-	path = vim/bundle/tabnine-vim
-	url = https://github.com/zxqfl/tabnine-vim.git
 [submodule "autoenv"]
 	path = autoenv
 	url = http://github.com/kennethreitz/autoenv.git
@@ -31,6 +28,3 @@
 [submodule "zsh-autosuggestions"]
 	path = zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/tabnine/YouCompleteMe.git
