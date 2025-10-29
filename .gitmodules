@@ -7,9 +7,6 @@
 [submodule "git/mingit"]
 	path = git/mingit
 	url = https://github.com/jimlawton/mingit.git
-[submodule "git/git-identify"]
-	path = git/git-identify
-	url = https://github.com/ConnorAtherton/git-identify.git
 [submodule "hyper-hacks"]
 	path = hyper-hacks
 	url = https://github.com/jimlawton/hyper-hacks.git
