@@ -1,45 +1,9 @@
-[submodule "vim-fugitive"]
-    path = vim/bundle/vim-fugitive
-    url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim-markdown"]
-    path = vim/bundle/vim-markdown
-    url = https://github.com/tpope/vim-markdown.git
-[submodule "vim-sensible"]
-    path = vim/bundle/vim-sensible
-    url = https://github.com/tpope/vim-sensible.git
-[submodule "vim-liquid"]
-    path = vim/bundle/vim-liquid
-    url = https://github.com/tpope/vim-liquid.git
-[submodule "vim-scriptease"]
-    path = vim/bundle/vim-scriptease
-    url = https://github.com/tpope/vim-scriptease.git
-[submodule "vim-surround"]
-    path = vim/bundle/vim-surround
-    url = https://github.com/tpope/vim-surround.git
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/jimlawton/scripts
 [submodule "unison-sync"]
 	path = unison-sync
 	url = https://github.com/jimlawton/unison-sync
-[submodule "vim/bundle/vundle"]
-	path = vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git
-[submodule "vim/bundle/vim-easymotion"]
-	path = vim/bundle/vim-easymotion
-	url = https://github.com/Lokaltog/vim-easymotion
-[submodule "vim/bundle/sparkup"]
-	path = vim/bundle/sparkup
-	url = https://github.com/rstacruz/sparkup
-[submodule "vim/bundle/L9"]
-	path = vim/bundle/L9
-	url = https://github.com/vim-scripts/L9
-[submodule "vim/bundle/FuzzyFinder"]
-	path = vim/bundle/FuzzyFinder
-	url = https://github.com/vim-scripts/FuzzyFinder
-[submodule "vim/bundle/command-t"]
-	path = vim/bundle/command-t
-	url = https://github.com/wincent/Command-T.git
 [submodule "vim/bundle/tabnine-vim"]
 	path = vim/bundle/tabnine-vim
 	url = https://github.com/zxqfl/tabnine-vim.git

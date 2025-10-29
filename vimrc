@@ -2,14 +2,10 @@
 " # VI text editor setup
 " ########################################################################
 
-" NOTE: make sure vim ins actually installed, and that you're not trying 
+" NOTE: make sure vim is actually installed, and that you're not trying 
 " to run this in vi!
 
-execute pathogen#infect()
-
 set shell=/bin/bash 
-
-"set term=screen
 set term=linux
 
 " set paste
@@ -50,30 +46,8 @@ set expandtab shiftwidth=4 tabstop=4
 
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 " use `:W` to sudo save a file if you forget to `sudo vim` the file
 command W w !sudo tee % > /dev/null
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
-" ...
-
-Plugin 'zxqfl/tabnine-vim'
 
 filetype plugin indent on     " required!
 
@@ -84,16 +58,6 @@ filetype plugin indent on     " required!
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
 
 " Syntax highlighting only when vim-common is there
 if has("mouse_gpm") && filereadable("/usr/share/vim/syntax/syntax.vim")
@@ -162,11 +126,7 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-" Darwin/Fusion log files.
 au BufNewFile,BufRead *.log setf logs
-
-" SVN commit messages.
-au BufNewFile,BufRead svn-commit.* setf svn
 
 " Set some sensible defaults for editing C-files
 augroup cprog
