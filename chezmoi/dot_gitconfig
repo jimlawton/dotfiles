@@ -3,6 +3,8 @@
     path = ~/dotfiles/git-identity-work
 [includeIf "gitdir:~/Personal/"]
     path = ~/dotfiles/git-identity-personal
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+    path = ~/dotfiles/git-identity-personal
 
 # Mac/Linux specifics.
 [includeIf "gitdir:/Users"]
