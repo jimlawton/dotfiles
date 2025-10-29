@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DOTFILESDIR=~/dotfiles
-DOTFILES=".Brewfile .colordiffrc .colorgccrc .gitconfig .gitignore .hammerspoon .inputrc .iterm2_shell_integration.zsh .p10k.zsh .pythonrc .shellactivities .shellaliases .shellpaths .shellvars .terraformrc .tmux.conf .vimrc .xxdiffrc .zlogout .zprofile .zshenv .zshrc"
-DOTDIRS=".vim"
+DOTFILES=".iterm2_shell_integration.zsh"
+DOTDIRS=".hammerspoon"
 DROPFILES="persistent_history"
 DROPDIRS="bin .pip"
 SAVEDIR=~/.old/_setupdotfiles
