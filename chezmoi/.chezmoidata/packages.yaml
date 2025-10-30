@@ -236,8 +236,6 @@ packages:
 
     casks:
       - "alt-tab"
-      - "aws-vault"
-      - "aws-vault-binary"
       - "bartender"
       - "beardedspice"
       - "bitwarden"
