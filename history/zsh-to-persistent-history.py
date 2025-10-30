@@ -18,17 +18,17 @@
 # is the command line.
 #
 # This script is then run from cron:
-# 0,15,30,45 * * * * python3 ~/dotfiles/history/zsh_to_persistent_history.py -w >/dev/null 2>&1 || true
+# 0,15,30,45 * * * * python3 ~/dotfiles/history/zsh-to-persistent-history.py -w >/dev/null 2>&1 || true
 
 import argparse
-import sys
-import os
-import socket
 import datetime
-import shutil
-import re
 import filecmp
 import glob
+import os
+import re
+import shutil
+import socket
+import sys
 
 
 # Skip any potential credentials.
@@ -114,15 +114,13 @@ def main():
     if args.extra_file:
         extra_file = os.path.expanduser(args.extra_file)
         if not os.path.exists(extra_file):
-            sys.exit(
-                f"Error: extra history file {extra_file} does not exist!"
-            )
+            sys.exit(f"Error: extra history file {extra_file} does not exist!")
         extra_file = os.path.abspath(extra_file)
         print(f"Extra ZSH input history file: {extra_file}")
 
     iterm_files = []
     if args.iterm_files:
-        if '*' in args.iterm_files:
+        if "*" in args.iterm_files:
             print(args.iterm_files)
             iterm_file_list = glob.glob(os.path.expanduser(args.iterm_files))
             print(iterm_file_list)
@@ -133,22 +131,16 @@ def main():
 
     for iterm_file in iterm_files:
         if not os.path.exists(iterm_file):
-            sys.exit(
-                f"Error: extra history file {iterm_file} does not exist!"
-            )
+            sys.exit(f"Error: extra history file {iterm_file} does not exist!")
         print(f"Extra iTerm2 input history file: {iterm_file}")
 
     for filename in (infile, zfile):
         if not os.path.exists(filename):
-            sys.exit(
-                f"Error: input history file {filename} does not exist!"
-            )
+            sys.exit(f"Error: input history file {filename} does not exist!")
 
     if outfile != infile:
         if os.path.exists(outfile) and not args.write:
-            sys.exit(
-                f"Error: output persistent history file {outfile} already exists!"
-            )
+            sys.exit(f"Error: output persistent history file {outfile} already exists!")
 
     real_infile = os.path.realpath(infile)
     if not os.path.exists(real_infile):
@@ -161,7 +153,7 @@ def main():
     print(f"Real output file: {real_outfile}")
 
     # Read input ZSH history file.
-    with open(zfile, 'r', errors="ignore") as f:
+    with open(zfile, "r", errors="ignore") as f:
         zdata = f.readlines()
 
     hostname = socket.gethostname().lower()
@@ -181,24 +173,24 @@ def main():
     combined_regex = "(" + ")|(".join(user_regexes) + ")"
 
     # Read input ZSH history file.
-    with open(infile, 'r', errors="ignore") as f:
+    with open(infile, "r", errors="ignore") as f:
         histdata = f.readlines()
 
     # Add the ZSH history to persistent history.
     for line in zdata:
-        if not line.startswith(':') or ';' not in line:
+        if not line.startswith(":") or ";" not in line:
             continue
-        timestamp = int(line.split(':')[1].strip())
+        timestamp = int(line.split(":")[1].strip())
         time = datetime.datetime.fromtimestamp(timestamp)
         # duration = line.split(':')[2].strip().split(';')[0]
-        cmd = line.split(';')[1].strip()
+        cmd = line.split(";")[1].strip()
         if _skip_line(combined_regex, cmd):
             continue
         histdata.append(f"{hostname} | {time} | {cmd}\n")
 
     extra_data = []
     if extra_file:
-        with open(extra_file, 'r', errors="ignore") as f:
+        with open(extra_file, "r", errors="ignore") as f:
             extra_data = f.readlines()
         histdata.extend(extra_data)
 
@@ -206,15 +198,17 @@ def main():
     if iterm_files:
         for iterm_file in iterm_files:
             print(f"Reading {iterm_file}")
-            with open(iterm_file, 'r', errors="ignore") as f:
+            with open(iterm_file, "r", errors="ignore") as f:
                 iterm_data = f.readlines()
             if len(iterm_data) % 2 != 0:
-                sys.exit(f"Error: input file {iterm_file} does not have an even number of lines!")
+                sys.exit(
+                    f"Error: input file {iterm_file} does not have an even number of lines!"
+                )
             it = iter(iterm_data)
             for line in it:
-                if not line.startswith('#'):
+                if not line.startswith("#"):
                     continue
-                timestamp = int(line.split('#')[1].strip())
+                timestamp = int(line.split("#")[1].strip())
                 time = datetime.datetime.fromtimestamp(timestamp)
                 cmd = next(it).strip()
                 if _skip_line(combined_regex, cmd):
@@ -226,10 +220,12 @@ def main():
 
     # Sort by the date field, ascending.
     # Keep the order of records at the same time unchanged.
-    histdata = sorted(histdata, key=lambda x: "".join([x.split('|')[1], x.split('|')[0], x.split('|')[2]]))
+    histdata = sorted(
+        histdata,
+        key=lambda x: "".join([x.split("|")[1], x.split("|")[0], x.split("|")[2]]),
+    )
 
     if args.write:
-
         if real_outfile == real_infile:
             # Save data to a temporary file.
             savefilename = f"{real_infile}.new"
@@ -238,8 +234,8 @@ def main():
             savefilename = f"{real_outfile}"
 
         print(f"Writing {savefilename} ...")
-        with open(f"{savefilename}", 'w') as f:
-            f.write(''.join(histdata))
+        with open(f"{savefilename}", "w") as f:
+            f.write("".join(histdata))
 
         if real_outfile == real_infile:
             if filecmp.cmp(real_infile, savefilename, shallow=True):
