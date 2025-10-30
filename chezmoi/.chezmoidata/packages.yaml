@@ -233,7 +233,6 @@ packages:
       - "zlib"
       - "zoxide"
       - "zsh"
-
     casks:
       - "alt-tab"
       - "bartender"
@@ -281,3 +280,54 @@ packages:
       - "vlc"
       - "yt-music"
       - "zed"
+    mas:
+      - name: "Battery Monitor"
+        id: 836505650
+      - name: "Bitwarden"
+        id: 1352778147
+      - name: "Elisi"
+        id: 1406239881
+      - name: "GoPro Player"
+        id: 1460836908
+      - name: "GoPro Quik"
+        id: 561350520
+      - name: "Keynote"
+        id: 409183694
+      - name: "Kindle"
+        id: 302584613
+      - name: "Magnet"
+        id: 441258766
+      - name: "Mattermost"
+        id: 1614666244
+      - name: "Microsoft Excel"
+        id: 462058435
+      - name: "Microsoft OneNote"
+        id: 784801555
+      - name: "Microsoft Outlook"
+        id: 985367838
+      - name: "Microsoft PowerPoint"
+        id: 462062816
+      - name: "Microsoft Word"
+        id: 462054704
+      - name: "Notability"
+        id: 360593530
+      - name: "Okta Extension App"
+        id: 1439967473
+      - name: "Okta Verify"
+        id: 490179405
+      - name: "Speedtest"
+        id: 1153157709
+      - name: "Tailscale"
+        id: 1475387142
+      - name: "TestFlight"
+        id: 899247664
+      - name: "The Unarchiver"
+        id: 425424353
+      - name: "Windows App"
+        id: 1295203466
+      - name: "Xcode"
+        id: 497799835
+      - name: "Xmind"
+        id: 1327661892
+      - name: "Yubico Authenticator"
+        id: 1497506650
