@@ -55,7 +55,6 @@ packages:
       - "dos2unix"
       - "dotter"
       - "doxygen"
-      - "fac"
       - "fd"
       - "ffmpeg"
       - "figlet"
