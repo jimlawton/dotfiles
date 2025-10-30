@@ -1,0 +1,19 @@
+[tools]
+rust = {version = "latest", components = "rustfmt,clippy,llvm-tools-preview"}
+cargo = "latest"
+"cargo:cargo-audit" = "latest"
+"cargo:cargo-workspaces" = "latest"
+"cargo:cargo-license" = "latest"
+"cargo:cargo-fuzz" = "latest"
+"cargo:cargo-semver" = "latest"
+"cargo:cargo-llvm-cov" = "latest"
+python = "3.13"
+pipx = "latest"
+uv = "latest"
+"pipx:pre-commit" = "latest"
+"pipx:pipenv" = "latest"
+"pipx:black" = "latest"
+"pipx:tsrc" = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["python"]
