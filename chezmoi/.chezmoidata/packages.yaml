@@ -4,7 +4,6 @@ packages:
       - "abhinav/tap"
       - "ankitpokhrel/jira-cli"
       - "bufbuild/buf"
-      - "charmbracelet/tap"
       - "common-fate/granted"
       - "coretech/terrafile"
       - "dutchcoders/cloudman"
