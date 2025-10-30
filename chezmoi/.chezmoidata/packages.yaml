@@ -268,6 +268,18 @@ packages:
       - "vlc"
       - "yt-music"
       - "zed"
+    taps:
+      - "abhinav/tap"
+      - "ankitpokhrel/jira-cli"
+      - "bufbuild/buf"
+      - "charmbracelet/tap"
+      - "common-fate/granted"
+      - "coretech/terrafile"
+      - "dutchcoders/cloudman"
+      - "github/gh"
+      - "messense/macos-cross-toolchains"
+      - "romkatv/powerlevel10k"
+      - "taiki-e/tap"
     mas:
       - name: "Battery Monitor"
         id: 836505650
