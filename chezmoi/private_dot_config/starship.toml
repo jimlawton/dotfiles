@@ -12,6 +12,7 @@ $git_branch\
 $git_status\
 $git_metrics\
 [](fg:#FCF392 bg:#030B16)\
+[ ]('')\
 """
 
 right_format = """\
