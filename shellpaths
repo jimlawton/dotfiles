@@ -4,66 +4,16 @@
 # Shell agnostic path setup
 ########################################################################
 
-# Jim's Scripts
 export PATH=$PATH:.
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/dotfiles/scripts
-export PATH=$PATH:~/utils
-export PATH=$PATH:~/dotfiles/git/git-identify/bin
 export PATH=$PATH:~/.cargo/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-#export PATH=~/pebble-dev/sdk/bin:$PATH
 export PATH=$PATH:~/adr-tools/src
-
-# Path setup.
-#export PATH=
-#pathmunge ${HOME}/bin
-#pathmunge ${HOME}/utils
-#pathmunge /usr/bin
-#pathmunge /bin
-#pathmunge /usr/sbin
-#pathmunge /sbin
-
-# Brew
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
-# Path setup for Brew Python.
-#export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-# Dev frameworks
-#export PATH=$PATH:$ANT_HOME/bin
-#export PATH=$PATH:$M2_HOME/bin
-#export PATH=$PATH:$GROOVY_HOME/bin
-#export PATH=$PATH:$GRAILS_HOME/bin
-#export PATH=$PATH:$NEXUS_HOME/bin/jsw/macosx-universal-64
-#export PATH=$PATH:$JMETER_HOME/bin
-#export PATH=$PATH:$JRUBY_HOME/bin
-#export PATH=$PATH:$SOAPUI_HOME/bin
-#export PATH=$PATH:$APPENGINE_HOME/bin
-
-# Dev
-#export PATH=$PATH:/Applications/Dev/apache-tomcat/bin
-#export PATH=$PATH:/Applications/Dev/apache-maven/bin
-#export PATH=$PATH:/Applications/Dev/sonar/bin/macosx-universal-64
-#export PATH=$PATH:/Library/PostgreSQL/8.4/bin
-#export PATH=$PATH:/Applications/Dev/gradle/bin
-#export PATH=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Commands:$PATH
-#export PATH=~/.gem/ruby/1.8/bin:$PATH             #For showoff
-#export PATH=$PATH:~/.cljr/bin
-# export PATH=~/.rbenv/bin:$PATH
-
-# Haskell
-# export PATH=$PATH:~/.cabal/bin
-
-# Node JS Packages (from Brew Install of Node and NPM)
-# PATH=$PATH:/usr/local/share/npm/bin
-
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-
-# Put goenv on path.
 export PATH="$GOENV_ROOT/bin:$PATH"
-
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-
