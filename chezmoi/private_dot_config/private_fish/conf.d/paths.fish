@@ -1,0 +1,13 @@
+fish_add_path .
+fish_add_path ~/bin
+fish_add_path ~/dotfiles/scripts
+fish_add_path ~/.cargo/bin
+fish_add_path $GOPATH/bin
+fish_add_path $GOROOT/bin
+fish_add_path ~/adr-tools/src
+fish_add_path /usr/local/sbin
+fish_add_path /opt/homebrew/sbin
+fish_add_path /opt/homebrew/bin
+fish_add_path /usr/local/opt/gnu-sed/libexec/gnubin
+fish_add_path $GOENV_ROOT/bin
+fish_add_path /opt/homebrew/opt/llvm/bin
