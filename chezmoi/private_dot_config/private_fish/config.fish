@@ -12,6 +12,5 @@ if status is-interactive
     bind -M insert up _atuin_bind_up
     bind -M insert \eOA _atuin_bind_up
     bind -M insert \e\[A _atuin_bind_up
-    source ~/.sensitive
-    eval (zellij setup --generate-auto-start fish | string collect)
+    # source ~/.sensitive
 end
