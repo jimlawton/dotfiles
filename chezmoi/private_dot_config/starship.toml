@@ -7,11 +7,11 @@
 # - Disabled line break for compactness
 format = """\
 $directory\
-[](fg:#3B76F0 bg:#FCF392)\
+[](fg:#2a6bef bg:#fbef6a)\
 $git_branch\
 $git_status\
 $git_metrics\
-[](fg:#FCF392 bg:#030B16)\
+[](fg:#fbec51 bg:#030B16)\
 [ ]('')\
 """
 
@@ -49,15 +49,15 @@ time_format = "%T" # %R no seconds, %T seconds
 [git_branch]
 format = '[ $symbol$branch(:$remote_branch) ]($style)'
 symbol = "  "
-style = "fg:#1C3A5E bg:#FCF392"
+style = "fg:#1C3A5E bg:#f9e71f"
 
 [git_status]
 format = '[$all_status]($style)'
-style = "fg:#1C3A5E bg:#FCF392"
+style = "fg:#1C3A5E bg:#f9e71f"
 
 [git_metrics]
 format = "([+$added]($added_style))[]($added_style)"
-added_style = "fg:#1C3A5E bg:#FCF392"
+added_style = "fg:#1C3A5E bg:#f9e71f"
 deleted_style = "fg:bright-red bg:235"
 
 [character]
