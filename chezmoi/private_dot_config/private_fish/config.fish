@@ -4,10 +4,8 @@ fish_add_path $HOME/bin
 fish_add_path $CARGO_HOME/bin
 
 if status is-interactive
-    # Make sure Tide is installed.
-    fisher install IlanCosman/tide@v6
-
     # Commands to run in interactive sessions can go here
+    starship init fish | source
     set -x ATUIN_NOBIND true
     atuin init fish | source
     # Atuin keybindings to suppress -k warning
