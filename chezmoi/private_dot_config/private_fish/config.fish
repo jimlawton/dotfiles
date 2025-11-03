@@ -18,4 +18,5 @@ if status is-interactive
     bind -M insert \eOA _atuin_bind_up
     bind -M insert \e\[A _atuin_bind_up
     # source ~/.sensitive
+    source ~/dotfiles/shellvars-work
 end
