@@ -4,6 +4,3 @@
 [submodule "hyper-hacks"]
 	path = hyper-hacks
 	url = https://github.com/jimlawton/hyper-hacks.git
-[submodule "powerlevel10k"]
-	path = powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
