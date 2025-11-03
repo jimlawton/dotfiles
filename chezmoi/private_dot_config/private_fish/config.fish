@@ -5,7 +5,18 @@ fish_add_path $CARGO_HOME/bin
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
+
+    # Starship prompt setup.
+    function starship_transient_prompt_func
+        "➜"
+    end
+    # function starship_transient_rprompt_func
+    #    starship module time
+    # end
     starship init fish | source
+    enable_transience
+
+    # Atuin setup.
     set -x ATUIN_NOBIND true
     atuin init fish | source
     # Atuin keybindings to suppress -k warning
@@ -17,5 +28,7 @@ if status is-interactive
     bind -M insert up _atuin_bind_up
     bind -M insert \eOA _atuin_bind_up
     bind -M insert \e\[A _atuin_bind_up
+
+    # Load sensitive variables.
     source ~/dotfiles/shellvars-work
 end
