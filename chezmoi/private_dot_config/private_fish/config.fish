@@ -6,6 +6,9 @@ fish_add_path $CARGO_HOME/bin
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
+    # Don't be so friendly.
+    set fish_greeting
+
     # Starship prompt setup.
     function starship_transient_prompt_func
         starship module character
