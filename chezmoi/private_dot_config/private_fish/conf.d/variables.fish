@@ -28,7 +28,7 @@ set -gx TSRC_PARALLEL_JOBS 8
 
 if test -f $HOME/dotfiles/shellvars-personal
     source $HOME/dotfiles/shellvars-personal
-fi
+end
 if test -f $HOME/dotfiles/shellvars-work
     source $HOME/dotfiles/shellvars-work
-fi
+end
