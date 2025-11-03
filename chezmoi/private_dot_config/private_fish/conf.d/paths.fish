@@ -1,10 +1,10 @@
 fish_add_path .
-fish_add_path ~/bin
-fish_add_path ~/dotfiles/scripts
-fish_add_path ~/.cargo/bin
+fish_add_path $HOME/bin
+fish_add_path $HOME/dotfiles/scripts
+fish_add_path $HOME/.cargo/bin
 fish_add_path $GOPATH/bin
 fish_add_path $GOROOT/bin
-fish_add_path ~/adr-tools/src
+fish_add_path $HOME/adr-tools/src
 fish_add_path /usr/local/sbin
 fish_add_path /opt/homebrew/sbin
 fish_add_path /opt/homebrew/bin
