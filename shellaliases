@@ -1,74 +1,11 @@
 #!/bin/sh
 
-#########################################
-# Connectivity
-
-
-#########################################
-# Commands to run apps
-alias run.clojure.repl='java -cp ${CLOJURE_HOME}/clojure.jar clojure.lang.Repl'
-alias run.jlineclojure.repl='java -cp ${CLOJURE_HOME}/jline-0.9.91.jar:${CLOJURE_HOME}/clojure.jar jline.ConsoleRunner clojure.lang.Repl'
-alias run.clojure.script='java -cp ${CLOJURE_HOME}/clojure.jar clojure.main'
-
-
-#########################################
-# Commands to change dirs
-
-
-#################################
-# Simple Program Name Shortening
-# alias aq=aquamacs
-# alias g=git
-
-
-#############################
-# Utilities
-alias zipall='for D in *; do zip -r "$D" "$D"; done'
-
-alias pram.reset='sudo nvram boot-args=”-p -r”'
-
-alias macports.cleansource='sudo port -f uninstall inactive'
-# alias macports.cleanold='sudo port clean --all installed'
-
-alias rubygems.update='sudo gem update --system'
-# alias macports.update='sudo port selfupdate && sudo port upgrade outdated'
-alias brew.update='brew update && brew upgrade'
-
-alias timemachine.enablelocalversions='sudo tmutil enablelocal'
-alias timemachine.disablelocalversions='sudo tmutil disablelocal'
-
 alias hexdumpfile='od -h'
 
-# Flush the DNS on Mac
-alias network.dnsflush='dscacheutil -flushcache'
-
-# Copy and paste and prune the usless newline
-alias pbcopynn='tr -d "\n" | pbcopy'
-
-# Set the extended MacOS attributes on a file such that Quicklook will open it as text
-alias finder.astext='xattr -wx com.apple.FinderInfo "54 45 58 54 21 52 63 68 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" $1'
-#alias finder.qltext2='osascript -e tell application "Finder" to set file type of ((POSIX file "$1") as alias) to "TEXT"'
-
-# Git shortcuts
 alias gpl='git pull'
 alias gps='git push'
 
-# Show network connections
-# Often useful to prefix with SUDO to see more system level network usage
-alias network.connections='lsof -l -i +L -R -V'
-alias network.established='lsof -l -i +L -R -V | grep ESTABLISHED'
-alias network.internalip="ifconfig en0 | egrep -o '([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)'"
-alias network.externalip='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
-
-# Files used, anywhere on the filesystem
-alias files.usage='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep'
-# Files being opened
-alias files.open='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep|grep open'
-# Files in use in the Users directory
-alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep|grep Users'
-
 # Directory listings
-# LS_COLORS='no=01;37:fi=01;37:di=07;96:ln=01;36:pi=01;32:so=01;35:do=01;35:bd=01;33:cd=01;33:ex=01;31:mi=00;05;37:or=00;05;37:'
 # -G Add colors to ls
 # -l Long format
 # -h Short size suffixes (B, K, M, G, P)
@@ -76,164 +13,20 @@ alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v
 alias ls='ls -G -h -p '
 alias ll='ls -l -G -h -p '
 
-if isLinux; then
-    alias ls='ls --color=auto'
-fi
-
-alias latest='ls -alt | head -20'
-
-#########################################
-# Utility Functions
-
-# Restart Apache on Mac
-alias apacherestart="sudo /usr/sbin/apachectl restart"
-
-# Do a Matrix movie effect of falling characters
-function matrix1() {
-echo -e "\e[1;40m" ; clear ; while :; do echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $(( $RANDOM % 72 )) ;sleep 0.05; done|gawk '{ letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()"; c=$4; letter=substr(letters,c,1);a[$3]=0;for (x in a) {o=a[x];a[x]=a[x]+1; printf "\033[%s;%sH\033[2;32m%s",o,x,letter; printf "\033[%s;%sH\033[1;37m%s\033[0;0H",a[x],x,letter;if (a[x] >= $1) { a[x]=0; } }}'
-}
-
-function matrix2() {
-echo -e "\e[1;40m" ; clear ; characters=$( jot -c 94 33 | tr -d '\n' ) ; while :; do echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $(( $RANDOM % 72 )) $characters ;sleep 0.05; done|gawk '{ letters=$5; c=$4; letter=substr(letters,c,1);a[$3]=0;for (x in a) {o=a[x];a[x]=a[x]+1; printf "\033[%s;%sH\033[2;32m%s",o,x,letter; printf "\033[%s;%sH\033[1;37m%s\033[0;0H",a[x],x,letter;if (a[x] >= $1) { a[x]=0; } }}'
-}
-
-function matrix3() {
-echo -e "\e[1;40m" ; clear ; while :; do echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $( printf "\U$(( $RANDOM % 500 ))" ) ;sleep 0.05; done|gawk '{c=$4; letter=$4;a[$3]=0;for (x in a) {o=a[x];a[x]=a[x]+1; printf "\033[%s;%sH\033[2;32m%s",o,x,letter; printf "\033[%s;%sH\033[1;37m%s\033[0;0H",a[x],x,letter;if (a[x] >= $1) { a[x]=0; } }}'
-}
-
-# Use Mac OSX Preview to open a man page in a more handsome format
-function manp() {
-    man -t $1 | open -f -a /Applications/Preview.app
-}
-
-# Show normally hidden system and dotfile types of files
-# in Mac OSX Finder
-function finder.showhiddenfiles() {
-    defaults write com.apple.Finder AppleShowAllFiles YES
-    osascript -e 'tell application "Finder" to quit'
-    sleep 0.25
-    osascript -e 'tell application "Finder" to activate'
-}
-
-# Hide (back to defaults) normally hidden system and dotfile types of files
-# in Mac OSX Finder
-function finder.hidehiddenfiles() {
-    defaults write com.apple.Finder AppleShowAllFiles NO
-    osascript -e 'tell application "Finder" to quit'
-    sleep 0.25
-    osascript -e 'tell application "Finder" to activate'
-}
-
-# Get (cache) all Cheat sheets
-function cheat.getall() {
-	cheat sheets | grep '^  ' | xargs -n 1 -I {} bash -c 'cheat {} | :'
-}
-
-function find.name() {
-    wild=\'\*$1\*\'
-    sh -c "find . -iname $wild"
-}
-
-alias lessc='less -R' # Lets color escape sequences carry through to less
-alias morec='more -R'
-alias lesscolor='less -R'
-alias morecolor='more -R'
-
-function screenshot.setjpg() {
-    defaults write com.apple.screencapture type jpg
-    killall SystemUIServer
-}
-
-function screenshot.setpng() {
-    defaults write com.apple.screencapture type png
-	killall SystemUIServer
-}
-
-## Show third party kernel extensions
-alias thirdpartykernelextensions='kextstat | grep -v apple'
-
-## DHCP renew
-alias ipreleaserenew="sudo ipconfig set en0 BOOTP && sudo ipconfig set en0 DHCP"
-
-alias nasquota='ssh svn /home/nasadmin/nasquota/cur/bin/nasquota'
-alias prettyprint='enscript --pretty-print --color -2 -r'
-if [ -f /usr/bin/colordiff ]; then
-    alias diff='colordiff'
-fi
 alias grep='grep --color=auto --exclude=.svn'
 alias egrep='egrep --color=auto --exclude=.svn'
 alias fgrep='fgrep --color=auto --exclude=.svn'
-#alias sortlog='cat logs/`ls -t logs/ | head -1` | grep '^NDS' | sort -n'
-alias sortlog='cat logs/`ls -t logs/ | head -1` | grep '^NDS' | sort -n >sortedlog.log; dos2unix -q sortedlog.log'
-alias prunelog='cat sortedlog.log | grep WLM | grep -v SERVER_HTTP_IsValidKeyword | grep -v SERVER_HTTP_SetValue | grep -v SERVER_HTTP_ExtractValue | grep -v ClearReceiveMessageBuffer | grep -v ClearTransmitMessageBuffer | grep -v CopyToTransmitBuffer | grep -v CopyFromReceiveBuffer | grep -v SERVER_ReadConfigFile | grep -v SERVER_HTTP_SetKeywordTable | grep -v SERVER_HTTP_ClearBuffer > prunedlog.log'
-#alias vilastlog='vi logs/`ls -t logs/ | head -1`'
-alias vilastlog='vi `ls -t *.log | head -1`'
-alias catlastlog='cat logs/`ls -t logs/ | head -1`'
-alias brokenlinks='find . -type l | (while read FN ; do test -e "$FN" || ls -ld "$FN"; done)'
 
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-#alias cd='cd \!*; pwd'
-#alias cd='pushd !*'
-#alias more=less
-
-#alias du='du --exclude=.svn'
 
 alias now='date +"%Y%m%d-%H%M%S"'
 alias minicom='minicom -C minicom-`now`.log'
 
-#alias svnst='svn st --ignore-externals'
-#alias svnup='svn up --ignore-externals'
-
-alias svnrepos='export REPOS=$(~/utils/svnrepos -r) ; echo $REPOS'
-alias svnurl='svn info | awk "/^URL:/ {print}" | sed "s/^URL: //"'
-alias svndot='svn info | awk "/^URL:/ {print}" | sed "s/^URL: //"'
-alias svndotdot='svn info .. | awk '\''/^URL:/ {print}'\'' | sed '\''s/^URL: //'\'''
-
-alias svndiff='svn diff --diff-cmd=xx-diff-proxy'
-
-# shortcuts for doing process stuff
 alias pgrep='ps auxww | grep \!* | grep -v grep'
-#alias pfind='pgrep \!* | awk "{print \${2}}"'
 
-#alias a2ps='a2ps -r -1 -C -E -g -l120 -s2 --toc'
-#alias a2ps='a2ps -r -1 -C -E -g -l120 -s2'
 alias a2ps='a2ps --landscape -1 --line-numbers=5 --pretty-print --highlight-level=heavy --chars-per-line=120 --sides=duplex --prologue=color'
-
-_filteredfind='find . \( -name .svn -prune \) \( -name .git -prune \) \( -name .repo -prune \) \( -name .venv -prune \)'
-_mfiles='\( -name "Makefile*" -o -name "*makefile*" -o -name "*\.mk" -o -name "*\.mak" -o -name build.xml \)'
-_sfiles='\( -name "*\.[dDhHcCsS]" -o -name "*\.cc" -o -name "*\.cpp" -o -name "*\.java" -o -name "*\.py" \)'
-_shfiles='\( -name "*\.sh" -o -name "*\.csh" -o -name "*\.zsh" -o -name "*\.tcsh" \)'
-_cfiles='\( -name "*\.[cCsS]" -o -name "*\.cc" -o -name "*\.cpp" \)'
-_hfiles='\( -name "*\.[hH]" -o -name "*\.hpp" \)'
-_jfiles='\( -name "*\.java" \)'
-_pyfiles='\( -name "*\.py" \)'
-_dfiles='\( -name "*\.[dD]" \)'
-_rstfiles='\( -name "*\.rst" \)'
-_gofiles='\( -name "*\.go" \)'
-_grepargs='xargs egrep --color=auto -n'
-
-alias mfind="$_filteredfind -o \( -type f $_mfiles -print \) | $_grepargs"
-alias mnotfind="$_filteredfind -o \( -type f $_mfiles -print \) | $_grepargs -v"
-alias sfind="$_filteredfind -o \( -type f $_sfiles -print \) | $_grepargs"
-alias snotfind="$_filteredfind -o \( -type f $_sfiles -print \) | $_grepargs -v"
-alias shfind="$_filteredfind -o \( -type f $_shfiles -print \) | $_grepargs"
-alias shnotfind="$_filteredfind -o \( -type f $_shfiles -print \) | $_grepargs -v"
-alias cfind="$_filteredfind -o \( -type f $_cfiles -print \) | $_grepargs"
-alias cnotfind="$_filteredfind -o \( -type f $_cfiles -print \) | $_grepargs -v"
-alias hfind="$_filteredfind -o \( -type f $_hfiles -print \) | $_grepargs"
-alias hnotfind="$_filteredfind -o \( -type f $_hfiles -print \) | $_grepargs -v"
-alias jfind="$_filteredfind -o \( -type f $_jfiles -print \) | $_grepargs"
-alias jnotfind="$_filteredfind -o \( -type f $_jfiles -print \) | $_grepargs -v"
-alias pyfind="$_filteredfind -o \( -type f $_pyfiles -print \) | $_grepargs"
-alias pynotfind="$_filteredfind -o \( -type f $_pyfiles -print \) | $_grepargs -v"
-alias dfind="$_filteredfind -o \( -type f $_dfiles -print \) | $_grepargs"
-alias dnotfind="$_filteredfind -o \( -type f $_dfiles -print \) | $_grepargs -v"
-alias rstfind="$_filteredfind -o \( -type f $_rstfiles -print \) | $_grepargs"
-alias rstnotfind="$_filteredfind -o \( -type f $_rstfiles -print \) | $_grepargs -v"
-alias gofind="$_filteredfind -o \( -type f $_gofiles -print \) | $_grepargs"
-alias gonotfind="$_filteredfind -o \( -type f $_gofiles -print \) | $_grepargs -v"
 
 if [ -f /opt/cxoffice/bin/wine -a -d /home/$USER/.cxoffice/Microsoft\ Office\ 2010 ]; then
     alias word="/opt/cxoffice/bin/wine --bottle /home/$USER/.cxoffice/Microsoft\ Office\ 2010 --cx-app winword.exe"
@@ -242,28 +35,10 @@ if [ -f /opt/cxoffice/bin/wine -a -d /home/$USER/.cxoffice/Microsoft\ Office\ 20
     alias visio="/opt/cxoffice/bin/wine --bottle /home/$USER/.cxoffice/Microsoft\ Visio\ 2010 --cx-app visio.exe"
 fi
 
-# History search.
-alias hgrep='history | grep --color'
-alias phgrep='cat ~/.persistent_history | grep -v phgrep | grep --color'
-
-# Kill ssh or sshpass sessions (e.g. if VPN hangs).
-alias sshkill="ps auxww | egrep 'sshpass|ssh ' | egrep -v egrep | awk '{print \$2}' | xargs kill -9"
-
-# http://randsinrepose.com/links/2016/10/16/nesting-and-networking/
-alias netwtf='sudo /usr/local/Cellar/mtr/0.87/sbin/mtr -n 8.8.8.8'
-
-# OSX gatekeeper disable...
 alias gatekeeper='sudo xattr -d com.apple.quarantine'
 
-if isMac; then
-    alias readlink='greadlink'
-    alias get_iplayer='PATH=/usr/bin:/usr/local/bin get_iplayer'
-    # On Mac OSX, uuidgen produces uppercase.
-    alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
-fi
-
-# Alias for parsing structure JSON logs...
-alias plog="jq -r -s 'map(select(.) | .log_level |=  ascii_upcase) | .[] | \"\(.event_timestamp) \(.log_level) \t \(.event_message)\" | @text'"
+# On Mac OSX, uuidgen produces uppercase.
+alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
 
 # Jira CLI aliases (https://github.com/ankitpokhrel/jira-cli)
 alias jfullboard="jira issue list -q \"project in (FWAAS) AND issuetype not in (Initiative, Epic, Project, Theme, Program) AND (status in (Open, 'On Hold', 'In Progress', 'In Review', 'To Do') OR status = Closed AND resolutiondate >= startOfDay(-2d))\""
