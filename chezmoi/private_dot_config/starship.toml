@@ -61,7 +61,7 @@ deleted_style = "fg:bright-red bg:235"
 
 [character]
 disabled = false
-success_symbol = '[➜](bold green) '
+success_symbol = '[](bold green) '
 error_symbol = '[✗](bold red) '
 vimcmd_symbol = '[❮](bold fg:green)'
 vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
