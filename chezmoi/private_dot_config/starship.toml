@@ -54,6 +54,9 @@ style = "fg:#1C3A5E bg:#f9e71f"
 [git_status]
 format = '[$all_status]($style)'
 style = "fg:#1C3A5E bg:#f9e71f"
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '[⇕⇡${ahead_count}⇣${behind_count}](fg:#1C3A5E bg:#f9e71f)'
 
 [git_metrics]
 format = "([+$added]($added_style))[]($added_style)"
