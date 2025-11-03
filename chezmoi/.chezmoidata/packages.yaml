@@ -58,7 +58,6 @@ packages:
       - "ffmpeg"
       - "figlet"
       - "fish"
-      - "fisher"
       - "freetype"
       - "fribidi"
       - "fzf"
