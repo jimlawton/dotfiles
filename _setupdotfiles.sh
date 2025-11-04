@@ -73,10 +73,6 @@ if [ ! -d dotfiles ]; then
 	exit 1
 fi
 
-echo "Symlinking config directories..."
-mkdir -p ~/.config
-ln -sf ~/dotfiles/hyper-hacks/karabiner ~/.config/karabiner
-
 echo "Creating Terraform directory..."
 mkdir -p ~/.terraform.d
 
