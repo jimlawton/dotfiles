@@ -7,11 +7,11 @@
 
 # Personal/work Git identity.
 [includeIf "gitdir:~/Work/"]
-    path = ~/dotfiles/git-identity-work
+    path = ~/.gitidentity-work
 [includeIf "gitdir:~/Personal/"]
-    path = ~/dotfiles/git-identity-personal
+    path = ~/.gitidentity-personal
 [includeIf "gitdir:~/.local/share/chezmoi/"]
-    path = ~/dotfiles/git-identity-personal
+    path = ~/.gitidentity-personal
 
 # Git aliases.
 [include]

@@ -1,9 +1,0 @@
-[user]
-    name = Jim Lawton
-    email = jim.lawton@gmail.com
-[hub]
-    protocol = https
-[credential "https://github.com"]
-    helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-    helper = !/opt/homebrew/bin/gh auth git-credential
