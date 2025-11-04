@@ -3,8 +3,6 @@
 DOTFILESDIR=~/dotfiles
 DOTFILES=".iterm2_shell_integration.zsh"
 DOTDIRS=".hammerspoon"
-DROPFILES="persistent_history"
-DROPDIRS="bin .pip"
 SAVEDIR=~/.old/_setupdotfiles
 
 function symlinkifne {
@@ -86,26 +84,6 @@ echo "Symlinking dot directories..."
 for dotdir in $DOTDIRS; do
 	symlinkifne $dotdir
 done
-
-echo "Symlinking Dropbox directories..."
-# Any directories you want linked from Dropbox.
-if [ -e ~/Dropbox/ ]; then
-    for dropdir in $DROPDIRS; do
-        if [ ! -e ~/$dropdir ]; then
-            ln -s ~/Dropbox/unixhome/$dropdir ~/
-        fi
-    done
-fi
-
-echo "Symlinking Dropbox files..."
-# Any files you want linked from Dropbox.
-if [ -e ~/Dropbox/ ]; then
-    for dropfile in $DROPFILES; do
-        if [ ! -e ~/$dropfile ]; then
-            ln -s ~/Dropbox/$dropfile ~/.$dropfile
-        fi
-    done
-fi
 
 echo "Symlinking config directories..."
 mkdir -p ~/.config
