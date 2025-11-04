@@ -14,6 +14,7 @@ packages:
     brews:
       - "a2ps"
       - "adr-tools"
+      - "age"
       - "asciidoc"
       - "asciinema"
       - "atuin"
@@ -175,6 +176,7 @@ packages:
       - "python-packaging"
       - "qemu"
       - "qt"
+      - "rage"
       - "rake-completion"
       - "rbenv"
       - "rbw"
