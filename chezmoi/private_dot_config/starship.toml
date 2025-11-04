@@ -8,7 +8,8 @@
 format = """\
 $directory\
 [](fg:#2a6bef bg:#fbef6a)\
-$git_branch\
+${custom.git_branch_dirty}\
+${custom.git_branch_clean}\
 $git_status\
 $git_metrics\
 [](fg:#fbec51 bg:#030B16)\
@@ -47,9 +48,26 @@ style = "dimmed white"
 time_format = "%T" # %R no seconds, %T seconds
 
 [git_branch]
+disabled = true
 format = '[ $symbol$branch(:$remote_branch) ]($style)'
 symbol = "  "
 style = "fg:#1C3A5E bg:#f9e71f"
+
+[custom.git_branch_dirty]
+command = "git rev-parse --abbrev-ref HEAD 2>/dev/null"
+style = "fg:#1C3A5E bg:#f9e71f"
+symbol = " "
+format = "[$symbol($output)]($style)"
+require_repo = true
+when = "git status --porcelain | grep -q ."
+
+[custom.git_branch_clean]
+command = "git rev-parse --abbrev-ref HEAD 2>/dev/null"
+style = "fg:black bg:green"
+symbol = " "
+format = "[$symbol($output)]($style)"
+require_repo = true
+when = "! git status --porcelain | grep -q ."
 
 [git_status]
 format = '[$all_status]($style)'
