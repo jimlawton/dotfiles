@@ -1,9 +1,17 @@
 # Mac/Linux specifics.
-[includeIf "gitdir:/Users"]
-    path = ~/dotfiles/gitconfig-macos
-# FIXME: this also matches on Mac.
-#[includeIf "gitdir:/home"]
-#    path = ~/dotfiles/gitconfig-linux
+{{ if eq .chezmoi.os "darwin" -}}
+[credential]
+	helper = osxkeychain
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[safe]
+	directory = "*"
+
+[push]
+	default = current
+{{ else if eq .chezmoi.os "linux" -}}
+[credential]
+	helper = cache --timeout=300
+{{ end -}}
 
 # Personal/work Git identity.
 [includeIf "gitdir:~/Work/"]
