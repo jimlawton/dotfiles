@@ -1,12 +1,11 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{ $passphrase := promptStringOnce . "passphrase" "Chezmoi passphrase" -}}
 
-encryption = "gpg"
+encryption = "rage"
+[age]
+    identity = "~/.config/chezmoi/key.txt"
+    recipient = "age160lkyv2ayy6n5j2d34h72kjry00styzt24mfsq2dn588tn95ygzqrnnak6"
 
 [data]
     email = {{ $email | quote }}
     passphrase = {{ $passphrase | quote }}
-
-[gpg]
-    symmetric = true
-    args = ["--quiet", "--batch", "--passphrase", {{ $passphrase | quote }}, "--no-symkey-cache"]
