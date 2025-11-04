@@ -1,7 +1,6 @@
 #!/bin/bash
 
 DOTFILESDIR=~/dotfiles
-DOTFILES=".iterm2_shell_integration.zsh"
 SAVEDIR=~/.old/_setupdotfiles
 
 function symlinkifne {
@@ -73,11 +72,6 @@ if [ ! -d dotfiles ]; then
 	echo "# ./_setupdotfiles.sh"
 	exit 1
 fi
-
-echo "Symlinking dot files..."
-for dotfile in $DOTFILES; do
-	symlinkifne $dotfile
-done
 
 echo "Symlinking config directories..."
 mkdir -p ~/.config
