@@ -9,8 +9,6 @@ import os
 import subprocess
 import sys
 
-DAYMD_SCRIPT = "dotfiles/scripts/daymd"
-
 
 def main():
     """Generate daily agenda as Markdown."""
@@ -134,7 +132,7 @@ def main():
     # Generate agenda
     file_lines.append("## Agenda (Hyper-D)")
     print("Running daymd...")
-    daymd = os.path.join(home, "dotfiles", "scripts", "daymd")
+    daymd = os.path.join(home, ".local", "share", "chezmoi", "obsidian", "daymd")
     result = subprocess.run([daymd, f"{date_str}"], stdout=subprocess.PIPE)
     file_lines.append(result.stdout.decode())
 
