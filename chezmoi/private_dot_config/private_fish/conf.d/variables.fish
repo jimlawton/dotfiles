@@ -22,9 +22,4 @@ set -gx GOENV_ROOT $HOME/.goenv
 
 set -gx TSRC_PARALLEL_JOBS 8
 
-if test -f $HOME/dotfiles/shellvars-personal
-    source $HOME/dotfiles/shellvars-personal
-end
-if test -f $HOME/dotfiles/shellvars-work
-    source $HOME/dotfiles/shellvars-work
-end
+source $HOME/.sensitive
