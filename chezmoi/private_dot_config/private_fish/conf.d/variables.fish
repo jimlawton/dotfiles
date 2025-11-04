@@ -22,4 +22,4 @@ set -gx GOENV_ROOT $HOME/.goenv
 
 set -gx TSRC_PARALLEL_JOBS 8
 
-source $HOME/.sensitive
+source $HOME/.shellvars
