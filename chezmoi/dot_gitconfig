@@ -15,7 +15,7 @@
 
 # Git aliases.
 [include]
-    path = ~/dotfiles/git-aliases
+    path = ~/.gitaliases
 
 [apply]
 	whitespace = nowarn
