@@ -1,3 +1,2 @@
-#0,15,30,45 * * * * python3 ~/dotfiles/history/zsh-to-persistent-history.py -w >> ~/ph.log 2>&1
 0,15,30,45 8,9,10,11,12 * * 1,2,3,4,5 python3 ~/dotfiles/obsidian/daily-note.py >> ~/daily-note.log 2>&1
 0,15,30,45 8,9,10,11,12 * * 1 python3 ~/dotfiles/obsidian/weekly-report.py >> ~/weekly-report.log 2>&1
