@@ -8,3 +8,6 @@
     templateDir = ~/dotfiles/git-template
 [credential "https://github.cicd.cloud.fpdev.io"]
     helper = !/opt/homebrew/bin/gh auth git-credential
+[spice "forge.github"]
+    url = https://github.cicd.cloud.fpdev.io
+    apiUrl = https://github.cicd.cloud.fpdev.io/api
