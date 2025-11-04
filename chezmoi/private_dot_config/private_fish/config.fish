@@ -31,7 +31,4 @@ if status is-interactive
     bind -M insert up _atuin_bind_up
     bind -M insert \eOA _atuin_bind_up
     bind -M insert \e\[A _atuin_bind_up
-
-    # Load sensitive variables.
-    source ~/dotfiles/shellvars-work
 end
