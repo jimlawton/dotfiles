@@ -1,9 +1,5 @@
 export OS=$(uname -s)
 
-#########################################################################
-# Tool settings
-#########################################################################
-
 # Set the default pager to less
 set -gx PAGER less
 # Set less to have a default flag of -R (RAW) so color passes through
