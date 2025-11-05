@@ -54,7 +54,7 @@ style = "fg:#1C3A5E bg:#4dff4d"
 
 [git_status]
 disabled = false
-format = '[$all_status]($style)'
+format = '[$all_status$ahead_behind]($style)'
 style = "fg:#1C3A5E bg:#f9e71f"
 ahead = '⇡${count}'
 behind = '⇣${count}'
