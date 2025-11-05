@@ -1,1 +1,1 @@
-../.local/chezmoi/hyper-hacks/hammerspoon/init.lua
+$HOME/.local/share/chezmoi/hyper-hacks/hammerspoon/init.lua
