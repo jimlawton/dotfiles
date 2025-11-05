@@ -32,3 +32,6 @@ if status is-interactive
     bind -M insert \eOA _atuin_bind_up
     bind -M insert \e\[A _atuin_bind_up
 end
+
+test -e {$HOME}/.iterm2/iterm2_shell_integration.fish ; and source {$HOME}/.iterm2/iterm2_shell_integration.fish
+
