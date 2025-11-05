@@ -30,30 +30,6 @@ brew install chezmoi
 ### Clone the repo and apply the dotfiles
 ```
 chezmoi init https://github.com/jimlawton/dotfiles
-```
 
-> [!IMPORTANT]
-> Update .chezmoidata/identity.yaml with your personal details
-
-```
 chezmoi apply
-```
-
-## Acquiring This Repo
-
-This project contains submodules. It is suggested that you clone this into your
-home directory, as follows.
-
-```bash
-> cd ~
-> git clone --recurse-submodules https://github.com/jimlawton/dotfiles
-```
-
-## Setup
-
-There is a set up script that establishes the symlinks in your home directory.
-If necessary, you can run this:
-
-```bash
-> ~/dotfiles/_setupdotfiles.sh
 ```
