@@ -59,6 +59,7 @@ style = "fg:#1C3A5E bg:#f9e71f"
 ahead = '⇡${count}'
 behind = '⇣${count}'
 diverged = '[⇕⇡${ahead_count}⇣${behind_count}](fg:#1C3A5E bg:#f9e71f)'
+use_git_executable = true
 
 [git_metrics]
 disabled = true
