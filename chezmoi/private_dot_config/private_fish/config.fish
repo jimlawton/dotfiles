@@ -9,12 +9,9 @@ if status is-interactive
     # Don't be so friendly.
     set fish_greeting
 
-    # Starship prompt setup.
-    function starship_transient_prompt_func
-        starship module character
-    end
+    # Starship transient prompt setup.
     function starship_transient_rprompt_func
-        starship module time
+        starship module character
     end
     starship init fish | source
     enable_transience
