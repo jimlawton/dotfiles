@@ -2,7 +2,7 @@
 
 This repository is meant to manage and configure a personalised dev env setup for MacOS/Linux.
 
-This primarily uses [chezmoi](https://www.chezmoi.io/) to manage dotfiles and a combination of [mise](https://mise.jdx.dev/) and Homebrew to manage package installations.
+This primarily uses [chezmoi](https://www.chezmoi.io/) to manage dotfiles and Homebrew to manage package installations.
 
 ## Structure
 
