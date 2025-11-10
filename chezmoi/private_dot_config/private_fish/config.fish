@@ -31,6 +31,9 @@ if status is-interactive
 
     # Zoxide setup.
     zoxide init fish | source
+
+    # Pyenv setup.
+    pyenv init - fish | source
 end
 
 test -e {$HOME}/.iterm2/iterm2_shell_integration.fish ; and source {$HOME}/.iterm2/iterm2_shell_integration.fish
