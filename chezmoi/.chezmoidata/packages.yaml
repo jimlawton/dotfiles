@@ -298,14 +298,14 @@ packages:
         id: 441258766
       - name: "Mattermost"
         id: 1614666244
-      - name: "Microsoft Excel"
-        id: 462058435
-      - name: "Microsoft Outlook"
-        id: 985367838
-      - name: "Microsoft PowerPoint"
-        id: 462062816
-      - name: "Microsoft Word"
-        id: 462054704
+      # - name: "Microsoft Excel"
+      #   id: 462058435
+      # - name: "Microsoft Outlook"
+      #   id: 985367838
+      # - name: "Microsoft PowerPoint"
+      #   id: 462062816
+      # - name: "Microsoft Word"
+      #   id: 462054704
       - name: "Notability"
         id: 360593530
       - name: "Okta Extension App"
@@ -320,8 +320,8 @@ packages:
         id: 899247664
       - name: "The Unarchiver"
         id: 425424353
-      - name: "Windows App"
-        id: 1295203466
+      # - name: "Windows App"
+      #   id: 1295203466
       - name: "Xcode"
         id: 497799835
       - name: "Xmind"
