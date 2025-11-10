@@ -1,0 +1,31 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# Assuming rustup is already installed, install the required Rust toolchains and components.
+
+rustup install stable
+rustup install nightly
+
+rustup component add rustfmt
+rustup component add clippy
+rustup component add rust-analyzer
+rustup component add llvm-tools-preview
+
+cargo install cargo-audit
+cargo install cargo-deps
+cargo install cargo-fuzz
+cargo install cargo-license
+cargo install cargo-llvm-cov
+cargo install cargo-outdated
+cargo install cargo-semver
+cargo install cargo-tarpaulin
+cargo install cargo-udeps
+cargo install cargo-warloc
+cargo install cargo-workspces
+cargo install cargo-xwin
+cargo install cargo2junit
+cargo install cross
+cargo install gitoxide
+cargo install sccache
+
+{{ end -}}
