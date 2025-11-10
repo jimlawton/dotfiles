@@ -126,7 +126,6 @@ packages:
       - "micro"
       - "microsocks"
       - "minicom"
-      - "mise"
       - "mmark"
       - "mplayer"
       - "mtr"
@@ -301,8 +300,6 @@ packages:
         id: 1614666244
       - name: "Microsoft Excel"
         id: 462058435
-      - name: "Microsoft OneNote"
-        id: 784801555
       - name: "Microsoft Outlook"
         id: 985367838
       - name: "Microsoft PowerPoint"
