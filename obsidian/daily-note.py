@@ -136,9 +136,9 @@ def main():
     result = subprocess.run([daymd, f"{date_str}"], stdout=subprocess.PIPE)
     file_lines.append(result.stdout.decode())
 
-    file_lines.append("## Reading/Learning")
-    file_lines.append("- ")
-    file_lines.append("")
+    # file_lines.append("## Reading/Learning")
+    # file_lines.append("- ")
+    # file_lines.append("")
 
     file_lines.append("## Activities")
     file_lines.append("- ")
