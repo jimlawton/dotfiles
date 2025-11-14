@@ -82,7 +82,7 @@ def main():
         next_date = datetime.datetime.strptime(
             date_str, "%Y-%m-%d"
         ) + datetime.timedelta(days=1)
-    next_str = next_date.strftime("%Y-%m-%d")
+    _next_str = next_date.strftime("%Y-%m-%d")
 
     file_lines = []
 
