@@ -1,18 +1,6 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-brew bundle --file=/dev/stdin <<EOF
-{{ range .packages.darwin.taps -}}
-tap {{ . | quote | replace " " "\", \"" }}
-{{ end -}}
-{{ range .packages.darwin.brews -}}
-brew {{ . | quote }}
-{{ end -}}
-{{ range .packages.darwin.casks -}}
-cask {{ . | quote }}
-{{ end -}}
-{{ range .packages.darwin.mas -}}
-mas {{ .name | quote }}, id: {{ .id }}
-{{ end -}}
-EOF
+# Install packages via Homebrew Bundle.
+brew bundle --file=$HOME/Brewfile
 {{ end -}}
