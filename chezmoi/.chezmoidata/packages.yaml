@@ -312,6 +312,8 @@ packages:
         id: 1439967473
       - name: "Okta Verify"
         id: 490179405
+      - name: "rcmd"
+        id: 1596283165
       - name: "Speedtest"
         id: 1153157709
       - name: "Tailscale"
