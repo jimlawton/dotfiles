@@ -2,5 +2,8 @@
 #!/bin/bash
 
 # Install packages via Homebrew Bundle.
-brew bundle --file=$HOME/Brewfile
+# NOTE: --no-upgrade to avoid upgrading existing packages, which can fail in the case of MAS apps.
+# NOTE: ignore errors, since MAS often fails.
+set -o pipefail
+brew bundle --no-upgrade --file=$HOME/Brewfile || true
 {{ end -}}
