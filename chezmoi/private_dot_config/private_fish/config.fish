@@ -1,6 +1,7 @@
 /opt/homebrew/bin/brew shellenv | source
 
 fish_add_path $HOME/bin
+fish_add_path $HOME/.local/bin
 fish_add_path $CARGO_HOME/bin
 
 if status is-interactive
