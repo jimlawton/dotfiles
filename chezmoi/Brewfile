@@ -162,6 +162,7 @@ brew "neovim"
 brew "nushell"
 brew "ocrad"
 brew "okta-aws-cli"
+brew "opencode"
 brew "openconnect"
 brew "openjdk"
 brew "openjdk@11"
@@ -306,8 +307,10 @@ mas "Kindle", id: 302584613
 mas "Magnet", id: 441258766
 mas "Mattermost", id: 1614666244
 mas "Notability", id: 360593530
+mas "Numbers", id: 409203825
 mas "Okta Extension App", id: 1439967473
 mas "Okta Verify", id: 490179405
+mas "Pages", id: 409201541
 mas "Proxy", id: 0
 mas "rcmd", id: 1596283165
 mas "Speedtest", id: 1153157709
