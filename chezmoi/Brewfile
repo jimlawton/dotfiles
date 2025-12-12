@@ -70,6 +70,7 @@ brew "docutils"
 brew "dos2unix"
 brew "dotter"
 brew "doxygen"
+brew "eza"
 brew "fd"
 brew "fribidi"
 brew "libidn2"
@@ -306,6 +307,7 @@ mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
 mas "Magnet", id: 441258766
 mas "Mattermost", id: 1614666244
+mas "Microsoft PowerPoint", id: 462062816
 mas "Notability", id: 360593530
 mas "Numbers", id: 409203825
 mas "Okta Extension App", id: 1439967473
