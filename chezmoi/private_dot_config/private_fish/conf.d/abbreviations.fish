@@ -40,10 +40,6 @@ abbr --add jkanban "jira issue list -q \"project in (FWAAS) AND issuetype not in
 # Ping Artifactory.
 abbr --add afping 'curl -I https:/${ARTIFACTORY_EMAIL}:${ARTIFACTORY_API_KEY}@${ARTIFACTORY_BASE}/artifactory/api/system/ping'
 
-# On Mac OSX, the make version installed is from 2006, so use gmake.
-# NOTE: disable this, it does not honour Makefile target tab completion.
-# abbr --add make 'gmake'
-
 # Use zoxide instead of cd
 abbr --add cd 'z'
 
