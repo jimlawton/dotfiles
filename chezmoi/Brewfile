@@ -154,6 +154,7 @@ brew "markdownlint-cli"
 brew "mas"
 brew "md5sha1sum", link: true
 brew "mdbook"
+brew "mergiraf"
 brew "micro"
 brew "microsocks"
 brew "minicom"
