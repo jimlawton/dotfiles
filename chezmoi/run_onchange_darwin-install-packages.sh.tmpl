@@ -1,6 +1,9 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
+# Hash of the Brewfile, used to determine if we need to rerun this script.
+# Brewfile hash: {{ include "Brewfile" | sha256sum }}
+
 # Install packages via Homebrew Bundle.
 # NOTE: --no-upgrade to avoid upgrading existing packages, which can fail in the case of MAS apps.
 # NOTE: ignore errors, since MAS often fails.
