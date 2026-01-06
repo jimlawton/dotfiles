@@ -8,5 +8,5 @@
 # NOTE: --no-upgrade to avoid upgrading existing packages, which can fail in the case of MAS apps.
 # NOTE: ignore errors, since MAS often fails.
 set -o pipefail
-brew bundle --no-upgrade --file=$HOME/Brewfile || true
+brew bundle --no-upgrade --file={{ joinPath .chezmoi.sourceDir "Brewfile" | quote }} || true
 {{ end -}}
