@@ -38,3 +38,10 @@ if status is-interactive
 end
 
 test -e {$HOME}/.iterm2/iterm2_shell_integration.fish ; and source {$HOME}/.iterm2/iterm2_shell_integration.fish
+
+# Disable terminal title updates in tmux
+if set -q TMUX
+    function fish_title
+        # Do nothing - don't update title in tmux
+    end
+end
