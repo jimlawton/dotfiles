@@ -130,7 +130,7 @@ def main():
     file_lines.append("")
 
     # Generate agenda
-    file_lines.append("## Agenda (Hyper-D)")
+    file_lines.append("## Agenda")
     print("Running daymd...")
     daymd = os.path.join(home, ".local", "share", "chezmoi", "obsidian", "daymd")
     result = subprocess.run([daymd, f"{date_str}"], stdout=subprocess.PIPE)
