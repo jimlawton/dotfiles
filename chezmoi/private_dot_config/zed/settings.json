@@ -1,0 +1,98 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "auto_update_extensions": {
+    "groovy": false
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
+    "always_allow_tool_actions": true,
+    "model_parameters": [],
+    "play_sound_when_agent_done": true
+  },
+  "buffer_font_size": 16,
+  "colorize_brackets": true,
+  "context_servers": {
+    // "atlassian": {
+    //   "source": "custom",
+    //   "command": "npx",
+    //   "args": ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"],
+    //   "env": {}
+    // }
+  },
+  "file_types": {
+    "Make": ["Makefile.include", "Makefile.env"],
+    "Groovy": ["Jenkinsfile", "Jenkinsfile.*"]
+  },
+  "git": {
+    "blame": {
+      "show_avatar": true
+    }
+  },
+  "languages": {
+    "JSON": {
+      "format_on_save": "off"
+    },
+    "Markdown": {
+      // Wrap text according to the previously defined preferred line length.
+      "soft_wrap": "preferred_line_length",
+      // do not remove any trailing whitespace since line breaks in
+      // lists (without adding a new punctuation) rely on whitespaces.
+      "remove_trailing_whitespace_on_save": false
+    },
+    "Python": {
+      "language_servers": ["ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        { "code_action": "source.organizeImports.ruff" },
+        { "code_action": "source.fixAll.ruff" },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    },
+    "YAML": {
+      "prettier": {
+        "allowed": true
+      }
+    }
+  },
+  // Set a preferred line lenth, showing a vertical gutter bar
+  "preferred_line_length": 160,
+  // Decrease the horizontal indent size of files & folders in the project
+  // panel to avoid horizontal scrolling
+  "project_panel": {
+    "indent_size": 16
+  },
+  // Show file type icons in the tab bar. Also color them according to the git status.
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark Pro"
+  },
+  "terminal": { "font_family": "MesloLGS NF" },
+  "ui_font_size": 16,
+  "use_system_window_tabs": true
+}
