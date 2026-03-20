@@ -52,7 +52,3 @@ shell-integration-features = ssh-terminfo,ssh-env
 # Enable auto copy of selected text
 copy-on-select = clipboard
 
-keybind = ctrl+left=esc:b
-keybind = ctrl+right=esc:f
-keybind = option+left=esc:b
-keybind = option+right=esc:f
