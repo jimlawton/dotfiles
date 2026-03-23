@@ -7,5 +7,6 @@
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true
   },
-  "effortLevel": "medium"
+  "effortLevel": "medium",
+  "env": { "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "1" }
 }
