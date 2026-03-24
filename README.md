@@ -12,6 +12,14 @@ These are installed whenever the packages.yaml has changed and a `chezmoi apply`
 
 ## Usage
 
+### The easiest way
+
+```
+$ curl https://raw.githubusercontent.com/jimlawton/dotfiles/refs/heads/master/bootstrap.sh -o bootstrap.sh
+$ chmod +x bootstrap.sh
+$ ./bootstrap.sh
+```
+
 ### Install XCode Command Line Tools if necessary
 ```
 xcode-select --install
