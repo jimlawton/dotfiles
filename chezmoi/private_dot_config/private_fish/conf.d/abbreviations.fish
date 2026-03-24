@@ -48,3 +48,7 @@ abbr --add cat 'bat'
 
 # Use ls replacement eza to list the directory tree
 abbr --add ll 'eza -lhT --git'
+
+# gs abbreviation for git-spice
+abbr --add gs 'git-spice'
+
