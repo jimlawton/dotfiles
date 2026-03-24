@@ -328,6 +328,7 @@ cask "wireshark-app"
 cask "wispr-flow"
 cask "yt-music"
 cask "zed"
+cask "zoom"
 mas "Bitwarden", id: 1352778147
 mas "Elisi", id: 1406239881
 mas "GoPro Player", id: 1460836908
