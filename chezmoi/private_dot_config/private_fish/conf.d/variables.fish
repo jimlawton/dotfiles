@@ -22,4 +22,6 @@ set -gx GOENV_ROOT $HOME/.goenv
 
 set -gx TSRC_PARALLEL_JOBS 8
 
+set -gx HOMEBREW_NO_ENV_HINTS 1
+
 source $HOME/.shellvars
