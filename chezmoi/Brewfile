@@ -324,6 +324,7 @@ cask "slack"
 cask "temurin"
 cask "utm"
 cask "vlc"
+cask "wireshark-app"
 cask "yt-music"
 cask "zed"
 mas "Bitwarden", id: 1352778147
