@@ -6,6 +6,9 @@
 # Install XCode Command Line Tools, if necessary.
 xcode-select --install || echo "XCode already installed"
 
+# Install Rosetta.
+sudo softwareupdate --install-rosetta || echo "Rosetta already installed"
+
 # Install Homebrew, if necessary.
 if which -s brew; then
     echo 'Homebrew is already installed'
