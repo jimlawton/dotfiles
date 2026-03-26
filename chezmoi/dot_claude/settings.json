@@ -1,12 +1,15 @@
 {
+  "env": {
+    "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "1"
+  },
   "model": "opus[1m]",
   "statusLine": {
     "type": "command",
     "command": "sh /Users/james.lawton/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
   },
-  "effortLevel": "medium",
-  "env": { "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "1" }
+  "effortLevel": "medium"
 }
