@@ -12,6 +12,14 @@ These are installed whenever the packages.yaml has changed and a `chezmoi apply`
 
 ## Usage
 
+### App Store password setting
+
+macOS asks for an App Store username/password by default, which makes unattended installs impossible. 
+If you are installing only (or mostly) free apps:
+
+- Go to `System Settings` > [Your Name] > `Media & Purchases`.
+- Under `Free Downloads`, change the setting to `Never Require`.
+
 ### The easiest way
 
 ```
