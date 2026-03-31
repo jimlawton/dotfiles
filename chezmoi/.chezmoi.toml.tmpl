@@ -1,6 +1,8 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{ $passphrase := promptStringOnce . "passphrase" "Chezmoi passphrase" -}}
 
+umask = 0o022
+
 encryption = "age"
 [age]
     identity = "~/.config/chezmoi/key.txt"
