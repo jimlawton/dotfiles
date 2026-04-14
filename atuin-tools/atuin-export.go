@@ -11,7 +11,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-func main() {
+func runExport(args []string) {
 	home, err := os.UserHomeDir()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "cannot determine home directory:", err)
@@ -20,8 +20,8 @@ func main() {
 
 	dbPath := filepath.Join(home, ".local", "share", "atuin", "history.db")
 	outPath := "history.csv"
-	if len(os.Args) > 1 {
-		outPath = os.Args[1]
+	if len(args) > 0 {
+		outPath = args[0]
 	}
 
 	db, err := sql.Open("sqlite3", dbPath)

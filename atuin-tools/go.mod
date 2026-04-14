@@ -1,4 +1,4 @@
-module github.com/jimlawton/atuin-export
+module github.com/jimlawton/atuin-tools
 
 go 1.26.1
 
