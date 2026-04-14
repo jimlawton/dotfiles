@@ -8,5 +8,11 @@
 # NOTE: --no-upgrade to avoid upgrading existing packages, which can fail in the case of MAS apps.
 # NOTE: ignore errors, since MAS often fails.
 set -o pipefail
-brew bundle --no-upgrade --file={{ joinPath .chezmoi.sourceDir "Brewfile" | quote }} || true
+HOSTNAME={{- .chezmoi.hostname }}
+BREWFILE="Brewfile"
+if [[ "$HOSTNAME" == "MBP-70WQL7" ]]; then
+BREWFILE="Brewfile.work"
+fi
+
+brew bundle --no-upgrade --file={{ joinPath .chezmoi.sourceDir "$BREWFILE" | quote }} || true
 {{ end -}}
