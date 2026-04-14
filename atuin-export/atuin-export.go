@@ -2,68 +2,90 @@ package main
 
 import (
 	"database/sql"
+	"encoding/csv"
 	"fmt"
 	"os"
+	"path/filepath"
+	"strconv"
 
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var (
-	home string
-)
-
-func init() {
-	home, _ = os.UserHomeDir()
-}
-
-func writeFishHistoryFile(t int, cmd string) {
-	file, err := os.OpenFile(home+"/.local/share/fish/fish_history", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-	content := fmt.Sprintf("- cmd: %s\n  when: %d\n", cmd, t/1000000000)
-
-	_, err = file.WriteString(content)
-	if err != nil {
-		panic(err)
-	}
-}
-
 func main() {
-	db, err := sql.Open("sqlite3", home+"/.local/share/atuin/history.db")
+	home, err := os.UserHomeDir()
 	if err != nil {
-		fmt.Println(err)
-		return
+		fmt.Fprintln(os.Stderr, "cannot determine home directory:", err)
+		os.Exit(1)
+	}
+
+	dbPath := filepath.Join(home, ".local", "share", "atuin", "history.db")
+	outPath := "history.csv"
+	if len(os.Args) > 1 {
+		outPath = os.Args[1]
+	}
+
+	db, err := sql.Open("sqlite3", dbPath)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "open db:", err)
+		os.Exit(1)
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT * FROM history ORDER BY timestamp ASC")
+	rows, err := db.Query("SELECT id, timestamp, duration, exit, command, cwd, session, hostname, deleted_at FROM history ORDER BY timestamp ASC")
 	if err != nil {
-		fmt.Println(err)
-		return
+		fmt.Fprintln(os.Stderr, "query:", err)
+		os.Exit(1)
 	}
 	defer rows.Close()
 
+	file, err := os.Create(outPath)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "create output:", err)
+		os.Exit(1)
+	}
+	defer file.Close()
+
+	w := csv.NewWriter(file)
+	defer w.Flush()
+
+	// Header
+	w.Write([]string{"id", "timestamp", "duration", "exit", "command", "cwd", "session", "hostname", "deleted_at"})
+
+	var count int
 	for rows.Next() {
 		var id, command, cwd, session, hostname string
 		var timestamp, duration, exit int
-		var deleted_at, author, intent interface{}
+		var deletedAt sql.NullInt64
 
-        err = rows.Scan(&id, &timestamp, &duration, &exit, &command, &cwd, &session, &hostname, &deleted_at, &author, &intent)
-
+		err = rows.Scan(&id, &timestamp, &duration, &exit, &command, &cwd, &session, &hostname, &deletedAt)
 		if err != nil {
-			fmt.Println(err)
+			fmt.Fprintln(os.Stderr, "scan:", err)
 			continue
 		}
 
-		writeFishHistoryFile(timestamp, command)
+		deletedAtStr := ""
+		if deletedAt.Valid {
+			deletedAtStr = strconv.FormatInt(deletedAt.Int64, 10)
+		}
+
+		w.Write([]string{
+			id,
+			strconv.Itoa(timestamp),
+			strconv.Itoa(duration),
+			strconv.Itoa(exit),
+			command,
+			cwd,
+			session,
+			hostname,
+			deletedAtStr,
+		})
+		count++
 	}
 
-	err = rows.Err()
-	if err != nil {
-		fmt.Println(err)
-		return
+	if err = rows.Err(); err != nil {
+		fmt.Fprintln(os.Stderr, "rows:", err)
+		os.Exit(1)
 	}
+
+	fmt.Printf("Exported %d entries to %s\n", count, outPath)
 }
-
