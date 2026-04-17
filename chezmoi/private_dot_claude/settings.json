@@ -12,7 +12,16 @@
     "superpowers@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true
+    "code-review@claude-plugins-official": true,
+    "git-spice@jimlawton-plugins": true
+  },
+  "extraKnownMarketplaces": {
+    "jimlawton-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "jimlawton/ai"
+      }
+    }
   },
   "effortLevel": "medium",
   "autoDreamEnabled": true
