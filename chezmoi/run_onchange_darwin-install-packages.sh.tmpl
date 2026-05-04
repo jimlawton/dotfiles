@@ -10,7 +10,9 @@
 set -o pipefail
 HOSTNAME={{- .chezmoi.hostname }}
 BREWFILE="Brewfile"
-if [[ "$HOSTNAME" == "MBP-70WQL7" ]]; then
+if [[ "$HOSTNAME" == "mini.local" ]]; then
+BREWFILE="Brewfile"
+else
 BREWFILE="Brewfile.work"
 fi
 
