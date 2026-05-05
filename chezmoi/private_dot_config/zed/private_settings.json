@@ -7,19 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
   "cli_default_open_behavior": "existing_window",
   "collaboration_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "git_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "telemetry": {
     "diagnostics": true,
-    "metrics": false
+    "metrics": false,
   },
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "edit_predictions": {
     "provider": "copilot",
@@ -41,7 +46,7 @@
       "model": "claude-sonnet-4.5",
     },
     "model_parameters": [],
-    "play_sound_when_agent_done": false,
+    "play_sound_when_agent_done": "never",
   },
   "buffer_font_size": 16,
   "colorize_brackets": true,
@@ -68,7 +73,7 @@
     },
     "Markdown": {
       // Wrap text according to the previously defined preferred line length.
-      "soft_wrap": "preferred_line_length",
+      "soft_wrap": "prefer_line",
       // do not remove any trailing whitespace since line breaks in
       // lists (without adding a new punctuation) rely on whitespaces.
       "remove_trailing_whitespace_on_save": false,
@@ -108,9 +113,9 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark Pro",
+    "dark": "One Dark",
   },
-  "terminal": { "font_family": "MesloLGS NF" },
+  "terminal": { "font_family": "Meslo LG S for Powerline" },
   "ui_font_size": 16,
   "use_system_window_tabs": true,
 }
