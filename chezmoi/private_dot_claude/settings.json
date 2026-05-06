@@ -24,5 +24,6 @@
     }
   },
   "effortLevel": "medium",
-  "autoDreamEnabled": true
+  "autoDreamEnabled": true,
+  "theme": "dark"
 }
