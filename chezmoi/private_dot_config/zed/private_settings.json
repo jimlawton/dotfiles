@@ -15,10 +15,10 @@
   },
   "cli_default_open_behavior": "existing_window",
   "collaboration_panel": {
-    "dock": "right",
+    "dock": "left",
   },
   "git_panel": {
-    "dock": "right",
+    "dock": "left",
   },
   "telemetry": {
     "diagnostics": true,
@@ -34,7 +34,7 @@
     "groovy": false,
   },
   "outline_panel": {
-    "dock": "right",
+    "dock": "left",
   },
   "agent": {
     "dock": "right",
