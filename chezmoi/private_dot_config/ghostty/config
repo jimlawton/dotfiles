@@ -52,3 +52,6 @@ shell-integration-features = ssh-terminfo,ssh-env
 # Enable auto copy of selected text
 copy-on-select = clipboard
 
+# Save window state
+window-save-state = always
+
