@@ -9,11 +9,11 @@
 # NOTE: ignore errors, since MAS often fails.
 set -o pipefail
 HOSTNAME={{- .chezmoi.hostname }}
+echo "Hostname: $HOSTNAME"
+
 BREWFILE="Brewfile"
-if [[ "$HOSTNAME" == "mbp.local" ]]; then
+if [[ "$HOSTNAME" == "mbp" ]]; then
 BREWFILE="Brewfile.work"
-else
-BREWFILE="Brewfile"
 fi
 
 echo "Using Brewfile: $BREWFILE"
