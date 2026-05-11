@@ -10,11 +10,12 @@
 set -o pipefail
 HOSTNAME={{- .chezmoi.hostname }}
 BREWFILE="Brewfile"
-if [[ "$HOSTNAME" == "mini.local" ]]; then
-BREWFILE="Brewfile"
-else
+if [[ "$HOSTNAME" == "mbp.local" ]]; then
 BREWFILE="Brewfile.work"
+else
+BREWFILE="Brewfile"
 fi
 
+echo "Using Brewfile: $BREWFILE"
 brew bundle --no-upgrade --file={{ joinPath .chezmoi.sourceDir "$BREWFILE" | quote }} || true
 {{ end -}}
