@@ -214,6 +214,7 @@ brew "rlwrap"
 brew "robot-framework"
 brew "rtmpdump"
 brew "ruff"
+brew "rust"
 brew "rustup"
 brew "scc"
 brew "sccache"
@@ -270,7 +271,6 @@ brew "taiki-e/tap/cargo-llvm-cov"
 cask "1password-cli"
 cask "alt-tab"
 cask "bartender"
-cask "beardedspice"
 cask "beyond-compare"
 cask "bitwarden"
 cask "block-goose"
@@ -333,6 +333,7 @@ cask "wispr-flow"
 cask "yt-music"
 cask "zed"
 cask "zoom"
+mas "1Password for Safari", id: 1569813296
 mas "Magnet", id: 441258766
 mas "rcmd", id: 1596283165
 mas "Speedtest", id: 1153157709
