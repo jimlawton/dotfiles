@@ -2,6 +2,7 @@
 # - Directory section with blue background and light text
 # - Git branch section with yellow background and dark text
 # - Git status and metrics in the same yellow background
+# - AWS env indicator
 # - Clean separator between sections
 # - Final space for command input
 # - Disabled line break for compactness
