@@ -83,7 +83,7 @@ disabled = true
 description = "Show AWS profile when dev is active"
 when = 'test -n "$AWS_PROFILE" && test "$AWS_PROFILE" = "$DEV_AWS_PROFILE"'
 command = 'echo "$AWS_PROFILE"'
-format = '[ $output ]($style) '
+format = "[ \uf270  $output ]($style) "
 style = "bold fg:#000000 bg:#FFA500"
 shell = ["bash", "--noprofile", "--norc"]
 
@@ -91,6 +91,6 @@ shell = ["bash", "--noprofile", "--norc"]
 description = "Show AWS profile when prod is active"
 when = 'test -n "$AWS_PROFILE" && test "$AWS_PROFILE" = "$PROD_AWS_PROFILE"'
 command = 'echo "$AWS_PROFILE"'
-format = '[ $output ]($style) '
+format = "[ \uf270  $output ]($style) "
 style = "bold fg:#000000 bg:red"
 shell = ["bash", "--noprofile", "--norc"]
