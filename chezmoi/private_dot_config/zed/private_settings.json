@@ -7,6 +7,20 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    },
+    "gemini": {
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
   "autosave": "on_window_change",
   "icon_theme": {
     "mode": "system",
@@ -37,14 +51,17 @@
     "dock": "left",
   },
   "agent": {
+    "sidebar_side": "right",
     "dock": "right",
     "tool_permissions": {
       "default": "allow",
     },
     "default_profile": "write",
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5",
+      "model": "claude-sonnet-4.6",
     },
     "model_parameters": [],
     "play_sound_when_agent_done": "never",
