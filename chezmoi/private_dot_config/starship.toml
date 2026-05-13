@@ -92,5 +92,5 @@ description = "Show AWS profile when prod is active"
 when = 'test -n "$AWS_PROFILE" && test "$AWS_PROFILE" = "$PROD_AWS_PROFILE"'
 command = 'echo "$AWS_PROFILE"'
 format = '[ $output ]($style) '
-style = "bold fg:bright-white bg:red"
+style = "bold fg:#000000 bg:red"
 shell = ["bash", "--noprofile", "--norc"]
