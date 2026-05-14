@@ -7,11 +7,6 @@
 	busythisweek = shortlog --since=one.week.ago
 	c = commit
 	cam = commit -a -m
-	cc-cache = "config --global credential.helper 'cache --timeout=300'"
-	cc-helperlin = "config --global credential.helper '/pathto/git-credential-gnome-key'"
-	cc-helperosx = "config --global credential.helper 'osxkeychain'"
-	cc-helperwin = "config --global credential.helper 'wincred'"
-	cc-off = "config --unset --global credential.helper"
 	ccfq = "!sh -c 'git add $1 && git commit -m\"Placeholder\"' -"
 	ci = commit
 	cl = log --stat -C -2
