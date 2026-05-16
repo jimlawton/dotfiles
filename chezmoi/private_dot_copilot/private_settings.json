@@ -11,4 +11,5 @@
     "showUsername": true,
     "showCustom": true
   }
+  "includeCoAuthoredBy": false
 }
