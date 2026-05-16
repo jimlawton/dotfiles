@@ -1,5 +1,9 @@
 {
   "autoDreamEnabled" : true,
+  "attribution": {
+      "commit": "",
+      "pr": ""
+  },
   "effortLevel" : "medium",
   "enabledPlugins" : {
     "code-review@claude-plugins-official" : true,
@@ -108,3 +112,4 @@
   },
   "theme" : "dark"
 }
+
