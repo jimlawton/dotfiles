@@ -34,6 +34,13 @@
   "git_panel": {
     "dock": "left",
   },
+  "lsp": {
+    "golangci-lint": {
+      "initialization_options": {
+        "command": ["golangci-lint", "run", "--output.json.path", "stdout", "--show-stats=false", "--output.text.path="],
+      },
+    },
+  },
   "telemetry": {
     "diagnostics": true,
     "metrics": false,
@@ -86,6 +93,9 @@
     },
   },
   "languages": {
+    "Go": {
+      "language_servers": ["gopls", "golangci-lint"],
+    },
     "JSON": {
       "format_on_save": "off",
     },
