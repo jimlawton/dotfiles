@@ -121,7 +121,6 @@ brew "pkgconf"
 brew "gobject-introspection"
 brew "goenv"
 brew "golangci-lint"
-brew "gopls"
 brew "grafana"
 brew "netpbm"
 brew "gts"
@@ -342,6 +341,7 @@ mas "rcmd", id: 1596283165
 mas "Speedtest", id: 1153157709
 mas "The Unarchiver", id: 425424353
 go "github.com/segmentio/golines"
+go "golang.org/x/tools/gopls"
 go "github.com/maxmind/mm-geofeed-verifier"
 go "github.com/lasorda/protobuf-language-server"
 go "google.golang.org/protobuf/cmd/protoc-gen-go"
