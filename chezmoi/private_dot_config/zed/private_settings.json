@@ -22,6 +22,7 @@
     },
   },
   "autosave": "on_window_change",
+  "code_lens": "on",
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
