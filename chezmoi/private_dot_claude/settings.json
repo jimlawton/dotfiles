@@ -1,115 +1,121 @@
 {
-  "autoDreamEnabled" : true,
+  "env": {
+    "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "1"
+  },
   "attribution": {
-      "commit": "",
-      "pr": ""
+    "commit": "",
+    "pr": ""
   },
-  "effortLevel" : "medium",
-  "enabledPlugins" : {
-    "code-review@claude-plugins-official" : true,
-    "git-spice@jimlawton-plugins" : true,
-    "gopls-lsp@claude-plugins-official" : true,
-    "rust-analyzer-lsp@claude-plugins-official" : true,
-    "skill-creator@claude-plugins-official" : true,
-    "superpowers@claude-plugins-official" : true
-  },
-  "env" : {
-    "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION" : "1"
-  },
-  "extraKnownMarketplaces" : {
-    "jimlawton-plugins" : {
-      "source" : {
-        "repo" : "jimlawton\/ai",
-        "source" : "github"
-      }
-    }
-  },
-  "hooks" : {
-    "Notification" : [
+  "hooks": {
+    "Notification": [
       {
-        "hooks" : [
+        "hooks": [
           {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Waiting # notchbar-agents-claude-hook",
-            "type" : "command"
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Waiting # notchbar-agents-claude-hook"
           }
         ]
       }
     ],
-    "PostToolUse" : [
+    "PostToolUse": [
       {
-        "hooks" : [
+        "hooks": [
           {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Auto # notchbar-agents-claude-hook",
-            "type" : "command"
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Auto # notchbar-agents-claude-hook"
           }
         ]
       }
     ],
-    "PostToolUseFailure" : [
+    "PostToolUseFailure": [
       {
-        "hooks" : [
+        "hooks": [
           {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' ToolFail # notchbar-agents-claude-hook",
-            "type" : "command"
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' ToolFail # notchbar-agents-claude-hook"
           }
         ]
       }
     ],
-    "PreToolUse" : [
+    "PreToolUse": [
       {
-        "hooks" : [
+        "hooks": [
           {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Working # notchbar-agents-claude-hook",
-            "type" : "command"
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Working # notchbar-agents-claude-hook"
           }
         ]
       }
     ],
-    "SessionEnd" : [
+    "SessionEnd": [
       {
-        "hooks" : [
+        "hooks": [
           {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Ended # notchbar-agents-claude-hook",
-            "type" : "command"
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Ended # notchbar-agents-claude-hook"
           }
         ]
       }
     ],
-    "SessionStart" : [
+    "SessionStart": [
       {
-        "hooks" : [
+        "hooks": [
           {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Idle # notchbar-agents-claude-hook",
-            "type" : "command"
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Idle # notchbar-agents-claude-hook"
           }
         ]
       }
     ],
-    "Stop" : [
+    "Stop": [
       {
-        "hooks" : [
+        "hooks": [
           {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Idle # notchbar-agents-claude-hook",
-            "type" : "command"
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Idle # notchbar-agents-claude-hook"
           }
         ]
       }
     ],
-    "UserPromptSubmit" : [
+    "UserPromptSubmit": [
       {
-        "hooks" : [
+        "hooks": [
           {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Working # notchbar-agents-claude-hook",
-            "type" : "command"
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Working # notchbar-agents-claude-hook"
           }
         ]
       }
     ]
   },
-  "statusLine" : {
-    "command" : "sh \/Users\/james.lawton\/.claude\/statusline-command.sh",
-    "type" : "command"
+  "statusLine": {
+    "type": "command",
+    "command": "sh /Users/james.lawton/.claude/statusline-command.sh"
   },
-  "theme" : "dark"
+  "enabledPlugins": {
+    "code-review@claude-plugins-official": true,
+    "git-spice@jimlawton-plugins": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "warp@claude-code-warp": true
+  },
+  "extraKnownMarketplaces": {
+    "jimlawton-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "jimlawton/ai"
+      }
+    },
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    }
+  },
+  "effortLevel": "medium",
+  "autoDreamEnabled": true,
+  "theme": "dark"
 }
-
