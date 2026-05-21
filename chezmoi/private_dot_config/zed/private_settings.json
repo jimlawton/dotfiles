@@ -144,7 +144,7 @@
     "light": "One Light",
     "dark": "One Dark",
   },
-  "terminal": { "font_family": "Meslo LG S for Powerline" },
+  "terminal": { "font_family": "MesloLGS NF" },
   "ui_font_size": 16,
   "use_system_window_tabs": true,
 }
