@@ -144,7 +144,7 @@
     "light": "One Light",
     "dark": "One Dark",
   },
-  "terminal": { "font_family": "MesloLGS NF" },
+  "terminal": { "font_family": "MesloLGS Nerd Font" },
   "ui_font_size": 16,
   "use_system_window_tabs": true,
 }
