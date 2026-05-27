@@ -52,6 +52,8 @@ disabled = false
 format = '[ $symbol$branch(:$remote_branch) ]($style)'
 symbol = "  "
 style = "fg:#1C3A5E bg:#4dff4d"
+truncation_length = 20
+truncation_symbol = "…"
 
 [git_status]
 disabled = false
