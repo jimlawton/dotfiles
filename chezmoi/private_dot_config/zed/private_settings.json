@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": true
+  },
+  "title_bar": {
+    "show_menus": true,
+    "show_branch_status_icon": true
+  },
   "agent_servers": {
     "opencode": {
       "type": "registry",
