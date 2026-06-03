@@ -5,3 +5,4 @@ fish_add_path --global --path /opt/homebrew/opt/gnu-sed/libexec/gnubin
 fish_add_path --global --path /opt/homebrew/opt/make/libexec/gnubin
 fish_add_path --global --path /opt/homebrew/opt/llvm/bin
 fish_add_path --global --path /Applications/Obsidian.app/Contents/MacOS
+fish_add_path --global --path $HOME/.local/bin
