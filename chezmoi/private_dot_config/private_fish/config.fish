@@ -1,8 +1,10 @@
 /opt/homebrew/bin/brew shellenv | source
 
 fish_add_path $HOME/bin
-fish_add_path $HOME/.local/bin
 fish_add_path $CARGO_HOME/bin
+
+# Prepend after brew shellenv so it takes priority over Homebrew
+set -gx PATH $HOME/.local/bin $PATH
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
