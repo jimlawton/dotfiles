@@ -8,6 +8,12 @@ default_model = ''
 default_backup_agent = ''
 default_backup_model = ''
 job_timeout_minutes = 30
+# Default reasoning level for reviews: fast, standard, medium, thorough, or maximum.
+review_reasoning = ''
+# Default reasoning level for refine: fast, standard, medium, thorough, or maximum.
+refine_reasoning = ''
+# Default reasoning level for fix: fast, standard, medium, thorough, or maximum.
+fix_reasoning = ''
 review_agent = ''
 review_agent_fast = ''
 review_agent_standard = ''
@@ -68,6 +74,16 @@ design_model_standard = ''
 design_model_medium = ''
 design_model_thorough = ''
 design_model_maximum = ''
+# Agent for the design-review routing classifier. Must implement SchemaAgent capability.
+classify_agent = ''
+# Model for the classifier agent. Empty = agent default.
+classify_model = ''
+# Reasoning level for the classifier: fast, standard, medium, thorough, or maximum.
+classify_reasoning = ''
+# Fallback classifier agent on quota exhaustion / failure.
+classify_backup_agent = ''
+# Fallback classifier model.
+classify_backup_model = ''
 review_backup_agent = ''
 refine_backup_agent = ''
 fix_backup_agent = ''
@@ -78,6 +94,13 @@ refine_backup_model = ''
 fix_backup_model = ''
 security_backup_model = ''
 design_backup_model = ''
+# Minimum severity for reviews: critical, high, medium, or low. Empty disables filtering.
+review_min_severity = ''
+# Minimum severity for refine: critical, high, medium, or low. Empty disables filtering.
+refine_min_severity = ''
+# Minimum severity for fix: critical, high, medium, or low. Empty disables filtering.
+fix_min_severity = ''
+disable_codex_sandbox = false
 codex_cmd = 'codex'
 claude_code_cmd = 'claude'
 cursor_cmd = 'agent'
@@ -97,11 +120,13 @@ hide_addressed_by_default = false
 auto_filter_repo = false
 # Automatically filter the TUI queue to the current branch.
 auto_filter_branch = false
+# Show auto-design-review classifier rows (and skipped design rows) in the TUI queue. Off by default to reduce noise.
+show_classify_jobs = false
 # Enable mouse support in the TUI.
 mouse_enabled = true
 tab_width = 4
 # Queue columns to hide in the TUI.
-hidden_columns = ['requested_model', 'requested_provider']
+hidden_columns = ['cost', 'requested_model', 'requested_provider']
 # Show column borders in the TUI queue.
 column_borders = true
 # Custom queue column order in the TUI.
@@ -137,6 +162,35 @@ batch_timeout = ''
 github_app_id = 0
 github_app_private_key = ''
 github_app_installation_id = 0
+
+[agent]
+[agent.codex]
+# Disable Codex skill instructions for review jobs.
+disable_review_skills = true
+# Pass --ignore-user-config to Codex for review jobs.
+ignore_review_user_config = true
+
+[auto_design_review]
+# Enable the automatic design review decider. Off by default.
+enabled = false
+# Diffs below this line count skip design review automatically.
+min_diff_lines = 0
+# Diffs at or above this line count trigger a design review automatically.
+large_diff_lines = 0
+# Commits touching at least this many files trigger a design review automatically.
+large_file_count = 0
+# Doublestar globs; any changed file matching triggers a design review.
+trigger_paths = []
+# Doublestar globs; a commit whose changed files all match is skipped.
+skip_paths = []
+# Regexes over the commit subject; a match triggers a design review.
+trigger_message_patterns = []
+# Regexes over the commit subject; a match skips the design review.
+skip_message_patterns = []
+# Per-classify-job timeout.
+classifier_timeout_seconds = 0
+# Cap on classifier prompt size in bytes.
+classifier_max_prompt_size = 0
 
 [advanced]
 # Enable the advanced Tasks workflow in the TUI.
