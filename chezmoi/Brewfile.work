@@ -343,7 +343,6 @@ cask "warp"
 cask "darrylmorley/whatcable/whatcable"
 cask "wireshark-app"
 cask "wispr-flow"
-cask "yt-music"
 cask "zed"
 cask "zoom"
 mas "1Password for Safari", id: 1569813296

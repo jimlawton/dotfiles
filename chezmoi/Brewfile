@@ -338,7 +338,6 @@ cask "darrylmorley/whatcable/whatcable"
 cask "whatsapp"
 cask "wireshark-app"
 cask "wispr-flow"
-cask "yt-music"
 cask "zed"
 cask "zoom"
 mas "Bitwarden", id: 1352778147
