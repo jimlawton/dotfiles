@@ -14,3 +14,5 @@ thumbs.db
 .gradle
 .gradle_targets
 .gradletasknamecache
+
+**/.claude/settings.local.json
