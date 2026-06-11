@@ -2,6 +2,14 @@
   "env": {
     "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "1"
   },
+  "permissions": {
+    "allow": [
+      "Bash(roborev comment:*)",
+      "Bash(roborev fix:*)",
+      "Bash(roborev close:*)",
+      "Bash(roborev show:*)"
+    ]
+  },
   "attribution": {
     "commit": "",
     "pr": ""
