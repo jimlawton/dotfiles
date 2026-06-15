@@ -534,7 +534,7 @@ cask "block-goose"
 # Web browser focusing on privacy
 cask "brave-browser"
 # macOS terminal built on libghostty with Liquid Glass UI
-cask "yuuichieguchi/calyx/calyx"
+cask "yuuichieguchi/calyx/calyx", trusted: true
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
