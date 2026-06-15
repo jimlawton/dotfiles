@@ -125,5 +125,6 @@
   },
   "effortLevel": "medium",
   "autoDreamEnabled": true,
-  "theme": "dark"
+  "theme": "dark",
+  "model": "opus[1m]"
 }
