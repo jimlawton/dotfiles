@@ -1,20 +1,14 @@
-tap "abhinav/tap"
-tap "ankitpokhrel/jira-cli"
+tap "abhinav/tap", trusted: true
 tap "anomalyco/tap"
-tap "atlassian/acli"
-tap "bufbuild/buf"
-tap "charmbracelet/tap"
+tap "atlassian/acli", trusted: true
 tap "common-fate/granted"
 tap "coretech/terrafile"
 tap "darrylmorley/whatcable"
 tap "dutchcoders/cloudman"
-tap "github/gh"
-tap "grafana/grafana"
-tap "julien-cpsn/atac"
-tap "manaflow-ai/cmux"
+tap "github/gh", trusted: true
 tap "messense/macos-cross-toolchains"
 tap "oven-sh/bun"
-tap "romkatv/powerlevel10k"
+tap "romkatv/powerlevel10k", trusted: true
 tap "steipete/tap"
 tap "taiki-e/tap"
 tap "terraform-linters/tap"
@@ -526,7 +520,7 @@ cask "block-goose"
 # Web browser focusing on privacy
 cask "brave-browser"
 # macOS terminal built on libghostty with Liquid Glass UI
-cask "yuuichieguchi/calyx/calyx"
+cask "yuuichieguchi/calyx/calyx", trusted: true
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
@@ -579,6 +573,8 @@ cask "git-credential-manager"
 cask "abhinav/tap/git-spice"
 # Web browser
 cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
 # Desktop automation application
 cask "hammerspoon"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -608,7 +604,7 @@ cask "pocket-casts"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Menu bar dashboard for GitHub repository health
-cask "steipete/tap/repobar"
+cask "repobar"
 # Team communication and collaboration software
 cask "slack"
 # Pluggable Terraform linter
@@ -622,7 +618,7 @@ cask "vnc-viewer"
 # Rust-based terminal
 cask "warp"
 # Menu bar app for USB-C cable diagnostics
-cask "darrylmorley/whatcable/whatcable"
+cask "whatcable"
 # Network protocol analyzer
 cask "wireshark-app"
 # Voice-to-text dictation with AI-powered auto-editing
