@@ -1,18 +1,10 @@
-tap "abhinav/tap", trusted: true
-tap "anomalyco/tap"
-tap "atlassian/acli", trusted: true
-tap "common-fate/granted"
-tap "coretech/terrafile"
-tap "darrylmorley/whatcable"
+tap "atlassian/acli"
 tap "dutchcoders/cloudman"
-tap "github/gh", trusted: true
+tap "grafana/grafana"
 tap "messense/macos-cross-toolchains"
 tap "oven-sh/bun"
-tap "romkatv/powerlevel10k", trusted: true
-tap "steipete/tap"
 tap "taiki-e/tap"
 tap "terraform-linters/tap"
-tap "yuuichieguchi/calyx"
 # Any-to-PostScript filter
 brew "a2ps"
 # CLI tool for working with Architecture Decision Records
@@ -181,6 +173,8 @@ brew "git-extras"
 brew "git-filter-repo"
 # Simple and efficient way to access statistics in git
 brew "git-quick-stats"
+# Manage stacked Git branches
+brew "git-spice"
 # Git blame for file trees
 brew "git-who"
 # Audit git repos for secrets
@@ -225,6 +219,8 @@ brew "goenv"
 brew "golangci-lint"
 # Gorgeous metric visualizations and dashboards for timeseries databases
 brew "grafana"
+# Easiest way to access your cloud
+brew "granted"
 # Image manipulation
 brew "netpbm"
 # GNU triangulated surface library
@@ -331,6 +327,10 @@ brew "nushell"
 brew "ocrad"
 # Okta federated identity for AWS CLI
 brew "okta-aws-cli"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Open client for Cisco AnyConnect VPN
 brew "openconnect"
 # Development kit for the Java programming language
@@ -401,8 +401,6 @@ brew "rbw"
 brew "rclone"
 # Repository tool for Android development
 brew "repo"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
 # Open source test framework for acceptance testing
@@ -501,6 +499,20 @@ brew "zlib"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Software to interact with Atlassian Cloud from the terminal
+brew "atlassian/acli/acli", trusted: true
+# Terminal user interface for managing Amazon EC2 instances
+brew "dutchcoders/cloudman/cloudman", trusted: true
+# Vendor-agnostic OpenTelemetry Collector distribution with programmable pipelines
+brew "grafana/grafana/alloy", trusted: true
+# Grafana Cloud CLI
+brew "grafana/grafana/gcx", trusted: true
+# x86_64-unknown-linux-gnu Toolchain
+brew "messense/macos-cross-toolchains/x86_64-unknown-linux-gnu", trusted: true
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun", trusted: true
+# Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
+brew "taiki-e/tap/cargo-llvm-cov", trusted: true
 # Command-line interface for 1Password
 cask "1password-cli"
 # Enable Windows-like alt-tab
@@ -519,8 +531,6 @@ cask "bitwarden"
 cask "block-goose"
 # Web browser focusing on privacy
 cask "brave-browser"
-# macOS terminal built on libghostty with Liquid Glass UI
-cask "yuuichieguchi/calyx/calyx", trusted: true
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
@@ -569,12 +579,8 @@ cask "fork"
 cask "ghostty"
 # Cross-platform Git credential storage for multiple hosting providers
 cask "git-credential-manager"
-# A tool for stacking Git branches.
-cask "abhinav/tap/git-spice"
 # Web browser
 cask "google-chrome"
-# Client for the Google Drive storage service
-cask "google-drive"
 # Desktop automation application
 cask "hammerspoon"
 # Terminal emulator as alternative to Apple's Terminal app
