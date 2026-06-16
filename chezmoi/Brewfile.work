@@ -2,6 +2,7 @@ tap "atlassian/acli"
 tap "dutchcoders/cloudman"
 tap "grafana/grafana"
 tap "messense/macos-cross-toolchains"
+tap "modem-dev/tap"
 tap "oven-sh/bun"
 tap "taiki-e/tap"
 tap "terraform-linters/tap"
@@ -289,6 +290,8 @@ brew "libressl"
 brew "libusb-compat"
 # Next-gen compiler infrastructure
 brew "llvm"
+# Control external displays (USB-C/DisplayPort Alt Mode) using DDC/CI on M1 Macs
+brew "m1ddc"
 # Utility for directing compilation
 brew "make"
 # CLI for Node.js style checker and lint tool for Markdown files
@@ -509,6 +512,8 @@ brew "grafana/grafana/alloy", trusted: true
 brew "grafana/grafana/gcx", trusted: true
 # x86_64-unknown-linux-gnu Toolchain
 brew "messense/macos-cross-toolchains/x86_64-unknown-linux-gnu", trusted: true
+# Desktop-inspired terminal diff viewer for agent-authored changesets
+brew "modem-dev/tap/hunk", trusted: true
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun", trusted: true
 # Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
