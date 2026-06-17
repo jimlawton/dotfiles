@@ -2,6 +2,10 @@
   "env": {
     "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "1"
   },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "Bash(roborev comment:*)",
@@ -10,10 +14,7 @@
       "Bash(roborev show:*)"
     ]
   },
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -107,7 +108,8 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
-    "warp@claude-code-warp": true
+    "warp@claude-code-warp": true,
+    "rust-skills@rust-skills": true
   },
   "extraKnownMarketplaces": {
     "jimlawton-plugins": {
@@ -121,10 +123,15 @@
         "source": "github",
         "repo": "warpdotdev/claude-code-warp"
       }
+    },
+    "rust-skills": {
+      "source": {
+        "source": "github",
+        "repo": "actionbook/rust-skills"
+      }
     }
   },
   "effortLevel": "medium",
   "autoDreamEnabled": true,
-  "theme": "dark",
-  "model": "opus[1m]"
+  "theme": "dark"
 }
