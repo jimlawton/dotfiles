@@ -99,7 +99,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "sh /Users/james.lawton/.claude/statusline-command.sh"
+    "command": "sh /Users/jim/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "code-review@claude-plugins-official": true,
