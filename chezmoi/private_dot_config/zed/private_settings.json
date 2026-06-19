@@ -15,6 +15,12 @@
     "show_branch_status_icon": true
   },
   "agent_servers": {
+    "grok-build": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    },
     "opencode": {
       "type": "registry",
     },
@@ -22,6 +28,9 @@
       "type": "registry",
     },
     "github-copilot-cli": {
+      "default_config_options": {
+        "allow_all": "on"
+      },
       "type": "registry",
     },
     "claude-acp": {
