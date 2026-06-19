@@ -33,7 +33,7 @@
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
-    "dark": "Zed (Default)",
+    "dark": "Colored Zed Icons Theme Dark",
   },
   "cli_default_open_behavior": "existing_window",
   "collaboration_panel": {
