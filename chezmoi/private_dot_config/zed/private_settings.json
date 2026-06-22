@@ -8,18 +8,18 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "tab_bar": {
-    "show_pinned_tabs_in_separate_row": true
+    "show_pinned_tabs_in_separate_row": true,
   },
   "title_bar": {
     "show_menus": true,
-    "show_branch_status_icon": true
+    "show_branch_status_icon": true,
   },
   "agent_servers": {
     "grok-build": {
-      "type": "registry"
+      "type": "registry",
     },
     "codex-acp": {
-      "type": "registry"
+      "type": "registry",
     },
     "opencode": {
       "type": "registry",
@@ -29,7 +29,8 @@
     },
     "github-copilot-cli": {
       "default_config_options": {
-        "allow_all": "on"
+        "model": "claude-opus-4.8",
+        "allow_all": "on",
       },
       "type": "registry",
     },
