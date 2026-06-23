@@ -28,5 +28,14 @@
     "bindings": {
       // "j k": "vim::SwitchToNormalMode"
     }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-enter": [
+        "terminal::SendText",
+        "\u001b\r"
+      ]
+    }
   }
 ]
