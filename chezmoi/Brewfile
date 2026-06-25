@@ -125,8 +125,6 @@ brew "diffutils"
 brew "dive"
 # Pack, ship and run any application as a lightweight container
 brew "docker", link: false
-# Bash, Zsh and Fish completion for Docker
-brew "docker-completion"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Platform keystore credential helper for Docker
