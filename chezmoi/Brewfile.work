@@ -282,6 +282,8 @@ brew "leptonica"
 brew "lftp"
 # Convert pixel information into colored ASCII art
 brew "libcaca"
+# Postgres C API library
+brew "libpq"
 # Version of the SSL/TLS protocol forked from OpenSSL
 brew "libressl"
 # Library for USB device access
@@ -314,6 +316,8 @@ brew "mmark"
 brew "mole"
 # UNIX movie player
 brew "mplayer"
+# Run multiple commands in parallel
+brew "mprocs"
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
 # Experimental optional static type checker for Python
@@ -666,6 +670,7 @@ cargo "cargo2junit"
 cargo "cross"
 cargo "gitoxide"
 cargo "oxdraw"
+cargo "rustfilt"
 cargo "sccache"
 uv "claudechic"
 npm "prettier"
