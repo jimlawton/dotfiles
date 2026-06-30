@@ -348,6 +348,8 @@ brew "ossp-uuid"
 brew "osv-scanner"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
+# PAM module for reattaching to the user's GUI (Aqua) session
+brew "pam-reattach"
 # Shell command parallelization utility
 brew "parallel"
 # Small collection of programs that operate on patch files
