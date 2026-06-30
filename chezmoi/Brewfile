@@ -1,9 +1,4 @@
-tap "abhinav/tap", trusted: true
-tap "anomalyco/tap"
 tap "atlassian/acli", trusted: true
-tap "common-fate/granted"
-tap "coretech/terrafile"
-tap "darrylmorley/whatcable"
 tap "dutchcoders/cloudman"
 tap "github/gh", trusted: true
 tap "messense/macos-cross-toolchains"
@@ -177,6 +172,8 @@ brew "git-extras"
 brew "git-filter-repo"
 # Simple and efficient way to access statistics in git
 brew "git-quick-stats"
+# Manage stacked Git branches
+brew "git-spice"
 # Git blame for file trees
 brew "git-who"
 # Audit git repos for secrets
@@ -221,6 +218,8 @@ brew "goenv"
 brew "golangci-lint"
 # Language server for the Go language
 brew "gopls"
+# Easiest way to access your cloud
+brew "granted"
 # Image manipulation
 brew "netpbm"
 # GNU triangulated surface library
@@ -291,6 +290,8 @@ brew "libressl"
 brew "libusb-compat"
 # Next-gen compiler infrastructure
 brew "llvm"
+# Control external displays (USB-C/DisplayPort Alt Mode) using DDC/CI on M1 Macs
+brew "m1ddc"
 # Utility for directing compilation
 brew "make"
 # CLI for Node.js style checker and lint tool for Markdown files
@@ -329,6 +330,10 @@ brew "nushell"
 brew "ocrad"
 # Okta federated identity for AWS CLI
 brew "okta-aws-cli"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Open client for Cisco AnyConnect VPN
 brew "openconnect"
 # Development kit for the Java programming language
@@ -341,6 +346,8 @@ brew "ossp-uuid"
 brew "osv-scanner"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
+# PAM module for reattaching to the user's GUI (Aqua) session
+brew "pam-reattach"
 # Shell command parallelization utility
 brew "parallel"
 # Small collection of programs that operate on patch files
@@ -401,8 +408,6 @@ brew "rbw"
 brew "rclone"
 # Repository tool for Android development
 brew "repo"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
 # Open source test framework for acceptance testing
