@@ -133,5 +133,6 @@
   },
   "effortLevel": "medium",
   "autoDreamEnabled": true,
-  "theme": "dark"
+  "theme": "dark",
+  "tui": "fullscreen"
 }
