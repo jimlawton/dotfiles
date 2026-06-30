@@ -47,7 +47,7 @@ keybind = global:cmd+grave_accent=toggle_quick_terminal
 quick-terminal-position = bottom
 
 # Shell integration for SSH:
-shell-integration-features = ssh-terminfo,ssh-env
+shell-integration-features = ssh-terminfo,ssh-env,sudo
 
 # Enable auto copy of selected text
 copy-on-select = clipboard
