@@ -600,6 +600,8 @@ cask "jupyter-notebook-ql"
 cask "karabiner-elements"
 # Clipboard manager
 cask "maccy"
+# Markdown editor
+cask "markedit"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
 # Intercept, modify, replay, save HTTP/S traffic
