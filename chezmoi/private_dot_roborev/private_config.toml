@@ -112,9 +112,9 @@ hooks = []
 exclude_patterns = []
 default_max_prompt_size = 0
 # Automatically close reviews that pass with no findings.
-auto_close_passing_reviews = false
+auto_close_passing_reviews = true
 # Hide closed reviews by default in the TUI queue.
-hide_closed_by_default = true
+hide_closed_by_default = false
 hide_addressed_by_default = false
 # Automatically filter the TUI queue to the current repo.
 auto_filter_repo = false
