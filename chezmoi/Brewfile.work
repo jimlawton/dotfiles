@@ -202,8 +202,6 @@ brew "libksba"
 brew "libusb"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
@@ -216,6 +214,8 @@ brew "gobject-introspection"
 brew "goenv"
 # Fast linters runner for Go
 brew "golangci-lint"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Gorgeous metric visualizations and dashboards for timeseries databases
 brew "grafana"
 # Easiest way to access your cloud
