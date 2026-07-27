@@ -57,18 +57,6 @@ brew "bash-completion"
 brew "libssh2"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Software library to render fonts
-brew "freetype"
-# Vector graphics library with cross-device output support
-brew "cairo"
-# Library and utilities for processing GIFs
-brew "giflib"
-# OpenType text shaping engine
-brew "harfbuzz"
-# TIFF library and utilities
-brew "libtiff"
-# Google's own build tool
-brew "bazel"
 # Secure and free password manager for all of your devices
 brew "bitwarden-cli"
 # Python code formatter
@@ -81,6 +69,10 @@ brew "brew-cask-completion"
 brew "buf"
 # Freely available high-quality data compressor
 brew "bzip2"
+# Software library to render fonts
+brew "freetype"
+# Vector graphics library with cross-device output support
+brew "cairo"
 # Binary installation for rust projects
 brew "cargo-binstall"
 # GNU compiler collection
@@ -105,6 +97,8 @@ brew "d2"
 brew "dateutils"
 # Debugger for the Go programming language
 brew "delve"
+# TIFF library and utilities
+brew "libtiff"
 # Reference implementation for the Development Containers specification
 brew "devcontainer"
 # Diff that understands syntax
@@ -147,6 +141,8 @@ brew "fish"
 brew "fribidi"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Library and utilities for processing GIFs
+brew "giflib"
 # Interact with Google Gemini AI models from the command-line
 brew "gemini-cli"
 # Utility for downloading TV and radio programmes from BBC iPlayer
@@ -217,6 +213,8 @@ brew "granted"
 brew "netpbm"
 # GNU triangulated surface library
 brew "gts"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
@@ -331,8 +329,6 @@ brew "opencode"
 brew "openconnect"
 # Development kit for the Java programming language
 brew "openjdk"
-# Development kit for the Java programming language
-brew "openjdk@11"
 # ISO-C API and CLI for generating UUIDs
 brew "ossp-uuid"
 # Vulnerability scanner which uses the OSV database
