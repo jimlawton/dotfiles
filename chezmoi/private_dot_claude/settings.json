@@ -1,207 +1,207 @@
 {
-  "attribution" : {
-    "commit" : "",
-    "pr" : ""
+  "env": {
+    "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "1"
   },
-  "autoDreamEnabled" : true,
-  "effortLevel" : "medium",
-  "enabledPlugins" : {
-    "code-review@claude-plugins-official" : true,
-    "git-spice@jimlawton-plugins" : true,
-    "gopls-lsp@claude-plugins-official" : true,
-    "rust-analyzer-lsp@claude-plugins-official" : true,
-    "rust-skills@rust-skills" : true,
-    "skill-creator@claude-plugins-official" : true,
-    "superpowers@claude-plugins-official" : true,
-    "warp@claude-code-warp" : true
+  "attribution": {
+    "commit": "",
+    "pr": ""
   },
-  "env" : {
-    "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION" : "1"
-  },
-  "extraKnownMarketplaces" : {
-    "claude-code-warp" : {
-      "source" : {
-        "repo" : "warpdotdev\/claude-code-warp",
-        "source" : "github"
-      }
-    },
-    "jimlawton-plugins" : {
-      "source" : {
-        "repo" : "jimlawton\/ai",
-        "source" : "github"
-      }
-    },
-    "rust-skills" : {
-      "source" : {
-        "repo" : "actionbook\/rust-skills",
-        "source" : "github"
-      }
-    }
-  },
-  "hooks" : {
-    "Notification" : [
-      {
-        "hooks" : [
-          {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Waiting # notchbar-agents-claude-hook",
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "PostToolUse" : [
-      {
-        "hooks" : [
-          {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Auto # notchbar-agents-claude-hook",
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "PostToolUseFailure" : [
-      {
-        "hooks" : [
-          {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' ToolFail # notchbar-agents-claude-hook",
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "PreToolUse" : [
-      {
-        "hooks" : [
-          {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Working # notchbar-agents-claude-hook",
-            "type" : "command"
-          }
-        ]
-      }
-    ],
-    "SessionEnd" : [
-      {
-        "hooks" : [
-          {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Ended # notchbar-agents-claude-hook",
-            "type" : "command"
-          }
-        ]
-      },
-      {
-        "hooks" : [
-          {
-            "command" : "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
-            "type" : "command"
-          }
-        ],
-        "matcher" : ".*"
-      }
-    ],
-    "SessionStart" : [
-      {
-        "hooks" : [
-          {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Idle # notchbar-agents-claude-hook",
-            "type" : "command"
-          }
-        ]
-      },
-      {
-        "hooks" : [
-          {
-            "command" : "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
-            "type" : "command"
-          }
-        ],
-        "matcher" : ".*"
-      }
-    ],
-    "Stop" : [
-      {
-        "hooks" : [
-          {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Idle # notchbar-agents-claude-hook",
-            "type" : "command"
-          }
-        ]
-      },
-      {
-        "hooks" : [
-          {
-            "command" : "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
-            "type" : "command"
-          }
-        ],
-        "matcher" : ".*"
-      }
-    ],
-    "SubagentStart" : [
-      {
-        "hooks" : [
-          {
-            "command" : "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
-            "type" : "command"
-          }
-        ],
-        "matcher" : ".*"
-      }
-    ],
-    "SubagentStop" : [
-      {
-        "hooks" : [
-          {
-            "command" : "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
-            "type" : "command"
-          }
-        ],
-        "matcher" : ".*"
-      }
-    ],
-    "TaskCompleted" : [
-      {
-        "hooks" : [
-          {
-            "command" : "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
-            "type" : "command"
-          }
-        ],
-        "matcher" : ".*"
-      }
-    ],
-    "UserPromptSubmit" : [
-      {
-        "hooks" : [
-          {
-            "command" : "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Working # notchbar-agents-claude-hook",
-            "type" : "command"
-          }
-        ]
-      },
-      {
-        "hooks" : [
-          {
-            "command" : "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
-            "type" : "command"
-          }
-        ],
-        "matcher" : ".*"
-      }
-    ]
-  },
-  "model" : "opus[1m]",
-  "permissions" : {
-    "allow" : [
+  "permissions": {
+    "allow": [
       "Bash(roborev comment:*)",
       "Bash(roborev fix:*)",
       "Bash(roborev close:*)",
       "Bash(roborev show:*)"
     ]
   },
-  "statusLine" : {
-    "command" : "sh \/Users\/jim\/.claude\/statusline-command.sh",
-    "type" : "command"
+  "model": "opus[1m]",
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Waiting # notchbar-agents-claude-hook"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Auto # notchbar-agents-claude-hook"
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' ToolFail # notchbar-agents-claude-hook"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Working # notchbar-agents-claude-hook"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Ended # notchbar-agents-claude-hook"
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Idle # notchbar-agents-claude-hook"
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Idle # notchbar-agents-claude-hook"
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook"
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Working # notchbar-agents-claude-hook"
+          }
+        ]
+      },
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook"
+          }
+        ]
+      }
+    ]
   },
-  "theme" : "dark",
-  "tui" : "fullscreen"
+  "statusLine": {
+    "type": "command",
+    "command": "sh /Users/jim/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "code-review@claude-plugins-official": true,
+    "git-spice@jimlawton-plugins": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "rust-skills@rust-skills": true,
+    "skill-creator@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "warp@claude-code-warp": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-warp": {
+      "source": {
+        "source": "github",
+        "repo": "warpdotdev/claude-code-warp"
+      }
+    },
+    "jimlawton-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "jimlawton/ai"
+      }
+    },
+    "rust-skills": {
+      "source": {
+        "source": "github",
+        "repo": "actionbook/rust-skills"
+      }
+    }
+  },
+  "effortLevel": "medium",
+  "tui": "fullscreen",
+  "autoDreamEnabled": true,
+  "theme": "dark"
 }
