@@ -346,6 +346,8 @@ brew "openjdk"
 brew "ossp-uuid"
 # Vulnerability scanner which uses the OSV database
 brew "osv-scanner"
+# High-performance formatting tool for JavaScript and TypeScript
+brew "oxfmt"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # PAM module for reattaching to the user's GUI (Aqua) session
