@@ -77,7 +77,6 @@
     "dock": "right",
   },
   "agent": {
-    "terminal_init_command": "claude",
     "sidebar_side": "left",
     "dock": "left",
     "tool_permissions": {
