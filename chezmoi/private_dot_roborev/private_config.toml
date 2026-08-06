@@ -2,12 +2,18 @@ server_addr = '127.0.0.1:7373'
 max_workers = 4
 review_context_count = 3
 reuse_review_session_lookback = 0
+# Extra review instructions added to prompts globally.
+review_guidelines = ''
 # Default agent when no workflow-specific agent is set.
 default_agent = 'codex'
 default_model = ''
 default_backup_agent = ''
 default_backup_model = ''
 job_timeout_minutes = 30
+# Post-commit hook request timeout in seconds. 0 or negative uses the platform default (3 on most systems, 30 on Windows where git subprocess spawns are slow).
+hook_timeout_seconds = 0
+# Maximum daemon-wide cooldown after an agent quota error, as a Go duration such as 30m.
+agent_quota_cooldown = '30m0s'
 # Default reasoning level for reviews: fast, standard, medium, thorough, or maximum.
 review_reasoning = ''
 # Default reasoning level for refine: fast, standard, medium, thorough, or maximum.
@@ -100,14 +106,18 @@ review_min_severity = ''
 refine_min_severity = ''
 # Minimum severity for fix: critical, high, medium, or low. Empty disables filtering.
 fix_min_severity = ''
+# Author for roborev-owned fix commits, formatted as Name <email>.
+fix_commit_author = ''
+# Co-authored-by trailers for roborev-owned fix commits, each formatted as Name <email>.
+fix_commit_co_authored_by = []
 disable_codex_sandbox = false
 codex_cmd = 'codex'
 claude_code_cmd = 'claude'
+gemini_cmd = ''
 cursor_cmd = 'agent'
 pi_cmd = 'pi'
 opencode_cmd = 'opencode'
 anthropic_api_key = ''
-hooks = []
 # Filenames or glob patterns to exclude from review diffs globally.
 exclude_patterns = []
 default_max_prompt_size = 0
@@ -130,7 +140,7 @@ hidden_columns = ['cost', 'requested_model', 'requested_provider']
 # Show column borders in the TUI queue.
 column_borders = true
 # Custom queue column order in the TUI.
-column_order = []
+column_order = ['branch', 'ref', 'repo', 'agent', 'queued', 'elapsed', 'status', 'pf', 'closed', 'cost', 'session_id', 'requested_model', 'requested_provider']
 # Custom Tasks column order in the TUI.
 task_column_order = []
 column_config_version = 1
@@ -157,11 +167,27 @@ synthesis_agent = ''
 synthesis_backup_agent = ''
 synthesis_model = ''
 min_severity = ''
+panel = ''
+discord_webhook_url = ''
 upsert_comments = false
+include_costs = false
 batch_timeout = ''
 github_app_id = 0
 github_app_private_key = ''
 github_app_installation_id = 0
+
+[ci.quiet_hours]
+start = ''
+end = ''
+timezone = ''
+throttle_interval = ''
+bypass_users = []
+
+[cost]
+# HTTP usage endpoint template for cost/token lookup. Use {session_id}; set empty to use agentsview CLI lookup only.
+endpoint = ''
+# Timeout for HTTP usage endpoint lookups.
+timeout = '10s'
 
 [agent]
 [agent.codex]
@@ -170,9 +196,15 @@ disable_review_skills = true
 # Pass --ignore-user-config to Codex for review jobs.
 ignore_review_user_config = true
 
+[agent.pi]
+# Pi extension source for classifier JSON schema output.
+jsonschemaextension = 'npm:@nqbao/pi-json-schema@0.1.1'
+
 [auto_design_review]
 # Enable the automatic design review decider. Off by default.
 enabled = false
+# Enable the automatic design review decider only for post-commit hook reviews. Off by default.
+hook_enabled = false
 # Diffs below this line count skip design review automatically.
 min_diff_lines = 0
 # Diffs at or above this line count trigger a design review automatically.
@@ -191,6 +223,36 @@ skip_message_patterns = []
 classifier_timeout_seconds = 0
 # Cap on classifier prompt size in bytes.
 classifier_max_prompt_size = 0
+
+[review]
+default_panel = ''
+hook_review_panel = ''
+
+[agent_hook]
+# Stop hook threshold; 0 disables Stop-based prompting.
+turn_threshold = 5
+# PostToolUse commit threshold; 0 disables commit-based prompting.
+commit_threshold = 0
+# Open failed roborev review threshold; 0 disables review-based prompting.
+failed_review_threshold = 4
+# Instruction emitted when the agent hook decides a review/fix pass is needed.
+instruction = 'Invoke the $roborev-fix skill now.'
+
+[droid_hook]
+# Stop hook threshold; 0 disables Stop-based prompting.
+turn_threshold = 5
+# PostToolUse commit threshold; 0 disables commit-based prompting.
+commit_threshold = 0
+# Open failed roborev review threshold; 0 disables review-based prompting.
+failed_review_threshold = 4
+# Instruction emitted when the Droid hook decides a review/fix pass is needed.
+instruction = 'Run the roborev-fix skill to address the unresolved roborev findings, then continue.'
+
+[kata_context]
+# Kata task context in review prompts: off | current | open (default off).
+mode = 'off'
+# Max bytes of kata context to include (default 50000).
+max_chars = 50000
 
 [advanced]
 # Enable the advanced Tasks workflow in the TUI.
