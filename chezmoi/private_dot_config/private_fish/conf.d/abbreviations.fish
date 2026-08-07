@@ -43,3 +43,6 @@ abbr --add ll 'eza -lhT --git'
 # gs abbreviation for git-spice
 abbr --add gs 'git-spice'
 
+# roborev abbreviations
+abbrev --add rr-branch-review 'roborev review --branch --agent codex --reasoning xhigh'
+
