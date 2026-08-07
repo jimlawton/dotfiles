@@ -44,5 +44,5 @@ abbr --add ll 'eza -lhT --git'
 abbr --add gs 'git-spice'
 
 # roborev abbreviations
-abbrev --add rr-branch-review 'roborev review --branch --agent codex --reasoning xhigh'
+abbr --add rr-branch-review 'roborev review --branch --agent codex --reasoning xhigh'
 
