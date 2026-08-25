@@ -2,6 +2,7 @@
 
 fish_add_path $HOME/bin
 fish_add_path $CARGO_HOME/bin
+fish_add_path --prepend --global /opt/homebrew/opt/rustup/bin
 
 # Prepend after brew shellenv so it takes priority over Homebrew
 set -gx PATH $HOME/.local/bin $PATH
