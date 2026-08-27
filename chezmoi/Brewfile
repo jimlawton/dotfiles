@@ -97,6 +97,8 @@ brew "d2"
 brew "dateutils"
 # Debugger for the Go programming language
 brew "delve"
+# Library and utilities for processing GIFs
+brew "giflib"
 # TIFF library and utilities
 brew "libtiff"
 # Reference implementation for the Development Containers specification
@@ -141,8 +143,6 @@ brew "fish"
 brew "fribidi"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Library and utilities for processing GIFs
-brew "giflib"
 # Interact with Google Gemini AI models from the command-line
 brew "gemini-cli"
 # Utility for downloading TV and radio programmes from BBC iPlayer
@@ -191,8 +191,6 @@ brew "libksba"
 brew "libusb"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
@@ -461,6 +459,8 @@ brew "todo-txt"
 brew "tokei"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Vi 'workalike' with many additional features
@@ -589,6 +589,8 @@ cask "nordvpn"
 cask "notunes"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Audiobook manager for Audible users
+cask "openaudible"
 # AI coding agent desktop client
 cask "opencode-desktop"
 # Podcast platform
