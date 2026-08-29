@@ -418,8 +418,6 @@ brew "robot-framework"
 brew "rtmpdump"
 # Extremely fast Python linter, written in Rust
 brew "ruff"
-# Safe, concurrent, practical language
-brew "rust"
 # Rust toolchain installer
 brew "rustup"
 # Fast and accurate code counter with complexity and COCOMO estimates
