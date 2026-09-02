@@ -50,6 +50,8 @@ brew "aws-cdk"
 brew "aws-shell"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Microsoft Azure CLI 2.0
+brew "azure-cli"
 # Background rust code check
 brew "bacon"
 # Terminal bandwidth utilization tool
@@ -214,8 +216,6 @@ brew "gobject-introspection"
 brew "goenv"
 # Fast linters runner for Go
 brew "golangci-lint"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # Gorgeous metric visualizations and dashboards for timeseries databases
 brew "grafana"
 # Easiest way to access your cloud
@@ -474,6 +474,8 @@ brew "todo-txt"
 brew "tokei"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Vi 'workalike' with many additional features
