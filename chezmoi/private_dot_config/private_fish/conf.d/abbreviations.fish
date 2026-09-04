@@ -46,3 +46,8 @@ abbr --add gs 'git-spice'
 # roborev abbreviations
 abbr --add rr-branch-review 'roborev review --branch --agent codex --reasoning xhigh'
 
+# bastion abbrevs
+abbr --add bnightly 'aws ssm start-session $BASTION_INFO_NIGHTLY $BASTION_SSM_OPTS'
+abbr --add bstaging 'aws ssm start-session $BASTION_INFO_STAGING $BASTION_SSM_OPTS'
+abbr --add bprodeu  'aws ssm start-session $BASTION_INFO_PROD_EU $BASTION_SSM_OPTS'
+
