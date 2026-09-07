@@ -110,6 +110,7 @@
     "blame": {
       "show_avatar": true,
     },
+    "worktree_directory": "../worktrees"
   },
   "languages": {
     "Go": {
