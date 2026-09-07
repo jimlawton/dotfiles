@@ -413,3 +413,16 @@ worktree-path = "{{ repo_path }}/.worktrees/{{ branch | sanitize }}"
 # ## Hooks
 #
 # See `wt hook` (https://worktrunk.dev/hook/) for hook types, execution order, template variables, and examples. User hooks apply to all projects; project hooks (https://worktrunk.dev/config/#project-configuration) apply only to that repository.
+
+# Automatically sync untracked config files (.env, etc.) before initializing
+[pre-start]
+copy-ignored = "wt step copy-ignored"
+
+# Automation that triggers once the worktree is ready
+[post-start]
+# Open the specific worktree inside Zed instantly
+zed = "zed ."
+
+# Tell the native Fork desktop app to target the new worktree
+fork = "open -a Fork ."
+
