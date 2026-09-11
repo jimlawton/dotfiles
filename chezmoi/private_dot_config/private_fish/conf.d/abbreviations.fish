@@ -52,3 +52,6 @@ abbr --add bstaging 'aws ssm start-session $BASTION_INFO_STAGING $BASTION_SSM_OP
 abbr --add bprodeu  'aws ssm start-session $BASTION_INFO_PROD_EU $BASTION_SSM_OPTS'
 abbr --add bprodus  'aws ssm start-session $BASTION_INFO_PROD_US $BASTION_SSM_OPTS'
 
+# unset an env var
+abbr --add unset 'set --erase'
+
