@@ -84,7 +84,7 @@ disabled = true
 
 [custom.aws_dev]
 description = "Show AWS profile when dev is active"
-when = 'test -n "$AWS_PROFILE" && test "$AWS_PROFILE" = "$DEV_AWS_PROFILE"'
+when = 'test -n "$AWS_PROFILE" && test "$AWS_PROFILE" = "$DEV_POWER_AWS_PROFILE"'
 command = 'echo "$AWS_PROFILE"'
 format = "[ \uf270  $output ]($style) "
 style = "bold fg:#000000 bg:#FFA500"
@@ -92,8 +92,25 @@ shell = ["bash", "--noprofile", "--norc"]
 
 [custom.aws_prod]
 description = "Show AWS profile when prod is active"
-when = 'test -n "$AWS_PROFILE" && test "$AWS_PROFILE" = "$PROD_AWS_PROFILE"'
+when = 'test -n "$AWS_PROFILE" && test "$AWS_PROFILE" = "$PROD_POWER_AWS_PROFILE"'
 command = 'echo "$AWS_PROFILE"'
 format = "[ \uf270  $output ]($style) "
 style = "bold fg:#000000 bg:red"
 shell = ["bash", "--noprofile", "--norc"]
+
+[custom.aws_sandbox_admin]
+description = "Show AWS profile when sandbox admin is active"
+when = 'test -n "$AWS_PROFILE" && test "$AWS_PROFILE" = "$SANDBOX_ADMIN_AWS_PROFILE"'
+command = 'echo "$AWS_PROFILE"'
+format = "[ \uf270  $output ]($style) "
+style = "bold fg:#000000 bg:#FFA500"
+shell = ["bash", "--noprofile", "--norc"]
+
+[custom.aws_sandbox_power]
+description = "Show AWS profile when sandbox power is active"
+when = 'test -n "$AWS_PROFILE" && test "$AWS_PROFILE" = "$SANDBOX_POWER_AWS_PROFILE"'
+command = 'echo "$AWS_PROFILE"'
+format = "[ \uf270  $output ]($style) "
+style = "bold fg:#000000 bg:red"
+shell = ["bash", "--noprofile", "--norc"]
+
