@@ -5,8 +5,6 @@
 [safe]
 	directory = "*"
 
-[push]
-	default = current
 {{ else if eq .chezmoi.os "linux" -}}
 [credential]
 	helper = cache --timeout=300
@@ -130,8 +128,7 @@
     branch = false
 
 [push]
-	# default = simple
-    default = matching
+	default = simple
 
 [rebase]
 	stat = true
