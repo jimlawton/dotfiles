@@ -119,7 +119,7 @@ brew "diffutils"
 # Tool for exploring each layer in a docker image
 brew "dive"
 # Pack, ship and run any application as a lightweight container
-brew "docker", link: false
+brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Platform keystore credential helper for Docker
@@ -622,6 +622,8 @@ cask "obsidian"
 cask "opencode-desktop"
 # Podcast platform
 cask "pocket-casts"
+# Remote desktop application focusing on security
+cask "realvnc-connect-viewer"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Menu bar dashboard for GitHub repository health
@@ -634,8 +636,6 @@ cask "terraform-linters/tap/tflint", trusted: true
 cask "utm"
 # Multimedia player
 cask "vlc"
-# Remote desktop application focusing on security
-cask "vnc-viewer"
 # Rust-based terminal
 cask "warp"
 # Menu bar app for USB-C cable diagnostics
