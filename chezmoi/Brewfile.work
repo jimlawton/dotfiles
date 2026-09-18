@@ -555,7 +555,7 @@ cask "codex"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 # App to build and share containerised applications and microservices
-cask "docker-desktop"
+cask "docker-desktop", args: { skip_cask_deps: true }
 # Utility to show apps badges from the dock in the menu bar
 cask "doll"
 # Online diagram software
