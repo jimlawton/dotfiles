@@ -118,8 +118,6 @@ brew "difftastic"
 brew "diffutils"
 # Tool for exploring each layer in a docker image
 brew "dive"
-# Pack, ship and run any application as a lightweight container
-brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Platform keystore credential helper for Docker
