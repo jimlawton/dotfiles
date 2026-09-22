@@ -160,6 +160,58 @@ acli jira workitem create --editor
 
 **Don't create bash loops with 10 individual create commands when `create-bulk` or `--from-json` exists.**
 
+## Parent / Hierarchy
+
+**`acli` can only set a parent at creation time. It cannot re-parent an existing work item.** (Verified against acli 1.3.36-stable.)
+
+```bash
+# ✅ Works - set parent when creating
+acli jira workitem create --summary "Sub-task" --project TEAM --type Task --parent "TEAM-100"
+
+# ❌ Does NOT work - `edit` has no --parent flag
+acli jira workitem edit --key TEAM-123 --parent "TEAM-100"
+# ✗ Error: unknown flag: --parent
+
+# ❌ Does NOT work - there is no `update` subcommand (the verb is `edit`)
+acli jira workitem update TEAM-123 --parent "TEAM-100"
+# ✗ Error: unknown flag: --parent
+```
+
+`acli jira workitem edit --generate-json` confirms it: the editable fields are
+`assignee`, `description`, `issues`, `labelsToAdd`, `labelsToRemove`, `summary`,
+`type`. There is no `parent` key, so `--from-json` is not a way around this.
+
+**`acli jira workitem link` is NOT hierarchy.** It creates issue links, whose
+types are Blocks, Cloners, Duplicate, Polaris work item link, Problem/Incident,
+Relates. Parent/child is a field, not a link type.
+
+### Re-parenting an existing item
+
+`acli` has no generic REST passthrough (`acli jira` exposes only auth, board,
+dashboard, field, filter, project, sprint, workitem), so use the API directly:
+
+```bash
+# Set parent
+curl -u "$JIRA_EMAIL:$JIRA_API_TOKEN" -X PUT \
+  -H "Content-Type: application/json" \
+  "https://<site>.atlassian.net/rest/api/3/issue/TEAM-123" \
+  -d '{"fields":{"parent":{"key":"TEAM-100"}}}'
+
+# Clear parent
+curl -u "$JIRA_EMAIL:$JIRA_API_TOKEN" -X PUT \
+  -H "Content-Type: application/json" \
+  "https://<site>.atlassian.net/rest/api/3/issue/TEAM-123" \
+  -d '{"fields":{"parent":null}}'
+```
+
+A success is HTTP 204 with an empty body. Add `-w '%{http_code}'` to see it.
+
+**Caveats:**
+- The new parent must be a valid type in the project's hierarchy (e.g. Story
+  under Epic), and in the same project — otherwise Jira returns 400.
+- Team-managed vs company-managed projects differ in what re-parenting they
+  allow; a 400 here is usually a hierarchy rule, not a bad request shape.
+
 ## Common JQL Patterns
 
 ```bash
@@ -190,6 +242,9 @@ acli jira workitem create --editor
 | Bash loops for creation | Inefficient, built-in features exist | Use `create-bulk`, `--from-json` |
 | One-by-one edits | Slow for bulk operations | Use `--jql` or `--filter` with edit/transition |
 | Making up commands | Wastes time | Run `acli <product> <entity> --help` to verify |
+| `acli jira workitem update` | No such subcommand; it silently prints help | The verb is `edit` |
+| Positional issue key | acli takes no positional key | Use `--key KEY-1` |
+| `edit --parent` | `edit` cannot re-parent; only `create` takes `--parent` | Use the REST API (see Parent / Hierarchy) |
 
 ## Red Flags - STOP and Check Skill
 
@@ -203,6 +258,9 @@ These indicate you're about to make a mistake:
 - Making up command names without checking --help
 - "The old syntax probably still works"
 - "They're probably already authenticated"
+- Reaching for `acli jira workitem update` (there is no `update`)
+- Passing an issue key positionally instead of via `--key`
+- Trying to re-parent an existing item with `edit --parent`
 - "A bash loop is more flexible than built-in commands"
 
 **All of these mean: Stop, re-read this skill, use correct syntax.**
