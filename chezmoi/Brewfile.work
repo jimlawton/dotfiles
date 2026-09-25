@@ -1,6 +1,8 @@
 tap "atlassian/acli"
 tap "dutchcoders/cloudman"
+tap "fluxcd/tap"
 tap "grafana/grafana"
+tap "illegalstudio/tap"
 tap "messense/macos-cross-toolchains"
 tap "modem-dev/tap"
 tap "oven-sh/bun"
@@ -514,6 +516,8 @@ brew "zsh"
 brew "atlassian/acli/acli", trusted: true
 # Terminal user interface for managing Amazon EC2 instances
 brew "dutchcoders/cloudman/cloudman", trusted: true
+# Flux CLI
+brew "fluxcd/tap/flux", trusted: true
 # Vendor-agnostic OpenTelemetry Collector distribution with programmable pipelines
 brew "grafana/grafana/alloy", trusted: true
 # Grafana Cloud CLI
@@ -602,6 +606,8 @@ cask "iterm2"
 cask "jupyter-notebook-ql"
 # Keyboard customiser
 cask "karabiner-elements"
+# Desktop app for monitoring coding agent sessions (includes the CLI)
+cask "illegalstudio/tap/lazyagent", trusted: true
 # Clipboard manager
 cask "maccy"
 # Markdown editor
