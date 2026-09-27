@@ -192,6 +192,29 @@ The description may need nothing at all: it says what changed, and a review
 fix usually does not change that. Where it does, edit it, and say in the
 detail comment what moved.
 
+## When it is approved: the sweep label
+
+Only where CI sweeps on a label. Today that is nroc-platform, whose
+`sweep.yml` sweeps a pull request only while it carries `sweep`; elsewhere
+skip this section.
+
+Add the label once the PR is approved and its last fix is pushed, not when
+it is opened. Each push while the label is on sweeps again, so labelling at
+creation re-sweeps every fix-up and gives back most of what the label saves.
+The local `just mutation-sweep --changed origin/<base>` before every push is
+still the gate; the labelled run is CI confirming it.
+
+```bash
+gh pr edit <n> --add-label sweep
+```
+
+In a stack, label every layer: each PR sweeps only its own diff against the
+branch below. Then wait for `mutation-sweep` to go green on each before
+saying the stack is ready to merge. A red one is worked like any other
+finding: fix, commit, settle roborev, push. That push sweeps again on its own.
+Unlabelled, the check passes with "not swept in CI", which is not the same
+as swept: do not read it as green.
+
 ## Then the ticket
 
 Append a delivery note to the subtask: what shipped and in which PR,
@@ -211,3 +234,4 @@ Read a Jira description with `--json` and edit the ADF tree. Never read with
 | "gh stack submit is fewer commands" | It opens the PR empty. |
 | "It says conflicting, I should rebase again" | Check ancestry first; GitHub lags. |
 | "The ticket can wait until the PR merges" | It is the record of decisions, and it is written while they are fresh. |
+| "I will add the sweep label now so it is done" | Every later push re-sweeps. Label it once it is approved. |
