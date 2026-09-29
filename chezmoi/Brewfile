@@ -8,7 +8,7 @@ brew "adr-tools"
 # Simple, modern, secure file encryption
 brew "age"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
+brew "openssl@3", link: true
 # Library for command-line editing
 brew "readline"
 # General-purpose data compression with high compression ratio
@@ -301,6 +301,8 @@ brew "microsocks"
 brew "minicom"
 # Powerful markdown processor in Go geared towards the IETF
 brew "mmark"
+# Remote CLI tool for Mattermost server
+brew "mmctl"
 # Deep clean and optimize your Mac
 brew "mole"
 # UNIX movie player
@@ -417,6 +419,8 @@ brew "semgrep"
 brew "shellcheck"
 # Personal key value store
 brew "skate"
+# Export Slack data without admin privileges
+brew "slackdump"
 # Prettier way to inspect network connections
 brew "snitch"
 # SOcket CAT: netcat on steroids
@@ -642,6 +646,7 @@ mas "Yubico Authenticator", id: 1497506650
 go "github.com/segmentio/golines"
 go "golang.org/x/tools/gopls"
 go "github.com/maxmind/mm-geofeed-verifier"
+go "github.com/mattermost/mmetl"
 go "github.com/lasorda/protobuf-language-server"
 go "google.golang.org/protobuf/cmd/protoc-gen-go"
 go "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
