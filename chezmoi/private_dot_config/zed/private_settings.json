@@ -163,7 +163,11 @@
     "light": "One Light",
     "dark": "One Dark",
   },
-  "terminal": { "font_family": "MesloLGS Nerd Font" },
+  "terminal": {
+    "copy_on_select": true,
+    "font_family": "MesloLGS Nerd Font",
+    "keep_selection_on_copy": false
+  },
   "ui_font_size": 16,
   "use_system_window_tabs": true,
 }

@@ -198,22 +198,20 @@ Only where CI sweeps on a label. Today that is nroc-platform, whose
 `sweep.yml` sweeps a pull request only while it carries `sweep`; elsewhere
 skip this section.
 
-Add the label once the PR is approved and its last fix is pushed, not when
-it is opened. Each push while the label is on sweeps again, so labelling at
-creation re-sweeps every fix-up and gives back most of what the label saves.
+**Only Jim adds the `sweep` label.** Never add it yourself, not in the create
+call and not after approval. Each labelled run is a full-price CI sweep, and
+he decides which pull requests get one. Once a PR is approved and its last fix is pushed, tell
+him (through the supervisor session, if there is one) that it is ready for
+him to decide on the label, and say whether you recommend it.
+
 The local `just mutation-sweep --changed origin/<base>` before every push is
-still the gate; the labelled run is CI confirming it.
+the gate either way; a labelled run is CI confirming it.
 
-```bash
-gh pr edit <n> --add-label sweep
-```
-
-In a stack, label every layer: each PR sweeps only its own diff against the
-branch below. Then wait for `mutation-sweep` to go green on each before
-saying the stack is ready to merge. A red one is worked like any other
-finding: fix, commit, settle roborev, push. That push sweeps again on its own.
-Unlabelled, the check passes with "not swept in CI", which is not the same
-as swept: do not read it as green.
+If Jim labels a PR, each later push to it sweeps again, and in a stack each
+layer sweeps only its own diff against the branch below. A red sweep is
+worked like any other finding: fix, commit, settle roborev, push. Unlabelled,
+the check passes with "not swept in CI", which is not the same as swept: do
+not read it as green.
 
 ## Then the ticket
 
@@ -234,4 +232,4 @@ Read a Jira description with `--json` and edit the ADF tree. Never read with
 | "gh stack submit is fewer commands" | It opens the PR empty. |
 | "It says conflicting, I should rebase again" | Check ancestry first; GitHub lags. |
 | "The ticket can wait until the PR merges" | It is the record of decisions, and it is written while they are fresh. |
-| "I will add the sweep label now so it is done" | Every later push re-sweeps. Label it once it is approved. |
+| "I will add the sweep label now so it is done" | Only Jim adds it. Tell him it is ready for his decision. |
