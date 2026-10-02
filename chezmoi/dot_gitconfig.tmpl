@@ -10,6 +10,9 @@
 	helper = cache --timeout=300
 {{ end -}}
 
+# Default git identity.
+[include]
+    path = ~/.gitidentity-work
 # Personal/work Git identity.
 [includeIf "gitdir:~/Work/"]
     path = ~/.gitidentity-work
