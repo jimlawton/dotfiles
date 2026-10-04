@@ -104,7 +104,8 @@ one-line amend before merge is cheap. A version nobody questioned is not.
 
 One to three short paragraphs, wrapped at 72 columns, saying what changed and
 the non-obvious constraint — usually something a reader could not get from
-the diff. Ten to thirteen non-blank lines is the observed range.
+the diff. At most ten non-blank lines: the squash commit carries it, and
+commit-msg refuses a longer body.
 
 No headings, no tables, no bullet lists, no "Based on ABCD-1234, which is
 #44" footer. Markdown soft-wraps a paragraph, so wrapping renders identically
