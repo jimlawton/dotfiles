@@ -3,6 +3,7 @@ tap "dutchcoders/cloudman"
 tap "fluxcd/tap"
 tap "grafana/grafana"
 tap "illegalstudio/tap"
+tap "kitlangton/tap"
 tap "messense/macos-cross-toolchains"
 tap "modem-dev/tap"
 tap "oven-sh/bun"
@@ -278,6 +279,8 @@ brew "zeromq"
 brew "jupyterlab"
 # Handy way to save and run project-specific commands
 brew "just"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
 # Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
 # Image processing and image analysis library
@@ -522,6 +525,8 @@ brew "fluxcd/tap/flux", trusted: true
 brew "grafana/grafana/alloy", trusted: true
 # Grafana Cloud CLI
 brew "grafana/grafana/gcx", trusted: true
+# Terminal UI for GitHub pull requests
+brew "kitlangton/tap/ghui", trusted: true
 # x86_64-unknown-linux-gnu Toolchain
 brew "messense/macos-cross-toolchains/x86_64-unknown-linux-gnu", trusted: true
 # Desktop-inspired terminal diff viewer for agent-authored changesets
@@ -602,8 +607,6 @@ cask "google-chrome"
 cask "hammerspoon"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Quick Look plugin for Jupyter notebooks
-cask "jupyter-notebook-ql"
 # Keyboard customiser
 cask "karabiner-elements"
 # Desktop app for monitoring coding agent sessions (includes the CLI)
@@ -656,7 +659,6 @@ cask "zed"
 cask "zen"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "1Password for Safari", id: 1569813296
 mas "Magnet", id: 441258766
 mas "rcmd", id: 1596283165
 mas "Speedtest", id: 1153157709
@@ -664,6 +666,7 @@ mas "The Unarchiver", id: 425424353
 go "github.com/segmentio/golines"
 go "golang.org/x/tools/gopls"
 go "github.com/maxmind/mm-geofeed-verifier"
+go "github.com/NROC-Codemaster/pgformat/go/cmd/pgformat-go"
 go "github.com/lasorda/protobuf-language-server"
 go "google.golang.org/protobuf/cmd/protoc-gen-go"
 go "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
@@ -684,6 +687,7 @@ cargo "cargo2junit"
 cargo "cross"
 cargo "gitoxide"
 cargo "oxdraw"
+cargo "pgformat", source: "https://github.com/NROC-Codemaster/pgformat.git"
 cargo "rustfilt"
 cargo "sccache"
 uv "claudechic"
