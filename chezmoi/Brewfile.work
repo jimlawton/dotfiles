@@ -161,8 +161,6 @@ brew "fish"
 brew "fribidi"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
 # Utility for downloading TV and radio programmes from BBC iPlayer
 brew "get_iplayer"
 # GitHub command-line tool
