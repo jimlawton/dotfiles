@@ -7,6 +7,7 @@ tap "kitlangton/tap"
 tap "messense/macos-cross-toolchains"
 tap "modem-dev/tap"
 tap "oven-sh/bun"
+tap "rednafi/rexdiff", "https://github.com/rednafi/rexdiff", trusted: true
 tap "taiki-e/tap"
 tap "terraform-linters/tap"
 # Any-to-PostScript filter
@@ -639,6 +640,8 @@ cask "realvnc-connect-viewer"
 cask "rectangle"
 # Menu bar dashboard for GitHub repository health
 cask "repobar"
+# Review the changes of a coding agent in Rex
+cask "rednafi/rexdiff/rexdiff"
 # Team communication and collaboration software
 cask "slack"
 # Pluggable Terraform linter
