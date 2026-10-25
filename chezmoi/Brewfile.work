@@ -1,5 +1,6 @@
 tap "atlassian/acli"
 tap "dutchcoders/cloudman"
+tap "entwining/tap"
 tap "fluxcd/tap"
 tap "grafana/grafana"
 tap "illegalstudio/tap"
@@ -522,6 +523,8 @@ brew "zsh"
 brew "atlassian/acli/acli", trusted: true
 # Terminal user interface for managing Amazon EC2 instances
 brew "dutchcoders/cloudman/cloudman", trusted: true
+# Restore Rex sessions and agent conversations after the server restarts
+brew "entwining/tap/rexume", trusted: true
 # Flux CLI
 brew "fluxcd/tap/flux", trusted: true
 # Vendor-agnostic OpenTelemetry Collector distribution with programmable pipelines
