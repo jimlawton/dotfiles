@@ -4,7 +4,7 @@
       {
         "hooks": [
           {
-            "command": "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Auto # notchbar-agents-claude-hook",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Auto # notchbar-agents-claude-hook",
             "type": "command"
           }
         ]
@@ -12,7 +12,7 @@
       {
         "hooks": [
           {
-            "command": "\/Users\/jim\/.holdmylid\/hooks\/codex-notify-hook.sh PostToolUse",
+            "command": "/Users/jim/.holdmylid/hooks/codex-notify-hook.sh PostToolUse",
             "type": "command"
           }
         ]
@@ -22,7 +22,7 @@
       {
         "hooks": [
           {
-            "command": "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Working # notchbar-agents-claude-hook",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Working # notchbar-agents-claude-hook",
             "type": "command"
           }
         ]
@@ -30,7 +30,7 @@
       {
         "hooks": [
           {
-            "command": "\/Users\/jim\/.holdmylid\/hooks\/codex-notify-hook.sh PreToolUse",
+            "command": "/Users/jim/.holdmylid/hooks/codex-notify-hook.sh PreToolUse",
             "type": "command"
           }
         ]
@@ -40,7 +40,7 @@
       {
         "hooks": [
           {
-            "command": "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Ended # notchbar-agents-claude-hook",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Ended # notchbar-agents-claude-hook",
             "type": "command"
           }
         ]
@@ -48,7 +48,7 @@
       {
         "hooks": [
           {
-            "command": "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook",
             "type": "command"
           }
         ],
@@ -59,7 +59,7 @@
       {
         "hooks": [
           {
-            "command": "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Idle # notchbar-agents-claude-hook",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Idle # notchbar-agents-claude-hook",
             "type": "command"
           }
         ]
@@ -67,7 +67,7 @@
       {
         "hooks": [
           {
-            "command": "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook",
             "type": "command"
           }
         ],
@@ -76,7 +76,7 @@
       {
         "hooks": [
           {
-            "command": "\/Users\/jim\/.holdmylid\/hooks\/codex-notify-hook.sh SessionStart",
+            "command": "/Users/jim/.holdmylid/hooks/codex-notify-hook.sh SessionStart",
             "type": "command"
           }
         ]
@@ -85,8 +85,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/bin/sh -c 'rex __internal session-start --agent codex 2>/dev/null || true'",
+            "command": "/bin/sh -c 'rex __internal session-start --agent codex --feature-session-naming=false 2>/dev/null || true'",
             "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "command": "rexume report codex",
+            "timeout": 5,
+            "type": "command"
           }
         ]
       }
@@ -95,7 +104,7 @@
       {
         "hooks": [
           {
-            "command": "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Idle # notchbar-agents-claude-hook",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Idle # notchbar-agents-claude-hook",
             "type": "command"
           }
         ]
@@ -103,7 +112,7 @@
       {
         "hooks": [
           {
-            "command": "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook",
             "type": "command"
           }
         ]
@@ -111,7 +120,7 @@
       {
         "hooks": [
           {
-            "command": "\/Users\/jim\/.holdmylid\/hooks\/codex-notify-hook.sh Stop",
+            "command": "/Users/jim/.holdmylid/hooks/codex-notify-hook.sh Stop",
             "type": "command"
           }
         ]
@@ -121,7 +130,7 @@
       {
         "hooks": [
           {
-            "command": "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook",
             "type": "command"
           }
         ],
@@ -132,7 +141,7 @@
       {
         "hooks": [
           {
-            "command": "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook",
             "type": "command"
           }
         ],
@@ -143,7 +152,7 @@
       {
         "hooks": [
           {
-            "command": "'\/Users\/jim\/Library\/Application Support\/Bartender\/NotchBar\/AgentStatus\/hooks\/claude-event-hook.sh' Working # notchbar-agents-claude-hook",
+            "command": "'/Users/jim/Library/Application Support/Bartender/NotchBar/AgentStatus/hooks/claude-event-hook.sh' Working # notchbar-agents-claude-hook",
             "type": "command"
           }
         ]
@@ -151,7 +160,7 @@
       {
         "hooks": [
           {
-            "command": "__claudebar_hook() { PORT=$(cat \"$HOME\/.claude\/claudebar-hook-port\" 2>\/dev\/null || echo 19847); cat | curl -s -X POST \"http:\/\/localhost:${PORT}\/hook\" -H 'Content-Type: application\/json' -d @- > \/dev\/null 2>&1 & }; __claudebar_hook",
+            "command": "__claudebar_hook() { PORT=$(cat \"$HOME/.claude/claudebar-hook-port\" 2>/dev/null || echo 19847); cat | curl -s -X POST \"http://localhost:${PORT}/hook\" -H 'Content-Type: application/json' -d @- > /dev/null 2>&1 & }; __claudebar_hook",
             "type": "command"
           }
         ]
@@ -159,7 +168,7 @@
       {
         "hooks": [
           {
-            "command": "\/Users\/jim\/.holdmylid\/hooks\/codex-notify-hook.sh UserPromptSubmit",
+            "command": "/Users/jim/.holdmylid/hooks/codex-notify-hook.sh UserPromptSubmit",
             "type": "command"
           }
         ]
