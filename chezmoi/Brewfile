@@ -435,8 +435,6 @@ brew "sshuttle"
 brew "starship"
 # State of the art linter for the Go programming language
 brew "staticcheck"
-# Easiest, most secure way to use WireGuard and 2FA
-brew "tailscale"
 # User interface to the TELNET protocol
 brew "telnet"
 # Send macOS User Notifications from the command-line
@@ -633,7 +631,6 @@ mas "Okta Verify", id: 490179405
 mas "Pages", id: 409201541
 mas "rcmd", id: 1596283165
 mas "Speedtest", id: 1153157709
-mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "Yubico Authenticator", id: 1497506650
