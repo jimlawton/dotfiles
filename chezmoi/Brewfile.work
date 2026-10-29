@@ -11,6 +11,7 @@ tap "oven-sh/bun"
 tap "rednafi/rexdiff", "https://github.com/rednafi/rexdiff", trusted: true
 tap "taiki-e/tap"
 tap "terraform-linters/tap"
+tap "vanducng/tap"
 # Any-to-PostScript filter
 brew "a2ps"
 # CLI tool for working with Architecture Decision Records
@@ -459,6 +460,8 @@ brew "sshuttle"
 brew "starship"
 # State of the art linter for the Go programming language
 brew "staticcheck"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
 # User interface to the TELNET protocol
 brew "telnet"
 # Send macOS User Notifications from the command-line
@@ -525,7 +528,7 @@ brew "atlassian/acli/acli", trusted: true
 brew "dutchcoders/cloudman/cloudman", trusted: true
 # Restore Rex sessions and agent conversations after the server restarts
 brew "entwining/tap/rexume", trusted: true
-# Flux CLI
+# CLI for GitOps continuous delivery
 brew "fluxcd/tap/flux", trusted: true
 # Vendor-agnostic OpenTelemetry Collector distribution with programmable pipelines
 brew "grafana/grafana/alloy", trusted: true
@@ -541,6 +544,8 @@ brew "modem-dev/tap/hunk", trusted: true
 brew "oven-sh/bun/bun", trusted: true
 # Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
 brew "taiki-e/tap/cargo-llvm-cov", trusted: true
+# Attention board for coding-agent panes across Rex hosts
+brew "vanducng/tap/rexboard", trusted: true
 # Command-line interface for 1Password
 cask "1password-cli"
 # Enable Windows-like alt-tab
