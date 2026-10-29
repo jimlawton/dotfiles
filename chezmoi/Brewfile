@@ -435,6 +435,8 @@ brew "sshuttle"
 brew "starship"
 # State of the art linter for the Go programming language
 brew "staticcheck"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
 # User interface to the TELNET protocol
 brew "telnet"
 # Send macOS User Notifications from the command-line
@@ -617,7 +619,6 @@ cask "wispr-flow"
 cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "Bitwarden", id: 1352778147
 mas "Elisi", id: 1406239881
 mas "GoPro Player", id: 1460836908
 mas "GoPro Quik", id: 561350520
