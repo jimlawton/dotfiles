@@ -460,8 +460,6 @@ brew "sshuttle"
 brew "starship"
 # State of the art linter for the Go programming language
 brew "staticcheck"
-# Easiest, most secure way to use WireGuard and 2FA
-brew "tailscale"
 # User interface to the TELNET protocol
 brew "telnet"
 # Send macOS User Notifications from the command-line
