@@ -33,10 +33,27 @@ local function last_output(text, with_command)
             end
         end
     end
-    if #prompts < 2 then
+    if #prompts == 0 then
+        error("no command in this pane", 0)
+    end
+    -- Text below the last prompt means its command is still running, for
+    -- example waiting for input, so that command's output runs to the end.
+    local running = false
+    for i = prompts[1] + 1, #lines do
+        if lines[i] ~= "" then
+            running = true
+            break
+        end
+    end
+    local from, to
+    if running then
+        from, to = prompts[1], #lines
+    elseif #prompts == 2 then
+        from, to = prompts[2], prompts[1] - 1
+    else
         error("no previous command in this pane", 0)
     end
-    local first, last = prompts[2] + (with_command and 0 or 1), prompts[1] - 1
+    local first, last = from + (with_command and 0 or 1), to
     while last >= first and lines[last] == "" do
         last = last - 1
     end
