@@ -88,5 +88,5 @@ rex.action{
     title = "Copy Last Command and Its Output",
     run = function(ctx) return copy_last(ctx, true) end,
 }
-rex.bind("shift+cmd+o", "copy_last_output")
-rex.bind("shift+cmd+alt+o", "copy_last_command")
+rex.bind("shift+cmd+o", "copy_last_command")
+rex.bind("shift+cmd+alt+o", "copy_last_output")
