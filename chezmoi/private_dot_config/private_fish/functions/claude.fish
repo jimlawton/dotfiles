@@ -9,6 +9,8 @@ function claude --description 'Claude Code through the NROC nightly proxy'
         localhost \
         127.0.0.1 \
         ::1 \
+        downloads.claude.ai \
+        mcp-proxy.anthropic.com \
         github.com \
         api.github.com \
         codeload.github.com \
