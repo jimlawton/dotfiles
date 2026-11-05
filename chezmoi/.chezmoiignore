@@ -4,3 +4,7 @@ crontab
 Brewfile
 Brewfile.work
 
+# Only the work machine routes Claude Code through the NROC proxy.
+{{- if ne .chezmoi.hostname "mbp" }}
+.config/fish/functions/claude.fish
+{{- end }}
