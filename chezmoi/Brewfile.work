@@ -9,6 +9,7 @@ tap "messense/macos-cross-toolchains"
 tap "modem-dev/tap"
 tap "oven-sh/bun"
 tap "rednafi/rexdiff", "https://github.com/rednafi/rexdiff", trusted: true
+tap "stealth-factory/tap"
 tap "taiki-e/tap"
 tap "terraform-linters/tap"
 tap "vanducng/tap"
@@ -540,6 +541,8 @@ brew "messense/macos-cross-toolchains/x86_64-unknown-linux-gnu", trusted: true
 brew "modem-dev/tap/hunk", trusted: true
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun", trusted: true
+# Terminal widgets showing real operational data
+brew "stealth-factory/tap/opscope", trusted: true
 # Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
 brew "taiki-e/tap/cargo-llvm-cov", trusted: true
 # Attention board for coding-agent panes across Rex hosts
@@ -656,6 +659,8 @@ cask "terraform-linters/tap/tflint", trusted: true
 cask "utm"
 # Multimedia player
 cask "vlc"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Rust-based terminal
 cask "warp"
 # Menu bar app for USB-C cable diagnostics
@@ -682,6 +687,7 @@ go "github.com/NROC-Codemaster/pgformat/go/cmd/pgformat-go"
 go "github.com/lasorda/protobuf-language-server"
 go "google.golang.org/protobuf/cmd/protoc-gen-go"
 go "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
+go "github.com/almonk/rexpad"
 go "github.com/swaggo/swag/cmd/swag"
 cargo "cargo-audit"
 cargo "cargo-deps"
