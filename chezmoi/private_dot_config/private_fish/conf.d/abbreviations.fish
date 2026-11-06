@@ -55,3 +55,5 @@ abbr --add bprodus  'aws ssm start-session $BASTION_INFO_PROD_US $BASTION_SSM_OP
 # unset an env var
 abbr --add unset 'set --erase'
 
+# Run Claude with proxy.
+addr --add claude 'HTTPS_PROXY=$AI_PROXY claude'
