@@ -1,0 +1,218 @@
+{
+  "$schema": "https://raw.githubusercontent.com/agarun/rex-workspaces/main/schema.json",
+  "workspaces": {
+    "v2-platform": {
+      "root": "~/.local/share/chezmoi/chezmoi",
+      "tabs": [
+        {
+          "name": "Window a1afd24a",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell"
+            },
+            {
+              "label": "shell"
+            }
+          ]
+        },
+        {
+          "name": "Window 0fad9645",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell",
+              "cmd": "rexboard"
+            },
+            {
+              "split": "grid",
+              "panes": [
+                {
+                  "label": "shell",
+                  "cwd": "~/Work/git"
+                },
+                {
+                  "label": "shell",
+                  "cwd": "~/Work/git",
+                  "cmd": "roborev tui"
+                },
+                {
+                  "label": "shell",
+                  "cwd": "~/Work/git"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Window 661800a3",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform",
+              "cmd": "claude --resume 7803d2c2-a2ea-42c9-be4f-688577479de6"
+            },
+            {
+              "split": "grid",
+              "panes": [
+                {
+                  "label": "shell",
+                  "cwd": "~/Work/git/nroc-platform",
+                  "cmd": "glow --tui -s /Users/jim/nroc-scripts/glow/nroc.json /Users/jim/nroc-scripts/out/open-items.md"
+                },
+                {
+                  "label": "shell",
+                  "cwd": "~/Work/git/nroc-platform",
+                  "cmd": "glow --tui -s /Users/jim/nroc-scripts/glow/nroc.json /Users/jim/nroc-scripts/out/agent-status.md"
+                },
+                {
+                  "label": "shell",
+                  "cwd": "~/Work/git/nroc-platform",
+                  "cmd": "glow --tui -s /Users/jim/nroc-scripts/glow/nroc.json /Users/jim/nroc-scripts/out/ready-to-run.md"
+                },
+                {
+                  "label": "shell",
+                  "cwd": "~/Work/git/nroc-platform",
+                  "cmd": "glow --tui -s /Users/jim/nroc-scripts/glow/nroc.json /Users/jim/nroc-scripts/out/pr-status.md"
+                },
+                {
+                  "label": "shell",
+                  "cwd": "~/Work/git/nroc-platform",
+                  "cmd": "glow --tui -s /Users/jim/nroc-scripts/glow/nroc.json /Users/jim/nroc-scripts/out/jira-tickets.md"
+                },
+                {
+                  "label": "shell",
+                  "cwd": "~/nroc-scratch/n1-3558"
+                },
+                {
+                  "label": "jim-ops",
+                  "cwd": "~"
+                },
+                {
+                  "label": "git-ops",
+                  "cwd": "~/Work/git/worktrees/nroc-platform/maint-3630"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Window 0d425119",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/Demo",
+              "cmd": "claude --resume 4062bf42-c2e7-4336-8bbf-39b41ba3f3f6"
+            },
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/Demo"
+            }
+          ]
+        },
+        {
+          "name": "Window d83aeae8",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform",
+              "cmd": "claude --resume fab199a3-3c24-453d-8005-a03f69c8b666"
+            },
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform"
+            }
+          ]
+        },
+        {
+          "name": "Window 4588af44",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform",
+              "cmd": "claude --resume 9a77f0ac-8413-4a04-acca-c841ddfa0562"
+            },
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform"
+            }
+          ]
+        },
+        {
+          "name": "Window 38db51c5",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform",
+              "cmd": "claude --resume 3c1323e6-6cdc-47c1-a111-20e9f438dc87"
+            },
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform"
+            }
+          ]
+        },
+        {
+          "name": "Window f50bf368",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform",
+              "cmd": "claude --resume 6917a72a-fc59-4696-b5ec-89a778f36016"
+            },
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/worktrees/NROC_infra/dev-3639/dashboards"
+            }
+          ]
+        },
+        {
+          "name": "Window a769ed9c",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform",
+              "cmd": "claude --resume 9ef437c3-73dc-49d6-9794-01f8fad4d4fd"
+            },
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform"
+            }
+          ]
+        },
+        {
+          "name": "Window 12fc6fc3",
+          "split": "right",
+          "panes": [
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform",
+              "cmd": "claude --resume 07c003cf-bfca-4558-8152-b2680739d5c6"
+            },
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform"
+            }
+          ]
+        },
+        {
+          "name": "Window 791eb57d",
+          "panes": [
+            {
+              "label": "shell",
+              "cwd": "~/Work/git/nroc-platform",
+              "cmd": "claude --resume 872fd4e1-e405-44cb-8ab4-583ee5499a2b"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
