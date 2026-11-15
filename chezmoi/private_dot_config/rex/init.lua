@@ -90,3 +90,7 @@ rex.action{
 }
 rex.bind("shift+cmd+o", "copy_last_command")
 rex.bind("shift+cmd+alt+o", "copy_last_output")
+
+do local r = rex.exec({ [[/opt/homebrew/bin/rexurrect]], "auto-restore" }, { env = { REXURRECT_STATE_DIR = [[/Users/jim/.local/state/rexurrect]], REXURRECT_CONFIG = [[/Users/jim/.config/rexurrect/config.toml]] } }) if r then io.stderr:write(r.stderr) end end
+
+require("rex-workspaces").setup{}
