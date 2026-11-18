@@ -1,3 +1,4 @@
+tap "agarun/tap", trusted: true
 tap "atlassian/acli"
 tap "cemcatik/tap"
 tap "dutchcoders/cloudman"
@@ -5,6 +6,7 @@ tap "entwining/tap"
 tap "fluxcd/tap"
 tap "grafana/grafana"
 tap "illegalstudio/tap"
+tap "kbrdn1/tap"
 tap "kitlangton/tap"
 tap "messense/macos-cross-toolchains"
 tap "modem-dev/tap"
@@ -494,6 +496,8 @@ brew "uv"
 brew "vim"
 # Image processing library
 brew "vips"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
 # Execute commands when watched files change
 brew "watchexec"
 # Internet file retriever
@@ -522,6 +526,8 @@ brew "zlib"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Start, stop and restart project workspaces in Rex
+brew "agarun/tap/rex-workspaces", trusted: true
 # Software to interact with Atlassian Cloud from the terminal
 brew "atlassian/acli/acli", trusted: true
 # Save Rex sessions and recreate them after the Rex server stops
@@ -536,6 +542,8 @@ brew "fluxcd/tap/flux", trusted: true
 brew "grafana/grafana/alloy", trusted: true
 # Grafana Cloud CLI
 brew "grafana/grafana/gcx", trusted: true
+# git worktree manager: TUI + CLI, native libgit2, per-repo bootstrap
+brew "kbrdn1/tap/gwm", trusted: true
 # Terminal UI for GitHub pull requests
 brew "kitlangton/tap/ghui", trusted: true
 # x86_64-unknown-linux-gnu Toolchain
@@ -610,7 +618,7 @@ cask "font-roboto-mono-for-powerline"
 cask "font-sf-mono-for-powerline"
 cask "font-source-code-pro-for-powerline"
 cask "font-ubuntu-mono-derivative-powerline"
-# GIT client
+# Git client
 cask "fork"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
