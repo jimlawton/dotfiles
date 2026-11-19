@@ -513,7 +513,7 @@ brew "zlib"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
-brew "zshe
+brew "zsh"
 #uStart, stop and restart project workspaces in Rex
 brew "agarun/tap/rex-workspaces", trusted: true
 # Save Rex sessions and recreate them after the Rex server stops
