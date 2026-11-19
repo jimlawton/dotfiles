@@ -1,6 +1,6 @@
 # Load ready-to-run blocks by number instead of copying them from glow.
 #   rtr 677          copy block 677 to the clipboard (paste with cmd-v)
-#   677 then alt-r   replace the command line with block 677, unrun,
+#   677 then opt-r   replace the command line with block 677, unrun,
 #                    so it can be read and edited before Enter
 # Install: ln -s ~/nroc-scripts/supervisor/rtr.fish ~/.config/fish/conf.d/
 
@@ -32,3 +32,5 @@ function _rtr_load --description 'Replace the command line with block N'
 end
 
 bind alt-r _rtr_load
+# Option-r on a Mac sends ® unless the terminal maps Option to Meta.
+bind ® _rtr_load
