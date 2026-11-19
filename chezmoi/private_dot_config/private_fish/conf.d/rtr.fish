@@ -34,3 +34,5 @@ end
 bind alt-r _rtr_load
 # Option-r on a Mac sends ® unless the terminal maps Option to Meta.
 bind ® _rtr_load
+# ctrl-g cancels ears a multi-line command block
+bind ctrl-g 'if commandline --paging-mode; commandline -f cancel; else; commandline -r ""; end'
