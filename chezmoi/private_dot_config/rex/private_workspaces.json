@@ -21,8 +21,16 @@
           "split": "right",
           "panes": [
             {
-              "label": "shell",
-              "cmd": "rexboard"
+              "split": "down",
+              "panes": [
+                {
+                  "label": "shell",
+                  "cmd": "rexboard"
+                },
+                {
+                  "label": "shell",
+                }
+              ]
             },
             {
               "split": "grid",
@@ -35,6 +43,11 @@
                   "label": "shell",
                   "cwd": "~/Work/git",
                   "cmd": "roborev tui"
+                },
+                {
+                  "label": "shell",
+                  "cwd": "~/Work/git",
+                  "cmd": "gwm --workspace ~/Work/git"
                 },
                 {
                   "label": "shell",
