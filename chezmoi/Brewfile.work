@@ -18,26 +18,26 @@ tap "terraform-linters/tap"
 tap "vanducng/tap"
 # Any-to-PostScript filter
 brew "a2ps"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@79"
 # CLI tool for working with Architecture Decision Records
 brew "adr-tools"
 # Simple, modern, secure file encryption
 brew "age"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
-# Library for command-line editing
-brew "readline"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# Automate deployment, configuration, and upgrading
-brew "ansible@9"
 # C library implementing the SSH2 protocol
 brew "libssh2"
 # Terminal multiplexer
 brew "tmux"
 # Terminal session manager for AI coding agents
 brew "aoe"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Collection of portable C++ source libraries
 brew "boost"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Library for command-line editing
+brew "readline"
 # Formatter/translator for text files to numerous formats
 brew "asciidoc"
 # Record and share terminal sessions
@@ -66,8 +66,6 @@ brew "aws-cdk"
 brew "aws-shell"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Microsoft Azure CLI 2.0
-brew "azure-cli"
 # Background rust code check
 brew "bacon"
 # Terminal bandwidth utilization tool
@@ -86,8 +84,6 @@ brew "bitwarden-cli"
 brew "black"
 # Open source, extensible AI agent that goes beyond code suggestions
 brew "block-goose-cli"
-# Fish completion for brew-cask
-brew "brew-cask-completion"
 # New way of working with Protocol Buffers
 brew "buf"
 # Freely available high-quality data compressor
@@ -478,8 +474,6 @@ brew "tfenv"
 brew "tfsec"
 # Text interface for Git repositories
 brew "tig"
-# Simplified and community-driven man pages
-brew "tldr"
 # Manage complex tmux sessions easily
 brew "tmuxinator"
 # Minimal, todo.txt-focused editor
@@ -566,6 +560,8 @@ cask "alt-tab"
 cask "antigravity"
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
+# Microsoft Azure CLI 2.0
+cask "azure-cli"
 # Menu bar icon organiser
 cask "bartender"
 # Compare files and folders
