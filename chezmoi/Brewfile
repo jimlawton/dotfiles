@@ -1,14 +1,15 @@
-tap "github/gh", trusted: true
-tap "romkatv/powerlevel10k", trusted: true
+tap "agarun/tap"
 tap "cemcatik/tap"
 tap "entwining/tap"
+tap "github/gh", trusted: true
 tap "illegalstudio/tap"
 tap "kbrdn1/tap"
 tap "kitlangton/tap"
 tap "modem-dev/tap"
 tap "rednafi/rexdiff", "https://github.com/rednafi/rexdiff", trusted: true
+tap "romkatv/powerlevel10k", trusted: true
 tap "stealth-factory/tap"
-tap "terraform-linters/tap"
+tap "taiki-e/tap"
 tap "vanducng/tap"
 # Any-to-PostScript filter
 brew "a2ps"
@@ -16,16 +17,14 @@ brew "a2ps"
 brew "adr-tools"
 # Simple, modern, secure file encryption
 brew "age"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Collection of portable C++ source libraries
+brew "boost"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3", link: true
 # Library for command-line editing
 brew "readline"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# Automate deployment, configuration, and upgrading
-brew "ansible@9"
-# Collection of portable C++ source libraries
-brew "boost"
 # Formatter/translator for text files to numerous formats
 brew "asciidoc"
 # Record and share terminal sessions
@@ -72,8 +71,6 @@ brew "bitwarden-cli"
 brew "black"
 # Open source, extensible AI agent that goes beyond code suggestions
 brew "block-goose-cli"
-# Fish completion for brew-cask
-brew "brew-cask-completion"
 # New way of working with Protocol Buffers
 brew "buf"
 # Freely available high-quality data compressor
@@ -466,8 +463,6 @@ brew "tfenv"
 brew "tfsec"
 # Text interface for Git repositories
 brew "tig"
-# Simplified and community-driven man pages
-brew "tldr"
 # Terminal multiplexer
 brew "tmux"
 # Manage complex tmux sessions easily
@@ -514,7 +509,7 @@ brew "zlib"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
-#uStart, stop and restart project workspaces in Rex
+# Start, stop and restart project workspaces in Rex
 brew "agarun/tap/rex-workspaces", trusted: true
 # Save Rex sessions and recreate them after the Rex server stops
 brew "cemcatik/tap/rexurrect", trusted: true
@@ -594,7 +589,7 @@ cask "font-roboto-mono-for-powerline"
 cask "font-sf-mono-for-powerline"
 cask "font-source-code-pro-for-powerline"
 cask "font-ubuntu-mono-derivative-powerline"
-# GIT client
+# Git client
 cask "fork"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
@@ -616,7 +611,7 @@ cask "illegalstudio/tap/lazyagent", trusted: true
 cask "maccy"
 # Markdown editor
 cask "markedit"
-# Shows the next meeting in the menu bar
+# Meetings in your menu bar
 cask "meetingbar"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
@@ -660,6 +655,7 @@ cask "wispr-flow"
 cask "zed"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "Bitwarden", id: 1352778147
 mas "Elisi", id: 1406239881
 mas "GoPro Player", id: 1460836908
 mas "GoPro Quik", id: 561350520
