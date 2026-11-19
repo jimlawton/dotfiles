@@ -1,6 +1,15 @@
 tap "github/gh", trusted: true
 tap "romkatv/powerlevel10k", trusted: true
-tap "taiki-e/tap"
+tap "cemcatik/tap"
+tap "entwining/tap"
+tap "illegalstudio/tap"
+tap "kbrdn1/tap"
+tap "kitlangton/tap"
+tap "modem-dev/tap"
+tap "rednafi/rexdiff", "https://github.com/rednafi/rexdiff", trusted: true
+tap "stealth-factory/tap"
+tap "terraform-linters/tap"
+tap "vanducng/tap"
 # Any-to-PostScript filter
 brew "a2ps"
 # CLI tool for working with Architecture Decision Records
@@ -89,12 +98,16 @@ brew "cloc"
 brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Tool for interacting with remote images and registries
+brew "crane"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Modern diagram scripting language that turns text to diagrams
 brew "d2"
 # Tools to manipulate dates with a focus on financial data
 brew "dateutils"
+# Process manager for dev and prod
+brew "dekit"
 # Debugger for the Go programming language
 brew "delve"
 # Library and utilities for processing GIFs
@@ -265,6 +278,8 @@ brew "zeromq"
 brew "jupyterlab"
 # Handy way to save and run project-specific commands
 brew "just"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Image processing and image analysis library
 brew "leptonica"
 # Sophisticated file transfer program
@@ -425,6 +440,8 @@ brew "snitch"
 brew "socat"
 # Launcher to analyze a project with SonarQube
 brew "sonar-scanner"
+# Editor of encrypted files
+brew "sops"
 # Tool to create intelligent and beautiful documentation
 brew "sphinx-doc"
 # Add a public key to a remote machine's authorized_keys file
@@ -467,14 +484,16 @@ brew "unbound"
 brew "uv"
 # Vi 'workalike' with many additional features
 brew "vim"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Execute commands when watched files change
+brew "watchexec"
 # Internet file retriever
 brew "wget"
 # Why is this running?
 brew "witr"
 # CLI for Git worktree management, designed for parallel AI agent workflows
 brew "worktrunk"
-# PDF viewer
-brew "xpdf"
 # High-performance, high-quality MPEG-4 video library
 brew "xvid"
 # Yet another elegant Go interpreter
@@ -494,9 +513,25 @@ brew "zlib"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
-brew "zsh"
+brew "zshe
+#uStart, stop and restart project workspaces in Rex
+brew "agarun/tap/rex-workspaces", trusted: true
+# Save Rex sessions and recreate them after the Rex server stops
+brew "cemcatik/tap/rexurrect", trusted: true
+# Reopen agent conversations in restored Rex panes and return worker results
+brew "entwining/tap/rexume", trusted: true
+# git worktree manager: TUI + CLI, native libgit2, per-repo bootstrap
+brew "kbrdn1/tap/gwm", trusted: true
+# Terminal UI for GitHub pull requests
+brew "kitlangton/tap/ghui", trusted: true
+# Desktop-inspired terminal diff viewer for agent-authored changesets
+brew "modem-dev/tap/hunk", trusted: true
+# Terminal widgets showing real operational data
+brew "stealth-factory/tap/opscope", trusted: true
 # Cargo subcommand for LLVM source-based code coverage (-C instrument-coverage)
 brew "taiki-e/tap/cargo-llvm-cov", trusted: true
+# Attention board for coding-agent panes across Rex hosts
+brew "vanducng/tap/rexboard", trusted: true
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # Agent orchestration platform
@@ -575,8 +610,12 @@ cask "handbrake-app"
 cask "iterm2"
 # Keyboard customiser
 cask "karabiner-elements"
+# Desktop app for monitoring coding agent sessions (includes the CLI)
+cask "illegalstudio/tap/lazyagent", trusted: true
 # Clipboard manager
 cask "maccy"
+# Markdown editor
+cask "markedit"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
 # Intercept, modify, replay, save HTTP/S traffic
@@ -599,6 +638,8 @@ cask "pocket-casts"
 cask "rectangle"
 # Menu bar dashboard for GitHub repository health
 cask "repobar"
+# Review the changes of a coding agent in Rex
+cask "rednafi/rexdiff/rexdiff"
 # Team communication and collaboration software
 cask "slack"
 # Open-source BitTorrent client
@@ -607,6 +648,8 @@ cask "transmission"
 cask "utm"
 # Multimedia player
 cask "vlc"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Network protocol analyzer
@@ -641,6 +684,7 @@ go "github.com/mattermost/mmetl"
 go "github.com/lasorda/protobuf-language-server"
 go "google.golang.org/protobuf/cmd/protoc-gen-go"
 go "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
+go "github.com/almonk/rexpad"
 go "github.com/swaggo/swag/cmd/swag"
 cargo "cargo-audit"
 cargo "cargo-deps"
@@ -658,6 +702,7 @@ cargo "cargo2junit"
 cargo "cross"
 cargo "gitoxide"
 cargo "oxdraw"
+cargo "rustfilt"
 cargo "sccache"
 uv "claudechic"
 npm "prettier"
