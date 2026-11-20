@@ -95,9 +95,12 @@ rex.bind("shift+cmd+alt+o", "copy_last_output")
 
 -- require("rex-workspaces").setup{}
 
--- >>> rex-agent-restore >>>
+-- Session restore
+-- 1. Coding agents (Claude Code, Codex, OpenCode, Pi)
 local ok_rar, rar = pcall(require, "rex_agent_restore")
-if ok_rar and type(rar) == "table" then rar.setup({ bin = "/opt/homebrew/bin/rex-agent-restore" }) end
--- <<< rex-agent-restore <<<
+if ok_rar and type(rar) == "table" then
+  rar.setup({ bin = "/opt/homebrew/bin/rex-agent-restore" })
+end
 
+-- 2. Other active TUI programs (roborev, rexboard, gh dash, gwm, etc.)
 require("restore_tuis")
