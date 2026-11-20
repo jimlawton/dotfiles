@@ -91,6 +91,13 @@ rex.action{
 rex.bind("shift+cmd+o", "copy_last_command")
 rex.bind("shift+cmd+alt+o", "copy_last_output")
 
-do local r = rex.exec({ [[/opt/homebrew/bin/rexurrect]], "auto-restore" }, { env = { REXURRECT_STATE_DIR = [[/Users/jim/.local/state/rexurrect]], REXURRECT_CONFIG = [[/Users/jim/.config/rexurrect/config.toml]] } }) if r then io.stderr:write(r.stderr) end end
+-- do local r = rex.exec({ [[/opt/homebrew/bin/rexurrect]], "auto-restore" }, { env = { REXURRECT_STATE_DIR = [[/Users/jim/.local/state/rexurrect]], REXURRECT_CONFIG = [[/Users/jim/.config/rexurrect/config.toml]] } }) if r then io.stderr:write(r.stderr) end end
 
-require("rex-workspaces").setup{}
+-- require("rex-workspaces").setup{}
+
+-- >>> rex-agent-restore >>>
+local ok_rar, rar = pcall(require, "rex_agent_restore")
+if ok_rar and type(rar) == "table" then rar.setup({ bin = "/opt/homebrew/bin/rex-agent-restore" }) end
+-- <<< rex-agent-restore <<<
+
+require("restore_tuis")
