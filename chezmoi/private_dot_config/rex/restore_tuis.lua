@@ -1,19 +1,23 @@
 -- ~/.config/rex/restore_tuis.lua
 local state_dir = (os.getenv("XDG_STATE_HOME") or (os.getenv("HOME") .. "/.local/state")) .. "/rex-active-cmds"
 
-local function write_to_block(block_id, text)
-  -- Try block.method wrapper first, fallback to direct block-scoped call
-  local ok = pcall(rex.call, "block.method", {
+local function normalize_pwd(raw)
+  if not raw then return nil end
+  -- Strip file://hostname prefix if reported via OSC 7
+  local path = raw:gsub("^file://[^/]*", "")
+  -- Decode basic %20 spaces if present
+  path = path:gsub("%%(%x%x)", function(hex)
+    return string.char(tonumber(hex, 16))
+  end)
+  return path
+end
+
+local function write_to_block(session_id, block_id, text)
+  return pcall(rex.call, "com.superlogical.terminal.write", {
+    session_id = session_id,
     block_id = block_id,
-    method = "com.superlogical.terminal.write",
-    params = { data = text },
+    args = { data = text },
   })
-  if not ok then
-    pcall(rex.call, "com.superlogical.terminal.write", {
-      block_id = block_id,
-      data = text,
-    })
-  end
 end
 
 local function restore_active_tuis()
@@ -22,26 +26,41 @@ local function restore_active_tuis()
     return
   end
 
-  local blocks_res = rex.call("session.list_blocks", {})
-  local live_blocks = (blocks_res and blocks_res.blocks) or blocks_res or {}
+  local sessions_res = rex.call("session.list", {})
+  local sessions = (sessions_res and sessions_res.sessions) or sessions_res or {}
 
-  -- Index live blocks by ID and by PWD for fallback matching
-  local by_id = {}
+  -- Map every live block across all sessions by block_id and normalized pwd
+  local by_block_id = {}
   local by_pwd = {}
-  for _, b in ipairs(live_blocks) do
-    local id = b.id or b.block_id
-    if id then
-      by_id[id] = true
-      local pwd_res = rex.call("com.superlogical.terminal.pwd", { block_id = id })
-      local pwd = pwd_res and (pwd_res.pwd or pwd_res.path)
-      if pwd then
-        by_pwd[pwd] = id
+
+  for _, s in ipairs(sessions) do
+    local sid = s.session_id or s.id
+    if sid then
+      local blocks_res = rex.call("session.list_blocks", { session_id = sid })
+      local blocks = (blocks_res and blocks_res.blocks) or {}
+      for _, b in ipairs(blocks) do
+        local bid = b.block_id
+        if bid then
+          by_block_id[bid] = sid
+          local ok, pwd_res = pcall(rex.call, "com.superlogical.terminal.pwd", {
+            session_id = sid,
+            block_id = bid,
+            args = {},
+          })
+          if ok and pwd_res and pwd_res.pwd then
+            local clean_pwd = normalize_pwd(pwd_res.pwd)
+            if clean_pwd then
+              by_pwd[clean_pwd] = { session_id = sid, block_id = bid }
+            end
+          end
+        end
       end
     end
   end
 
-  for saved_id in res.stdout:gmatch("[^\r\n]+") do
-    local filepath = state_dir .. "/" .. saved_id
+  -- Consume saved state files and inject commands with \r
+  for saved_bid in res.stdout:gmatch("[^\r\n]+") do
+    local filepath = state_dir .. "/" .. saved_bid
     local f = io.open(filepath, "r")
     if f then
       local line = f:read("*l")
@@ -50,15 +69,19 @@ local function restore_active_tuis()
 
       if line then
         local saved_pwd, cmd = line:match("^([^\t]+)\t(.+)$")
-        local target_id = by_id[saved_id] and saved_id or by_pwd[saved_pwd]
-        if target_id and cmd then
-          write_to_block(target_id, cmd .. "\r")
+        if cmd then
+          if by_block_id[saved_bid] then
+            write_to_block(by_block_id[saved_bid], saved_bid, cmd .. "\r")
+          elseif saved_pwd and by_pwd[saved_pwd] then
+            local target = by_pwd[saved_pwd]
+            write_to_block(target.session_id, target.block_id, cmd .. "\r")
+          end
         end
       end
     end
   end
 end
 
--- Wait briefly for Rex to finish recreating restored blocks and PTYs on startup
+-- Wait 1s for Rex to finish recreating restored sessions, blocks, and PTYs on startup
 rex.after(1000, restore_active_tuis)
 
