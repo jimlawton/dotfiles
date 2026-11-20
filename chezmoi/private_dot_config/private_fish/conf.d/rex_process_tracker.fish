@@ -1,4 +1,3 @@
-# Only run inside Rex blocks
 if set -q REX_BLOCK
     set -g __rex_state_dir "$XDG_STATE_HOME/rex-active-cmds"
     if test -z "$XDG_STATE_HOME"
@@ -6,23 +5,23 @@ if set -q REX_BLOCK
     end
     mkdir -p "$__rex_state_dir"
 
-    # Record command right before it executes
     function __rex_track_start --on-event fish_preexec
-        set -l cmd (string trim -- "$argv[1]")
-        # Skip empty commands, exit, or clear
+        set -l cmd (string trim -- "$argv")
+        # Ignore empty commands or shell exits
         if test -z "$cmd"; or string match -rq '^(exit|clear|logout)$' -- "$cmd"
             return
         end
-        # Write JSON/line with block ID, cwd, and exact command
+        # Skip coding agents handled separately by RexAgentRestore
+        if string match -rq '^(claude|codex|opencode|pi)(\s|$)' -- "$cmd"
+            return
+        end
         printf '%s\t%s\n' "$PWD" "$cmd" > "$__rex_state_dir/$REX_BLOCK"
     end
 
-    # Delete the record as soon as the command finishes normally
     function __rex_track_end --on-event fish_postexec
         rm -f "$__rex_state_dir/$REX_BLOCK"
     end
 
-    # Clean up if the user intentionally closes the shell/pane
     function __rex_track_exit --on-event fish_exit
         rm -f "$__rex_state_dir/$REX_BLOCK"
     end
