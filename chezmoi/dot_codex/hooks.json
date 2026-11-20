@@ -89,6 +89,16 @@
             "type": "command"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/opt/homebrew/bin/rex-agent-restore' hook codex",
+            "timeout": 10,
+            "statusMessage": "Rex Agent Restore: save this chat for Rex restarts"
+          }
+        ]
       }
     ],
     "Stop": [
