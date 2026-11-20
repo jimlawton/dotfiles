@@ -10,11 +10,10 @@ if set -q REX_BLOCK
         if test -z "$cmd"; or string match -rq '^(exit|clear|logout)$' -- "$cmd"
             return
         end
-        # Skip coding agents (including with inline env vars like HTTPS_PROXY=... claude)
-        if string match -rq '^([A-Za-z_][A-Za-z0-9_]*=[^\s]+\s+)*(claude|codex|opencode|pi)(\s|$)' -- "$cmd"
+        # Skip coding agents (bare, KEY=VAL prefixed, or env-prefixed)
+        if string match -rq '^(env\s+)?([A-Za-z_][A-Za-z0-9_]*=[^\s]+\s+)*(claude|codex|opencode|pi)(\s|$)' -- "$cmd"
             return
         end
-
         printf '%s\t%s\n' "$PWD" "$cmd" > "$__rex_state_dir/$REX_BLOCK"
     end
 
