@@ -7,7 +7,6 @@ if set -q REX_BLOCK
 
     function __rex_track_start --on-event fish_preexec
         set -l cmd (string trim -- "$argv")
-        # Ignore empty commands or shell exits
         if test -z "$cmd"; or string match -rq '^(exit|clear|logout)$' -- "$cmd"
             return
         end
