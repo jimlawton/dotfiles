@@ -19,7 +19,6 @@ end
 set -l _block_uuid (string replace -r '^block:' '' -- "$REX_BLOCK")
 set -g _rex_agent_file "$_rex_agent_dir/panes/$_block_uuid.json"
 
-# Prevent nested shells inside the same pane from re-triggering a restore
 if test "$_REX_AGENT_RESTORE_OWNER" = "$REX_BLOCK"
     set -g _rex_agent_nested 1
 else
@@ -68,7 +67,6 @@ function _rex_agent_prompt --on-event fish_prompt
     if test -e "$_rex_agent_file"
         set -l body (string join \n < "$_rex_agent_file")
         if test -n "$REX_AGENT_RESTORE_SHELL_TOKEN"; and string match -q "*\"shell_token\":\"$REX_AGENT_RESTORE_SHELL_TOKEN\"*" -- "$body"
-            # Agent started in this shell exited; delete unless killed by SIGHUP/SIGTERM/SIGKILL
             _rex_agent_killed $st; or command rm -f -- "$_rex_agent_file"
         else if test "$_rex_agent_first" = 1 -a "$_rex_agent_nested" = 0
             set -g _rex_agent_first 0
@@ -89,7 +87,6 @@ function _rex_tui_start --on-event fish_preexec
     if test -z "$cmd"; or string match -rq '^(exit|clear|logout)$' -- "$cmd"
         return
     end
-    # Skip coding agents handled by RexAgentRestore above
     if string match -rq '^(env\s+)?([A-Za-z_][A-Za-z0-9_]*=[^\s]+\s+)*(claude|codex|opencode|pi)(\s|$)' -- "$cmd"
         return
     end
@@ -98,13 +95,8 @@ end
 
 function _rex_tui_end --on-event fish_postexec
     set -l st $status
-    # Keep saved TUI command if killed by Rex shutdown/reboot (129/137/143)
     if not _rex_agent_killed $st
         command rm -f -- "$_rex_tui_dir/$REX_BLOCK"
     end
-end
-
-function _rex_tui_exit --on-event fish_exit
-    command rm -f -- "$_rex_tui_dir/$REX_BLOCK"
 end
 
