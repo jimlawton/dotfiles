@@ -4,12 +4,13 @@ set -q REX_BLOCK; or exit 0
 set -q _rex_restore_loaded; and exit 0
 set -g _rex_restore_loaded 1
 
+set -l _state_base "$XDG_STATE_HOME"
+test -z "$_state_base"; and set _state_base "$HOME/.local/state"
+
 # ---------------------------------------------------------------------------
 # 1. RexAgentRestore (1:1 port of rex-agent-restore.zsh)
 # ---------------------------------------------------------------------------
 set -g _rex_agent_first 1
-set -l _state_base "$XDG_STATE_HOME"
-test -z "$_state_base"; and set _state_base "$HOME/.local/state"
 if set -q REX_AGENT_RESTORE_STATE_DIR; and test -n "$REX_AGENT_RESTORE_STATE_DIR"
     set -g _rex_agent_dir "$REX_AGENT_RESTORE_STATE_DIR"
 else
@@ -37,8 +38,8 @@ function _rex_agent_run
     set -l plan (rex-agent-restore restore-plan 2>/dev/null); or return 0
     test (count $plan) -ge 3; or return 0
 
-    set -l mode $plan[1]
-    set -l desc $plan[2]
+    set -l mode $plan
+    set -l desc $plan
     set -l cmd (string join \n -- $plan[3..-1])
     test -n "$cmd"; or return 0
 
@@ -62,8 +63,48 @@ function _rex_agent_run
     return 0
 end
 
-function _rex_agent_prompt --on-event fish_prompt
+# ---------------------------------------------------------------------------
+# 2. Active TUI / CLI Process Tracker & First-Prompt Restorer
+# ---------------------------------------------------------------------------
+set -g _rex_tui_dir "$_state_base/rex-active-cmds"
+mkdir -p "$_rex_tui_dir"
+set -g _rex_tui_first 1
+
+function _rex_tui_restore_on_boot
+    test "$_rex_tui_first" = 1 -a "$_rex_agent_nested" = 0; or return 0
+    set -g _rex_tui_first 0
+
+    set -l target_file "$_rex_tui_dir/$REX_BLOCK"
+    if not test -f "$target_file"
+        # Fallback: match any saved command whose recorded PWD matches this pane's PWD
+        for f in $_rex_tui_dir/block:*
+            if test -f "$f"
+                set -l saved_pwd (head -n 1 "$f" | cut -f1)
+                if test "$saved_pwd" = "$PWD"
+                    set target_file "$f"
+                    break
+                end
+            end
+        end
+    end
+
+    if test -f "$target_file"
+        set -l line (head -n 1 "$target_file")
+        command rm -f -- "$target_file"
+        set -l cmd (string replace -r '^[^\t]+\t' '' -- "$line")
+        if test -n "$cmd"
+            set_color brblack
+            echo "rex-tui-restore: $cmd"
+            set_color normal
+            builtin history append -- "$cmd"
+            eval "$cmd"
+        end
+    end
+end
+
+function _rex_first_prompt --on-event fish_prompt
     set -l st $status
+    # A. Handle RexAgentRestore
     if test -e "$_rex_agent_file"
         set -l body (string join \n < "$_rex_agent_file")
         if test -n "$REX_AGENT_RESTORE_SHELL_TOKEN"; and string match -q "*\"shell_token\":\"$REX_AGENT_RESTORE_SHELL_TOKEN\"*" -- "$body"
@@ -74,13 +115,10 @@ function _rex_agent_prompt --on-event fish_prompt
         end
     end
     set -g _rex_agent_first 0
-end
 
-# ---------------------------------------------------------------------------
-# 2. Active TUI / CLI Process Tracker (for restore_tuis.lua)
-# ---------------------------------------------------------------------------
-set -g _rex_tui_dir "$_state_base/rex-active-cmds"
-mkdir -p "$_rex_tui_dir"
+    # B. Handle TUI restore on first prompt of restored pane
+    _rex_tui_restore_on_boot
+end
 
 function _rex_tui_start --on-event fish_preexec
     set -l cmd (string trim -- "$argv")
