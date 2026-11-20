@@ -97,6 +97,7 @@ function _rex_tui_restore_on_boot
             echo "rex-tui-restore: $cmd"
             set_color normal
             builtin history append -- "$cmd"
+            printf '%s\t%s\n' "$PWD" "$cmd" > "$_rex_tui_dir/$REX_BLOCK"
             eval "$cmd"
         end
     end
