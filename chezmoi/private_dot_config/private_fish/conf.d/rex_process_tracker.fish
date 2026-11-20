@@ -75,12 +75,26 @@ function _rex_tui_restore_on_boot
     set -g _rex_tui_first 0
 
     set -l target_file "$_rex_tui_dir/$REX_BLOCK"
+
+    # Pass 1: Match same REX_SESSION + PWD
     if not test -f "$target_file"
-        # Fallback: match any saved command whose recorded PWD matches this pane's PWD
         for f in $_rex_tui_dir/block:*
             if test -f "$f"
-                set -l saved_pwd (head -n 1 "$f" | cut -f1)
-                if test "$saved_pwd" = "$PWD"
+                set -l fields (string split \t -- (head -n 1 "$f"))
+                if test (count $fields) -ge 3; and test "$fields[1]" = "$REX_SESSION" -a "$fields[2]" = "$PWD"
+                    set target_file "$f"
+                    break
+                end
+            end
+        end
+    end
+
+    # Pass 2: Fallback to PWD-only match if session ID also rotated
+    if not test -f "$target_file"
+        for f in $_rex_tui_dir/block:*
+            if test -f "$f"
+                set -l fields (string split \t -- (head -n 1 "$f"))
+                if test (count $fields) -ge 3; and test "$fields[2]" = "$PWD"
                     set target_file "$f"
                     break
                 end
@@ -91,14 +105,26 @@ function _rex_tui_restore_on_boot
     if test -f "$target_file"
         set -l line (head -n 1 "$target_file")
         command rm -f -- "$target_file"
-        set -l cmd (string replace -r '^[^\t]+\t' '' -- "$line")
+        set -l fields (string split -m 2 \t -- "$line")
+        set -l cmd ""
+        if test (count $fields) -ge 3
+            set cmd "$fields[3]"
+        else if test (count $fields) -eq 2
+            set cmd "$fields[2]"
+        end
+
         if test -n "$cmd"
             set_color brblack
             echo "rex-tui-restore: $cmd"
             set_color normal
             builtin history append -- "$cmd"
-            printf '%s\t%s\n' "$PWD" "$cmd" > "$_rex_tui_dir/$REX_BLOCK"
+            # Re-record under the new REX_BLOCK so subsequent restarts also preserve it
+            printf '%s\t%s\t%s\n' "$REX_SESSION" "$PWD" "$cmd" > "$_rex_tui_dir/$REX_BLOCK"
             eval "$cmd"
+            set -l st $status
+            if not _rex_agent_killed $st
+                command rm -f -- "$_rex_tui_dir/$REX_BLOCK"
+            end
         end
     end
 end
@@ -129,7 +155,7 @@ function _rex_tui_start --on-event fish_preexec
     if string match -rq '^(env\s+)?([A-Za-z_][A-Za-z0-9_]*=[^\s]+\s+)*(claude|codex|opencode|pi)(\s|$)' -- "$cmd"
         return
     end
-    printf '%s\t%s\n' "$PWD" "$cmd" > "$_rex_tui_dir/$REX_BLOCK"
+    printf '%s\t%s\t%s\n' "$REX_SESSION" "$PWD" "$cmd" > "$_rex_tui_dir/$REX_BLOCK"
 end
 
 function _rex_tui_end --on-event fish_postexec
