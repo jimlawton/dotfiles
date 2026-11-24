@@ -74,33 +74,14 @@ function _rex_tui_restore_on_boot
     test "$_rex_tui_first" = 1 -a "$_rex_agent_nested" = 0; or return 0
     set -g _rex_tui_first 0
 
-    set -l target_file "$_rex_tui_dir/$REX_BLOCK"
-
-    # Pass 1: Match same REX_SESSION + PWD
-    if not test -f "$target_file"
-        for f in $_rex_tui_dir/block:*
-            if test -f "$f"
-                set -l fields (string split \t -- (head -n 1 "$f"))
-                if test (count $fields) -ge 3; and test "$fields[1]" = "$REX_SESSION" -a "$fields[2]" = "$PWD"
-                    set target_file "$f"
-                    break
-                end
-            end
-        end
-    end
-
-    # Pass 2: Fallback to PWD-only match if session ID also rotated
-    if not test -f "$target_file"
-        for f in $_rex_tui_dir/block:*
-            if test -f "$f"
-                set -l fields (string split \t -- (head -n 1 "$f"))
-                if test (count $fields) -ge 3; and test "$fields[2]" = "$PWD"
-                    set target_file "$f"
-                    break
-                end
-            end
-        end
-    end
+    # Only this pane's own command. Rex keeps pane IDs across a restore;
+    # matching by session or directory handed one pane's command to
+    # others, since every pane shares one session and most one directory.
+    # The rename claims the file, so it can never run in two panes.
+    set -l own "$_rex_tui_dir/$REX_BLOCK"
+    set -l target_file "$own.claimed-$fish_pid"
+    command mv -- "$own" "$target_file" 2>/dev/null
+    # mv's error is only "no saved command for this pane".
 
     if test -f "$target_file"
         set -l line (head -n 1 "$target_file")
