@@ -537,7 +537,7 @@ cask "antigravity-cli"
 cask "bartender"
 # Compare files and folders
 cask "beyond-compare"
-# Desktop password and login vault
+# Open source desktop password manager with encrypted vault and autofilling
 cask "bitwarden"
 # Open source, extensible AI agent that goes beyond code suggestions
 cask "block-goose"
